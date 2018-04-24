@@ -7,14 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A2C7120547F9309B9CF466B /* Pods_FBApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC98FE63D30C70B2B7FB1B82 /* Pods_FBApp.framework */; };
+		141C25CBBA6A256F63C293C3 /* Pods_FBAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 031B49DDA3EB150B8D5C3F7D /* Pods_FBAppUITests.framework */; };
 		2D33CBCB208D8F0000F7FEFC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D33CBCA208D8F0000F7FEFC /* AppDelegate.swift */; };
-		2D33CBCD208D8F0000F7FEFC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D33CBCC208D8F0000F7FEFC /* ViewController.swift */; };
+		2D33CBCD208D8F0000F7FEFC /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D33CBCC208D8F0000F7FEFC /* SignInViewController.swift */; };
 		2D33CBD0208D8F0100F7FEFC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D33CBCE208D8F0100F7FEFC /* Main.storyboard */; };
 		2D33CBD3208D8F0100F7FEFC /* FBApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2D33CBD1208D8F0100F7FEFC /* FBApp.xcdatamodeld */; };
 		2D33CBD5208D8F0200F7FEFC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D33CBD4208D8F0200F7FEFC /* Assets.xcassets */; };
 		2D33CBD8208D8F0200F7FEFC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D33CBD6208D8F0200F7FEFC /* LaunchScreen.storyboard */; };
 		2D33CBE3208D8F0200F7FEFC /* FBAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D33CBE2208D8F0200F7FEFC /* FBAppTests.swift */; };
 		2D33CBEE208D8F0200F7FEFC /* FBAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D33CBED208D8F0200F7FEFC /* FBAppUITests.swift */; };
+		2D33CBFC208E7E6800F7FEFC /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D33CBFB208E7E6800F7FEFC /* SignUpViewController.swift */; };
+		2D33CBFE208E7E8300F7FEFC /* SignOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D33CBFD208E7E8300F7FEFC /* SignOutViewController.swift */; };
+		2D33CC00208E85CF00F7FEFC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2D33CBFF208E85CF00F7FEFC /* GoogleService-Info.plist */; };
+		2D8263C3208ECA2400A21BB8 /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8263C2208ECA2400A21BB8 /* AlertController.swift */; };
+		89311A5244187B29972177B9 /* Pods_FBAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 549578A97ABF13BFBDA0D536 /* Pods_FBAppTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,9 +42,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		031B49DDA3EB150B8D5C3F7D /* Pods_FBAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FBAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A4122FCA14F01704972DF0D /* Pods-FBAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FBAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FBAppTests/Pods-FBAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		2D33CBC7208D8F0000F7FEFC /* FBApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FBApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D33CBCA208D8F0000F7FEFC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2D33CBCC208D8F0000F7FEFC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2D33CBCC208D8F0000F7FEFC /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		2D33CBCF208D8F0100F7FEFC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2D33CBD2208D8F0100F7FEFC /* FBApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FBApp.xcdatamodel; sourceTree = "<group>"; };
 		2D33CBD4208D8F0200F7FEFC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +58,17 @@
 		2D33CBE9208D8F0200F7FEFC /* FBAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FBAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D33CBED208D8F0200F7FEFC /* FBAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBAppUITests.swift; sourceTree = "<group>"; };
 		2D33CBEF208D8F0200F7FEFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2D33CBFB208E7E6800F7FEFC /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		2D33CBFD208E7E8300F7FEFC /* SignOutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignOutViewController.swift; sourceTree = "<group>"; };
+		2D33CBFF208E85CF00F7FEFC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		2D8263C2208ECA2400A21BB8 /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AlertController.swift; path = /Users/sophieamin/Desktop/FireBaseProjects/FBApp/FBApp/AlertController.swift; sourceTree = "<absolute>"; };
+		43A94675B5AAA8BBD66BA138 /* Pods-FBAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FBAppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FBAppUITests/Pods-FBAppUITests.release.xcconfig"; sourceTree = "<group>"; };
+		549578A97ABF13BFBDA0D536 /* Pods_FBAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FBAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6B98AED1D68E39E33648EC41 /* Pods-FBAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FBAppUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FBAppUITests/Pods-FBAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		B43D876803DA561A20BE961A /* Pods-FBAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FBAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FBAppTests/Pods-FBAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		C280BCB022713373AF65BB28 /* Pods-FBApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FBApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FBApp/Pods-FBApp.debug.xcconfig"; sourceTree = "<group>"; };
+		EC98FE63D30C70B2B7FB1B82 /* Pods_FBApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FBApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F330C3C17834F3ADD74786B8 /* Pods-FBApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FBApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-FBApp/Pods-FBApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A2C7120547F9309B9CF466B /* Pods_FBApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89311A5244187B29972177B9 /* Pods_FBAppTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,12 +92,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				141C25CBBA6A256F63C293C3 /* Pods_FBAppUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		089CB2606DFE47015BE0C94B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EC98FE63D30C70B2B7FB1B82 /* Pods_FBApp.framework */,
+				549578A97ABF13BFBDA0D536 /* Pods_FBAppTests.framework */,
+				031B49DDA3EB150B8D5C3F7D /* Pods_FBAppUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		2D33CBBE208D8F0000F7FEFC = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +116,8 @@
 				2D33CBE1208D8F0200F7FEFC /* FBAppTests */,
 				2D33CBEC208D8F0200F7FEFC /* FBAppUITests */,
 				2D33CBC8208D8F0000F7FEFC /* Products */,
+				77541CCF1D2CF7FFF70785E8 /* Pods */,
+				089CB2606DFE47015BE0C94B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -100,11 +135,15 @@
 			isa = PBXGroup;
 			children = (
 				2D33CBCA208D8F0000F7FEFC /* AppDelegate.swift */,
-				2D33CBCC208D8F0000F7FEFC /* ViewController.swift */,
+				2D33CBCC208D8F0000F7FEFC /* SignInViewController.swift */,
+				2D33CBFB208E7E6800F7FEFC /* SignUpViewController.swift */,
+				2D33CBFD208E7E8300F7FEFC /* SignOutViewController.swift */,
+				2D8263C2208ECA2400A21BB8 /* AlertController.swift */,
 				2D33CBCE208D8F0100F7FEFC /* Main.storyboard */,
 				2D33CBD4208D8F0200F7FEFC /* Assets.xcassets */,
 				2D33CBD6208D8F0200F7FEFC /* LaunchScreen.storyboard */,
 				2D33CBD9208D8F0200F7FEFC /* Info.plist */,
+				2D33CBFF208E85CF00F7FEFC /* GoogleService-Info.plist */,
 				2D33CBD1208D8F0100F7FEFC /* FBApp.xcdatamodeld */,
 			);
 			path = FBApp;
@@ -128,6 +167,19 @@
 			path = FBAppUITests;
 			sourceTree = "<group>";
 		};
+		77541CCF1D2CF7FFF70785E8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C280BCB022713373AF65BB28 /* Pods-FBApp.debug.xcconfig */,
+				F330C3C17834F3ADD74786B8 /* Pods-FBApp.release.xcconfig */,
+				B43D876803DA561A20BE961A /* Pods-FBAppTests.debug.xcconfig */,
+				1A4122FCA14F01704972DF0D /* Pods-FBAppTests.release.xcconfig */,
+				6B98AED1D68E39E33648EC41 /* Pods-FBAppUITests.debug.xcconfig */,
+				43A94675B5AAA8BBD66BA138 /* Pods-FBAppUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +187,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2D33CBF2208D8F0200F7FEFC /* Build configuration list for PBXNativeTarget "FBApp" */;
 			buildPhases = (
+				BB08FA681BBF2CBA13B00E63 /* [CP] Check Pods Manifest.lock */,
 				2D33CBC3208D8F0000F7FEFC /* Sources */,
 				2D33CBC4208D8F0000F7FEFC /* Frameworks */,
 				2D33CBC5208D8F0000F7FEFC /* Resources */,
+				0C4EF5A08B6FE3770B33B6C6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -152,6 +206,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2D33CBF5208D8F0200F7FEFC /* Build configuration list for PBXNativeTarget "FBAppTests" */;
 			buildPhases = (
+				01073F3674614E86570426D3 /* [CP] Check Pods Manifest.lock */,
 				2D33CBDA208D8F0200F7FEFC /* Sources */,
 				2D33CBDB208D8F0200F7FEFC /* Frameworks */,
 				2D33CBDC208D8F0200F7FEFC /* Resources */,
@@ -170,6 +225,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2D33CBF8208D8F0200F7FEFC /* Build configuration list for PBXNativeTarget "FBAppUITests" */;
 			buildPhases = (
+				29EBB036F2960F558356B1F8 /* [CP] Check Pods Manifest.lock */,
 				2D33CBE5208D8F0200F7FEFC /* Sources */,
 				2D33CBE6208D8F0200F7FEFC /* Frameworks */,
 				2D33CBE7208D8F0200F7FEFC /* Resources */,
@@ -235,6 +291,7 @@
 				2D33CBD8208D8F0200F7FEFC /* LaunchScreen.storyboard in Resources */,
 				2D33CBD5208D8F0200F7FEFC /* Assets.xcassets in Resources */,
 				2D33CBD0208D8F0100F7FEFC /* Main.storyboard in Resources */,
+				2D33CC00208E85CF00F7FEFC /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,13 +311,93 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		01073F3674614E86570426D3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FBAppTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		0C4EF5A08B6FE3770B33B6C6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-FBApp/Pods-FBApp-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FBApp/Pods-FBApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		29EBB036F2960F558356B1F8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FBAppUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BB08FA681BBF2CBA13B00E63 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FBApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		2D33CBC3208D8F0000F7FEFC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				2D33CBD3208D8F0100F7FEFC /* FBApp.xcdatamodeld in Sources */,
-				2D33CBCD208D8F0000F7FEFC /* ViewController.swift in Sources */,
+				2D33CBCD208D8F0000F7FEFC /* SignInViewController.swift in Sources */,
+				2D33CBFE208E7E8300F7FEFC /* SignOutViewController.swift in Sources */,
+				2D33CBFC208E7E6800F7FEFC /* SignUpViewController.swift in Sources */,
+				2D8263C3208ECA2400A21BB8 /* AlertController.swift in Sources */,
 				2D33CBCB208D8F0000F7FEFC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -432,6 +569,7 @@
 		};
 		2D33CBF3208D8F0200F7FEFC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C280BCB022713373AF65BB28 /* Pods-FBApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -449,6 +587,7 @@
 		};
 		2D33CBF4208D8F0200F7FEFC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F330C3C17834F3ADD74786B8 /* Pods-FBApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -466,6 +605,7 @@
 		};
 		2D33CBF6208D8F0200F7FEFC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B43D876803DA561A20BE961A /* Pods-FBAppTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -486,6 +626,7 @@
 		};
 		2D33CBF7208D8F0200F7FEFC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1A4122FCA14F01704972DF0D /* Pods-FBAppTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -506,6 +647,7 @@
 		};
 		2D33CBF9208D8F0200F7FEFC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6B98AED1D68E39E33648EC41 /* Pods-FBAppUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -525,6 +667,7 @@
 		};
 		2D33CBFA208D8F0200F7FEFC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 43A94675B5AAA8BBD66BA138 /* Pods-FBAppUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
