@@ -165,7 +165,7 @@
                         <outlet property="emailTF" destination="IvX-L6-dxI" id="yjo-Pl-zfY"/>
                         <outlet property="passwordTF" destination="er7-oq-wyp" id="I3t-eC-L4A"/>
                         <outlet property="usernameTF" destination="jbb-hS-Npe" id="P4A-kE-uQz"/>
-                        <segue destination="njc-Gq-dy3" kind="show" identifier="singUpSegue" id="wd2-aK-7zG"/>
+                        <segue destination="njc-Gq-dy3" kind="show" identifier="signUpSegue" id="wd2-aK-7zG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zX3-m4-TAN" userLabel="First Responder" sceneMemberID="firstResponder"/>

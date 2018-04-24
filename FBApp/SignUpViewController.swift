@@ -7,7 +7,10 @@
 //
 
 import UIKit
+import FirebaseAuth
 import Firebase
+
+
 
 class SignUpViewController: UIViewController {
 
@@ -28,6 +31,27 @@ class SignUpViewController: UIViewController {
             AlertController.showAlert(inViewController: self, title: "Missing Info", message: "Please fill out all fields")
             return
         }
+        Auth.auth().createUser(withEmail: email, password: password, completion: { (user, error)  in
+            guard error == nil else {
+                AlertController.showAlert(inViewController: self, title: "Error", message: error!.localizedDescription)
+                return
+            }
+            guard let user = user else { return }
+            print(user.email ?? "MISSING EMAIL")
+            print(user.uid)
+            
+            let changeRequest = user.createProfileChangeRequest()
+            changeRequest.displayName = username
+            changeRequest.commitChanges(completion: { (error) in
+                guard error == nil else{
+                    AlertController.showAlert(inViewController: self, title: "Error", message: error!.localizedDescription)
+                    return
+                    
+                }
+                self.performSegue(withIdentifier: "signUpSegue", sender: nil)
+                
+            })
+        })
        
     }
     
