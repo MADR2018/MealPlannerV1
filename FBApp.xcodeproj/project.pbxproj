@@ -21,6 +21,7 @@
 		2D33CBFE208E7E8300F7FEFC /* SignOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D33CBFD208E7E8300F7FEFC /* SignOutViewController.swift */; };
 		2D33CC00208E85CF00F7FEFC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2D33CBFF208E85CF00F7FEFC /* GoogleService-Info.plist */; };
 		2D99A651208FEBAF00BE9F1D /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D99A650208FEBAF00BE9F1D /* AlertController.swift */; };
+		2D99A653209800F000BE9F1D /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D99A652209800F000BE9F1D /* WelcomeViewController.swift */; };
 		89311A5244187B29972177B9 /* Pods_FBAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 549578A97ABF13BFBDA0D536 /* Pods_FBAppTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +63,7 @@
 		2D33CBFD208E7E8300F7FEFC /* SignOutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignOutViewController.swift; sourceTree = "<group>"; };
 		2D33CBFF208E85CF00F7FEFC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2D99A650208FEBAF00BE9F1D /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AlertController.swift; path = /Users/sophieamin/Desktop/FireBaseProjects/FBApp/FBApp/AlertController.swift; sourceTree = "<absolute>"; };
+		2D99A652209800F000BE9F1D /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		43A94675B5AAA8BBD66BA138 /* Pods-FBAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FBAppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FBAppUITests/Pods-FBAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		549578A97ABF13BFBDA0D536 /* Pods_FBAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FBAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B98AED1D68E39E33648EC41 /* Pods-FBAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FBAppUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FBAppUITests/Pods-FBAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 				2D33CBFD208E7E8300F7FEFC /* SignOutViewController.swift */,
 				2D99A650208FEBAF00BE9F1D /* AlertController.swift */,
 				2D33CBCE208D8F0100F7FEFC /* Main.storyboard */,
+				2D99A652209800F000BE9F1D /* WelcomeViewController.swift */,
 				2D33CBD4208D8F0200F7FEFC /* Assets.xcassets */,
 				2D33CBD6208D8F0200F7FEFC /* LaunchScreen.storyboard */,
 				2D33CBD9208D8F0200F7FEFC /* Info.plist */,
@@ -447,6 +450,7 @@
 				2D33CBFC208E7E6800F7FEFC /* SignUpViewController.swift in Sources */,
 				2D99A651208FEBAF00BE9F1D /* AlertController.swift in Sources */,
 				2D33CBCB208D8F0000F7FEFC /* AppDelegate.swift in Sources */,
+				2D99A653209800F000BE9F1D /* WelcomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -15,15 +15,13 @@ import Firebase
 class SignUpViewController: UIViewController {
 
     //MARK: Properties
-    @IBOutlet weak var usernameTF: UITextField!
+
     @IBOutlet weak var emailTF: UITextField!
     @IBOutlet weak var passwordTF: UITextField!
     
     //MARK: Actioms
     @IBAction func onSignUpTapped(_ sender: Any) {
-        guard let username = usernameTF.text,
-        username != "",
-        let email = emailTF.text,
+        guard let email = emailTF.text,
         email != "",
         let password = passwordTF.text,
         password != ""
@@ -37,11 +35,11 @@ class SignUpViewController: UIViewController {
                 return
             }
             guard let user = user else { return }
-            print(user.email ?? "MISSING EMAIL")
-            print(user.uid)
+            print(user.email ?? "MISSING EMAIL") //if there's no email print missing email. this is only a thing if you have an alternative signup method like facebook, etc
+            print(user.uid) //user id will exist regardless if the user exists
             
+            //change request is for changing the users profile info
             let changeRequest = user.createProfileChangeRequest()
-            changeRequest.displayName = username
             changeRequest.commitChanges(completion: { (error) in
                 guard error == nil else{
                     AlertController.showAlert(inViewController: self, title: "Error", message: error!.localizedDescription)

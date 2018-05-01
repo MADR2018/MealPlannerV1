@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
 
 class SignOutViewController: UIViewController {
 
@@ -15,11 +17,19 @@ class SignOutViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        guard let username = Auth.auth().currentUser?.displayName else { return }
+        label.text = "Hello \(username)"
         // Do any additional setup after loading the view.
     }
 
     @IBAction func onSignOutTapped(_ sender: Any) {
+        do {
+            try Auth.auth().signOut()
+            performSegue(withIdentifier: "signOutSegue", sender: nil)
+            
+        } catch {
+            print(error)
+        }
     }
     
 
