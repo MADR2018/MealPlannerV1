@@ -20,8 +20,12 @@
 		2D33CBFC208E7E6800F7FEFC /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D33CBFB208E7E6800F7FEFC /* SignUpViewController.swift */; };
 		2D33CBFE208E7E8300F7FEFC /* SignOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D33CBFD208E7E8300F7FEFC /* SignOutViewController.swift */; };
 		2D33CC00208E85CF00F7FEFC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2D33CBFF208E85CF00F7FEFC /* GoogleService-Info.plist */; };
-		2D99A651208FEBAF00BE9F1D /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D99A650208FEBAF00BE9F1D /* AlertController.swift */; };
 		2D99A653209800F000BE9F1D /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D99A652209800F000BE9F1D /* WelcomeViewController.swift */; };
+		2DD0B515209B715800181025 /* SelectDietViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD0B514209B715800181025 /* SelectDietViewController.swift */; };
+		2DD0B51B209B8DA600181025 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD0B51A209B8DA600181025 /* User.swift */; };
+		2DD0B51F209B8E9000181025 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD0B51E209B8E9000181025 /* Recipe.swift */; };
+		2DD0B525209B8F8A00181025 /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD0B524209B8F8A00181025 /* AlertController.swift */; };
+		2DD0B527209B91DB00181025 /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD0B526209B91DB00181025 /* DatabaseService.swift */; };
 		89311A5244187B29972177B9 /* Pods_FBAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 549578A97ABF13BFBDA0D536 /* Pods_FBAppTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -62,8 +66,12 @@
 		2D33CBFB208E7E6800F7FEFC /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		2D33CBFD208E7E8300F7FEFC /* SignOutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignOutViewController.swift; sourceTree = "<group>"; };
 		2D33CBFF208E85CF00F7FEFC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		2D99A650208FEBAF00BE9F1D /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AlertController.swift; path = /Users/sophieamin/Desktop/FireBaseProjects/FBApp/FBApp/AlertController.swift; sourceTree = "<absolute>"; };
 		2D99A652209800F000BE9F1D /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		2DD0B514209B715800181025 /* SelectDietViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDietViewController.swift; sourceTree = "<group>"; };
+		2DD0B51A209B8DA600181025 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		2DD0B51E209B8E9000181025 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		2DD0B524209B8F8A00181025 /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
+		2DD0B526209B91DB00181025 /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
 		43A94675B5AAA8BBD66BA138 /* Pods-FBAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FBAppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FBAppUITests/Pods-FBAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		549578A97ABF13BFBDA0D536 /* Pods_FBAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FBAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B98AED1D68E39E33648EC41 /* Pods-FBAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FBAppUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FBAppUITests/Pods-FBAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -136,12 +144,16 @@
 		2D33CBC9208D8F0000F7FEFC /* FBApp */ = {
 			isa = PBXGroup;
 			children = (
+				2DD0B524209B8F8A00181025 /* AlertController.swift */,
+				2DD0B51E209B8E9000181025 /* Recipe.swift */,
+				2DD0B51A209B8DA600181025 /* User.swift */,
 				2D33CBCA208D8F0000F7FEFC /* AppDelegate.swift */,
 				2D33CBCC208D8F0000F7FEFC /* SignInViewController.swift */,
 				2D33CBFB208E7E6800F7FEFC /* SignUpViewController.swift */,
+				2DD0B526209B91DB00181025 /* DatabaseService.swift */,
 				2D33CBFD208E7E8300F7FEFC /* SignOutViewController.swift */,
-				2D99A650208FEBAF00BE9F1D /* AlertController.swift */,
 				2D33CBCE208D8F0100F7FEFC /* Main.storyboard */,
+				2DD0B514209B715800181025 /* SelectDietViewController.swift */,
 				2D99A652209800F000BE9F1D /* WelcomeViewController.swift */,
 				2D33CBD4208D8F0200F7FEFC /* Assets.xcassets */,
 				2D33CBD6208D8F0200F7FEFC /* LaunchScreen.storyboard */,
@@ -448,9 +460,13 @@
 				2D33CBCD208D8F0000F7FEFC /* SignInViewController.swift in Sources */,
 				2D33CBFE208E7E8300F7FEFC /* SignOutViewController.swift in Sources */,
 				2D33CBFC208E7E6800F7FEFC /* SignUpViewController.swift in Sources */,
-				2D99A651208FEBAF00BE9F1D /* AlertController.swift in Sources */,
+				2DD0B51B209B8DA600181025 /* User.swift in Sources */,
 				2D33CBCB208D8F0000F7FEFC /* AppDelegate.swift in Sources */,
+				2DD0B525209B8F8A00181025 /* AlertController.swift in Sources */,
+				2DD0B515209B715800181025 /* SelectDietViewController.swift in Sources */,
 				2D99A653209800F000BE9F1D /* WelcomeViewController.swift in Sources */,
+				2DD0B51F209B8E9000181025 /* Recipe.swift in Sources */,
+				2DD0B527209B91DB00181025 /* DatabaseService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

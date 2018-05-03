@@ -2,9 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/sophieamin/Desktop/FireBaseProjects/FBApp/FBApp/AlertController.swift">
-   </FileRef>
-   <FileRef
       location = "group:FBApp.xcodeproj">
    </FileRef>
    <FileRef

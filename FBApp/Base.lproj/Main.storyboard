@@ -204,7 +204,53 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vrv-j1-vrg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1012" y="382"/>
+            <point key="canvasLocation" x="1780" y="-65"/>
+        </scene>
+        <!--Select Diet View Controller-->
+        <scene sceneID="dql-88-D3C">
+            <objects>
+                <viewController id="TIp-1x-07s" customClass="SelectDietViewController" customModule="FBApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NeS-N1-Vk7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select Diet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ar-qL-81J">
+                                <rect key="frame" x="145" y="75" width="84" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9a8-WZ-5h7">
+                                <rect key="frame" x="152" y="128" width="74" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.57350726379999994" blue="0.32179848639999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Vegetarian">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="veggiePressed:" destination="TIp-1x-07s" eventType="touchUpInside" id="Krq-hK-HmQ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mY9-0v-ruy">
+                                <rect key="frame" x="155" y="176" width="65" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.57350726379999994" blue="0.32179848639999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="No Limits">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="noLimitPressed:" destination="TIp-1x-07s" eventType="touchUpInside" id="dPu-oJ-wKv"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="NUV-gx-Mpk"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="u8O-27-tzI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1196" y="751.57421289355329"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="NHE-le-f5w">
@@ -293,7 +339,7 @@
                     <connections>
                         <outlet property="emailTF" destination="IvX-L6-dxI" id="yjo-Pl-zfY"/>
                         <outlet property="passwordTF" destination="er7-oq-wyp" id="I3t-eC-L4A"/>
-                        <segue destination="njc-Gq-dy3" kind="show" identifier="signUpSegue" id="wd2-aK-7zG"/>
+                        <segue destination="TIp-1x-07s" kind="show" identifier="signUpSegue" id="cEW-ya-bbr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zX3-m4-TAN" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -303,7 +349,6 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="4Uz-1c-ILh"/>
-        <segue reference="wd2-aK-7zG"/>
-        <segue reference="dxL-Zj-iSd"/>
+        <segue reference="bxe-JM-bht"/>
     </inferredMetricsTieBreakers>
 </document>

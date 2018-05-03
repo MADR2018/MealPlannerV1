@@ -1,10 +1,3 @@
-//
-//  AlertController.swift
-//  
-//
-//  Created by Sophie Amin on 2018-04-23.
-//
-
 import Foundation
 import UIKit
 
