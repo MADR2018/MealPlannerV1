@@ -21,33 +21,42 @@ class SelectDietViewController: UIViewController {
    
     @IBAction func veggiePressed(_ sender: UIButton) {
         
-        
-//        let ref = Database.database().reference()
-//        let usersReference = ref.child("users").child(user.uid)
-//        let values = ["diet": "Veggie"]
-//        usersReference.updateChildValues(values, withCompletionBlock: { (err, ref) in
-//            
-//            if err != nil {
-//                print(err!)
-//                return
-//            }
-//            
-//            print("Saved user successfully")
-//        })
-//        let userDiet = [
-//            "diet" : Vegetarian]
-//        let ref = FIRDatabase.database().reference()
-//        ref.child('users').child(authData!.uid)
-        //let userRef = Database.database().reference()
-        // userRef.child("users").setValue("Vegetarian")
-//        
-//        
-        
+        let user = Auth.auth().currentUser
+        if let user = user {
+            let uid = user.uid
+        }
+        let ref = Database.database().reference()
+        let usersReference = ref.child("users").child((user?.uid)!)
+        let values = ["diet": "Vegetarian"]
+        usersReference.updateChildValues(values, withCompletionBlock: { (err, ref) in
+
+            if err != nil {
+                print(err!)
+                return
+            }
+
+            print("Saved user successfully")
+        })
+
     }
     
     @IBAction func noLimitPressed(_ sender: UIButton) {
-        let userRef = Database.database().reference()
-        userRef.child("users").setValue("No Limit")
+        let user = Auth.auth().currentUser
+        if let user = user {
+            let uid = user.uid
+        }
+        let ref = Database.database().reference()
+        let usersReference = ref.child("users").child((user?.uid)!)
+        let values = ["diet": "No Limit"]
+        usersReference.updateChildValues(values, withCompletionBlock: { (err, ref) in
+            
+            if err != nil {
+                print(err!)
+                return
+            }
+            
+            print("Saved user successfully")
+        })
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
