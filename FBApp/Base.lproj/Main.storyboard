@@ -204,7 +204,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vrv-j1-vrg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1780" y="-65"/>
+            <point key="canvasLocation" x="1916" y="-57"/>
         </scene>
         <!--Select Diet View Controller-->
         <scene sceneID="dql-88-D3C">
@@ -230,6 +230,7 @@
                                 </state>
                                 <connections>
                                     <action selector="veggiePressed:" destination="TIp-1x-07s" eventType="touchUpInside" id="Krq-hK-HmQ"/>
+                                    <segue destination="njc-Gq-dy3" kind="show" identifier="veggieSegue" id="6q6-i6-MhF"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mY9-0v-ruy">
@@ -241,6 +242,7 @@
                                 </state>
                                 <connections>
                                     <action selector="noLimitPressed:" destination="TIp-1x-07s" eventType="touchUpInside" id="dPu-oJ-wKv"/>
+                                    <segue destination="njc-Gq-dy3" kind="show" identifier="noLimitsSegue" id="NPf-jQ-eeP"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -349,6 +351,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="4Uz-1c-ILh"/>
+        <segue reference="NPf-jQ-eeP"/>
         <segue reference="bxe-JM-bht"/>
     </inferredMetricsTieBreakers>
 </document>

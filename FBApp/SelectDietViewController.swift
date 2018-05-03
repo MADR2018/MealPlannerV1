@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import FirebaseAuth
+import FirebaseDatabase
 
 class SelectDietViewController: UIViewController {
 
@@ -20,16 +21,33 @@ class SelectDietViewController: UIViewController {
    
     @IBAction func veggiePressed(_ sender: UIButton) {
         
+        
+//        let ref = Database.database().reference()
+//        let usersReference = ref.child("users").child(user.uid)
+//        let values = ["diet": "Veggie"]
+//        usersReference.updateChildValues(values, withCompletionBlock: { (err, ref) in
+//            
+//            if err != nil {
+//                print(err!)
+//                return
+//            }
+//            
+//            print("Saved user successfully")
+//        })
 //        let userDiet = [
 //            "diet" : Vegetarian]
 //        let ref = FIRDatabase.database().reference()
 //        ref.child('users').child(authData!.uid)
+        //let userRef = Database.database().reference()
+        // userRef.child("users").setValue("Vegetarian")
 //        
 //        
         
     }
     
     @IBAction func noLimitPressed(_ sender: UIButton) {
+        let userRef = Database.database().reference()
+        userRef.child("users").setValue("No Limit")
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

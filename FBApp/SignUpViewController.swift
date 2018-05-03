@@ -9,6 +9,7 @@
 import UIKit
 import FirebaseAuth
 import Firebase
+import FirebaseDatabase
 
 
 
@@ -46,6 +47,24 @@ class SignUpViewController: UIViewController {
                     return
                     
                 }
+//                guard let uid = user.uid else {
+//                    return
+//                }
+                
+                //authenticated user
+                let ref = Database.database().reference()
+                let usersReference = ref.child("users").child(user.uid)
+                let values = ["email": email, "password": password, "diet": "default"]
+                usersReference.updateChildValues(values, withCompletionBlock: { (err, ref) in
+                
+                    if err != nil {
+                        print(err!)
+                        return
+                    }
+                    
+                    print("Saved user successfully")
+                })
+                
                 self.performSegue(withIdentifier: "signUpSegue", sender: nil)
                 
             })

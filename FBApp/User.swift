@@ -11,11 +11,11 @@ import Foundation
 struct User {
     
     var diet:String
-    var monMeal:String
-    var tueMeal:String
-    var wedMeal:String
-    var thuMeal:String
-    var friMeal:String
-    var satMeal:String
-    var sunMeal:String
+//    var monMeal:String
+//    var tueMeal:String
+//    var wedMeal:String
+//    var thuMeal:String
+//    var friMeal:String
+//    var satMeal:String
+//    var sunMeal:String
 }

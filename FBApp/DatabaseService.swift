@@ -9,4 +9,12 @@
 import Foundation
 import Firebase
 
-
+class DatabaseService {
+    
+    static let shared = DatabaseService()
+    private init() {}
+    
+    //create a user reference
+    let userReference = Database.database().reference().child("users")
+    
+}
