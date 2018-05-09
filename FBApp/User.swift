@@ -7,15 +7,34 @@
 //
 
 import Foundation
-
-struct User {
+import Firebase
+class User {
     
-    var diet:String
-//    var monMeal:String
-//    var tueMeal:String
-//    var wedMeal:String
-//    var thuMeal:String
-//    var friMeal:String
-//    var satMeal:String
-//    var sunMeal:String
+    
+    var uid: String
+    var email: String
+    var password: String
+    var diet: String
+    
+    
+    init(uid: String, email: String, password: String, diet: String){
+        self.uid = uid
+        self.email = email
+        self.password = password
+        self.diet = diet
+    }
+    
+//    func saveUser(){
+//        let dbReference =  Database.database().reference()
+//        let userRef = ref.child("users").child(users.uid)
+//        
+//    }
+    func toDictionary() -> [String : Any]{
+        return [
+            "uid" : uid,
+            "email:" : email,
+            "password" : password,
+            "diet" : diet
+        ]
+    }
 }

@@ -14,21 +14,21 @@ import FirebaseDatabase
 
 
 class SignUpViewController: UIViewController {
-
+    
     //MARK: Properties
-
+    
     @IBOutlet weak var emailTF: UITextField!
     @IBOutlet weak var passwordTF: UITextField!
     
     //MARK: Actioms
     @IBAction func onSignUpTapped(_ sender: Any) {
         guard let email = emailTF.text,
-        email != "",
-        let password = passwordTF.text,
-        password != ""
-        else {
-            AlertController.showAlert(inViewController: self, title: "Missing Info", message: "Please fill out all fields")
-            return
+            email != "",
+            let password = passwordTF.text,
+            password != ""
+            else {
+                AlertController.showAlert(inViewController: self, title: "Missing Info", message: "Please fill out all fields")
+                return
         }
         Auth.auth().createUser(withEmail: email, password: password, completion: { (user, error)  in
             guard error == nil else {
@@ -40,6 +40,7 @@ class SignUpViewController: UIViewController {
             print(user.uid) //user id will exist regardless if the user exists
             
             //change request is for changing the users profile info
+            //TODO take out, from when usernanme was included
             let changeRequest = user.createProfileChangeRequest()
             changeRequest.commitChanges(completion: { (error) in
                 guard error == nil else{
@@ -47,16 +48,17 @@ class SignUpViewController: UIViewController {
                     return
                     
                 }
-//                guard let uid = user.uid else {
-//                    return
-//                }
+                //                guard let uid = user.uid else {
+                //                    return
+                //                }
                 
-                //authenticated user
-                let ref = Database.database().reference()
-                let usersReference = ref.child("users").child(user.uid)
-                let values = ["email": email, "password": password, "diet": "default"]
-                usersReference.updateChildValues(values, withCompletionBlock: { (err, ref) in
+                //authenticated user additional info
+                //                let ref = Database.database().reference()
+                //                let usersReference = ref.child("users").child(user.uid)
                 
+                let values = ["email": email, "diet": "None"]
+                DatabaseService.shared.userReference.child(user.uid).updateChildValues(values, withCompletionBlock: { (err, ref) in
+                    
                     if err != nil {
                         print(err!)
                         return
@@ -69,7 +71,7 @@ class SignUpViewController: UIViewController {
                 
             })
         })
-       
+        
     }
     
 }

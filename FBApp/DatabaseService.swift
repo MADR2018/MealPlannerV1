@@ -11,10 +11,10 @@ import Firebase
 
 class DatabaseService {
     
-    static let shared = DatabaseService()
+    static let shared = DatabaseService() //Singleton
     private init() {}
     
-    //create a user reference
+    //create a user reference to store the data in the "users" path
     let userReference = Database.database().reference().child("users")
     
 }
