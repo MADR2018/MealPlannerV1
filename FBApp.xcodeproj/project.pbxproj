@@ -17,12 +17,13 @@
 		2D33CBD8208D8F0200F7FEFC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D33CBD6208D8F0200F7FEFC /* LaunchScreen.storyboard */; };
 		2D33CBE3208D8F0200F7FEFC /* FBAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D33CBE2208D8F0200F7FEFC /* FBAppTests.swift */; };
 		2D33CBEE208D8F0200F7FEFC /* FBAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D33CBED208D8F0200F7FEFC /* FBAppUITests.swift */; };
-		2D33CBFC208E7E6800F7FEFC /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D33CBFB208E7E6800F7FEFC /* SignUpViewController.swift */; };
 		2D33CBFE208E7E8300F7FEFC /* SignOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D33CBFD208E7E8300F7FEFC /* SignOutViewController.swift */; };
 		2D33CC00208E85CF00F7FEFC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2D33CBFF208E85CF00F7FEFC /* GoogleService-Info.plist */; };
 		2D99A653209800F000BE9F1D /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D99A652209800F000BE9F1D /* WelcomeViewController.swift */; };
+		2DA2D5CF20A2980500A7C18A /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA2D5CE20A2980500A7C18A /* SignUpViewController.swift */; };
+		2DA2D5D420A29C4A00A7C18A /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA2D5D320A29C4A00A7C18A /* UserData.swift */; };
 		2DD0B515209B715800181025 /* SelectDietViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD0B514209B715800181025 /* SelectDietViewController.swift */; };
-		2DD0B51B209B8DA600181025 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD0B51A209B8DA600181025 /* User.swift */; };
+		2DD0B51B209B8DA600181025 /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD0B51A209B8DA600181025 /* CurrentUser.swift */; };
 		2DD0B51F209B8E9000181025 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD0B51E209B8E9000181025 /* Recipe.swift */; };
 		2DD0B525209B8F8A00181025 /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD0B524209B8F8A00181025 /* AlertController.swift */; };
 		2DD0B527209B91DB00181025 /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD0B526209B91DB00181025 /* DatabaseService.swift */; };
@@ -63,12 +64,13 @@
 		2D33CBE9208D8F0200F7FEFC /* FBAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FBAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D33CBED208D8F0200F7FEFC /* FBAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBAppUITests.swift; sourceTree = "<group>"; };
 		2D33CBEF208D8F0200F7FEFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2D33CBFB208E7E6800F7FEFC /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		2D33CBFD208E7E8300F7FEFC /* SignOutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignOutViewController.swift; sourceTree = "<group>"; };
 		2D33CBFF208E85CF00F7FEFC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2D99A652209800F000BE9F1D /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		2DA2D5CE20A2980500A7C18A /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		2DA2D5D320A29C4A00A7C18A /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		2DD0B514209B715800181025 /* SelectDietViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDietViewController.swift; sourceTree = "<group>"; };
-		2DD0B51A209B8DA600181025 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		2DD0B51A209B8DA600181025 /* CurrentUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
 		2DD0B51E209B8E9000181025 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		2DD0B524209B8F8A00181025 /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
 		2DD0B526209B91DB00181025 /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
@@ -144,21 +146,12 @@
 		2D33CBC9208D8F0000F7FEFC /* FBApp */ = {
 			isa = PBXGroup;
 			children = (
-				2DD0B524209B8F8A00181025 /* AlertController.swift */,
-				2DD0B51E209B8E9000181025 /* Recipe.swift */,
-				2DD0B51A209B8DA600181025 /* User.swift */,
-				2D33CBCA208D8F0000F7FEFC /* AppDelegate.swift */,
-				2D33CBCC208D8F0000F7FEFC /* SignInViewController.swift */,
-				2D33CBFB208E7E6800F7FEFC /* SignUpViewController.swift */,
-				2DD0B526209B91DB00181025 /* DatabaseService.swift */,
-				2D33CBFD208E7E8300F7FEFC /* SignOutViewController.swift */,
-				2D33CBCE208D8F0100F7FEFC /* Main.storyboard */,
-				2DD0B514209B715800181025 /* SelectDietViewController.swift */,
-				2D99A652209800F000BE9F1D /* WelcomeViewController.swift */,
-				2D33CBD4208D8F0200F7FEFC /* Assets.xcassets */,
-				2D33CBD6208D8F0200F7FEFC /* LaunchScreen.storyboard */,
-				2D33CBD9208D8F0200F7FEFC /* Info.plist */,
+				2DA2D5CD20A2979600A7C18A /* Views */,
+				2DA2D5D020A2986000A7C18A /* Controllers */,
+				2DA2D5D120A2987C00A7C18A /* Models */,
+				2DA2D5D220A298B600A7C18A /* SupportFiles */,
 				2D33CBFF208E85CF00F7FEFC /* GoogleService-Info.plist */,
+				2D33CBD9208D8F0200F7FEFC /* Info.plist */,
 				2D33CBD1208D8F0100F7FEFC /* FBApp.xcdatamodeld */,
 			);
 			path = FBApp;
@@ -180,6 +173,48 @@
 				2D33CBEF208D8F0200F7FEFC /* Info.plist */,
 			);
 			path = FBAppUITests;
+			sourceTree = "<group>";
+		};
+		2DA2D5CD20A2979600A7C18A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2DD0B514209B715800181025 /* SelectDietViewController.swift */,
+				2D33CBCC208D8F0000F7FEFC /* SignInViewController.swift */,
+				2D99A652209800F000BE9F1D /* WelcomeViewController.swift */,
+				2D33CBFD208E7E8300F7FEFC /* SignOutViewController.swift */,
+				2DA2D5CE20A2980500A7C18A /* SignUpViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2DA2D5D020A2986000A7C18A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				2DD0B524209B8F8A00181025 /* AlertController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		2DA2D5D120A2987C00A7C18A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2DD0B51E209B8E9000181025 /* Recipe.swift */,
+				2DD0B51A209B8DA600181025 /* CurrentUser.swift */,
+				2DD0B526209B91DB00181025 /* DatabaseService.swift */,
+				2DA2D5D320A29C4A00A7C18A /* UserData.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2DA2D5D220A298B600A7C18A /* SupportFiles */ = {
+			isa = PBXGroup;
+			children = (
+				2D33CBCE208D8F0100F7FEFC /* Main.storyboard */,
+				2D33CBD4208D8F0200F7FEFC /* Assets.xcassets */,
+				2D33CBD6208D8F0200F7FEFC /* LaunchScreen.storyboard */,
+				2D33CBCA208D8F0000F7FEFC /* AppDelegate.swift */,
+			);
+			path = SupportFiles;
 			sourceTree = "<group>";
 		};
 		77541CCF1D2CF7FFF70785E8 /* Pods */ = {
@@ -462,12 +497,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2DA2D5CF20A2980500A7C18A /* SignUpViewController.swift in Sources */,
 				2D33CBD3208D8F0100F7FEFC /* FBApp.xcdatamodeld in Sources */,
 				2D33CBCD208D8F0000F7FEFC /* SignInViewController.swift in Sources */,
 				2D33CBFE208E7E8300F7FEFC /* SignOutViewController.swift in Sources */,
-				2D33CBFC208E7E6800F7FEFC /* SignUpViewController.swift in Sources */,
-				2DD0B51B209B8DA600181025 /* User.swift in Sources */,
+				2DD0B51B209B8DA600181025 /* CurrentUser.swift in Sources */,
 				2D33CBCB208D8F0000F7FEFC /* AppDelegate.swift in Sources */,
+				2DA2D5D420A29C4A00A7C18A /* UserData.swift in Sources */,
 				2DD0B525209B8F8A00181025 /* AlertController.swift in Sources */,
 				2DD0B515209B715800181025 /* SelectDietViewController.swift in Sources */,
 				2D99A653209800F000BE9F1D /* WelcomeViewController.swift in Sources */,
@@ -648,7 +684,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = FBApp/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Sophie-Amin.FBApp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_INCLUDE_PATHS = "";
@@ -664,7 +703,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = FBApp/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Sophie-Amin.FBApp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_INCLUDE_PATHS = "";
@@ -681,7 +723,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = FBAppTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Sophie-Amin.FBAppTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -698,7 +744,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = FBAppTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Sophie-Amin.FBAppTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -714,7 +764,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = FBAppUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Sophie-Amin.FBAppUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -730,7 +784,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = FBAppUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Sophie-Amin.FBAppUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

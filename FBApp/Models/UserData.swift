@@ -1,16 +1,15 @@
 //
-//  User.swift
+//  UserData.swift
 //  FBApp
 //
-//  Created by Sophie Amin on 2018-05-03.
+//  Created by Sophie Amin on 2018-05-08.
 //  Copyright © 2018 Sophie Amin. All rights reserved.
 //
 
 import Foundation
 import Firebase
-class User {
-    
-    
+
+class UserData {
     var uid: String
     var email: String
     var password: String
@@ -24,11 +23,11 @@ class User {
         self.diet = diet
     }
     
-//    func saveUser(){
-//        let dbReference =  Database.database().reference()
-//        let userRef = ref.child("users").child(users.uid)
-//        
-//    }
+    //    func saveUser(){
+    //        let dbReference =  Database.database().reference()
+    //        let userRef = ref.child("users").child(users.uid)
+    //
+    //    }
     func toDictionary() -> [String : Any]{
         return [
             "uid" : uid,
