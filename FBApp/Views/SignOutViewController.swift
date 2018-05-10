@@ -17,8 +17,8 @@ class SignOutViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        guard let username = Auth.auth().currentUser?.displayName else { return }
-        label.text = "Hello \(username)"
+        guard let email = Auth.auth().currentUser?.email else { return }
+        label.text = "Hello \(email)"
         // Do any additional setup after loading the view.
     }
 
