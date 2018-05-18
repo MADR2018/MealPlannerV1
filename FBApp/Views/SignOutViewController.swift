@@ -12,26 +12,32 @@ import FirebaseAuth
 
 class SignOutViewController: UIViewController {
 
-    @IBOutlet weak var label: UILabel!
+
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        guard let email = Auth.auth().currentUser?.email else { return }
-        label.text = "Hello \(email)"
+        //TODO: load user recipe selections
+        
+        
+        
+//        guard let email = Auth.auth().currentUser?.email else { return }
+//        label.text = "Hello \(email)"
         // Do any additional setup after loading the view.
     }
 
-    @IBAction func onSignOutTapped(_ sender: Any) {
-        do {
-            try Auth.auth().signOut()
-            performSegue(withIdentifier: "signOutSegue", sender: nil)
-            
-        } catch {
-            print(error)
-        }
-    }
     
+    //TODO: Keep this comment for reference until later stage of completion
+//    @IBAction func onSignOutTapped(_ sender: Any) {
+//        do {
+//            try Auth.auth().signOut()
+//            performSegue(withIdentifier: "signOutSegue", sender: nil)
+//
+//        } catch {
+//            print(error)
+//        }
+//    }
+//
 
 
 }
