@@ -21,11 +21,7 @@ class UserData {
     var friSelectionID: String = ""
     var satSelectionID: String = ""
     var sunSelectionID: String = ""
-    
-    
-    
-    
-    
+
     init(email: String, password: String, diet: String, monSelectionID: String, tueSelectionID: String, wedSelectionID: String, thuSelectionID: String, friSelectionID: String, satSelectionID: String, sunSelectionID: String){
         self.email = email
         self.password = password
@@ -78,6 +74,7 @@ class UserData {
             })
         })
     }
+    
     
     //convert to an array of dictionaries to pass the user into firebase
     func toDictionary() -> [String : Any]{
