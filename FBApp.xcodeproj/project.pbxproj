@@ -18,7 +18,6 @@
 		2D33CBE3208D8F0200F7FEFC /* FBAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D33CBE2208D8F0200F7FEFC /* FBAppTests.swift */; };
 		2D33CBEE208D8F0200F7FEFC /* FBAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D33CBED208D8F0200F7FEFC /* FBAppUITests.swift */; };
 		2D33CBFE208E7E8300F7FEFC /* SignOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D33CBFD208E7E8300F7FEFC /* SignOutViewController.swift */; };
-		2D33CC00208E85CF00F7FEFC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2D33CBFF208E85CF00F7FEFC /* GoogleService-Info.plist */; };
 		2D99A653209800F000BE9F1D /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D99A652209800F000BE9F1D /* WelcomeViewController.swift */; };
 		2DA2D5CF20A2980500A7C18A /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA2D5CE20A2980500A7C18A /* SignUpViewController.swift */; };
 		2DA2D5D420A29C4A00A7C18A /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA2D5D320A29C4A00A7C18A /* UserData.swift */; };
@@ -27,6 +26,7 @@
 		2DD0B51F209B8E9000181025 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD0B51E209B8E9000181025 /* Recipe.swift */; };
 		2DD0B525209B8F8A00181025 /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD0B524209B8F8A00181025 /* AlertController.swift */; };
 		2DD0B527209B91DB00181025 /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD0B526209B91DB00181025 /* DatabaseService.swift */; };
+		84A9623E20B291DB001009CF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84A9623D20B291DB001009CF /* GoogleService-Info.plist */; };
 		89311A5244187B29972177B9 /* Pods_FBAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 549578A97ABF13BFBDA0D536 /* Pods_FBAppTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -65,7 +65,6 @@
 		2D33CBED208D8F0200F7FEFC /* FBAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBAppUITests.swift; sourceTree = "<group>"; };
 		2D33CBEF208D8F0200F7FEFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2D33CBFD208E7E8300F7FEFC /* SignOutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignOutViewController.swift; sourceTree = "<group>"; };
-		2D33CBFF208E85CF00F7FEFC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2D99A652209800F000BE9F1D /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		2DA2D5CE20A2980500A7C18A /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		2DA2D5D320A29C4A00A7C18A /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
@@ -77,6 +76,7 @@
 		43A94675B5AAA8BBD66BA138 /* Pods-FBAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FBAppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FBAppUITests/Pods-FBAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		549578A97ABF13BFBDA0D536 /* Pods_FBAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FBAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B98AED1D68E39E33648EC41 /* Pods-FBAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FBAppUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FBAppUITests/Pods-FBAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		84A9623D20B291DB001009CF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Desktop/Flash-Chat-iOS11-master/Flash Chat/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B43D876803DA561A20BE961A /* Pods-FBAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FBAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FBAppTests/Pods-FBAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C280BCB022713373AF65BB28 /* Pods-FBApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FBApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FBApp/Pods-FBApp.debug.xcconfig"; sourceTree = "<group>"; };
 		EC98FE63D30C70B2B7FB1B82 /* Pods_FBApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FBApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -150,7 +150,6 @@
 				2DA2D5D020A2986000A7C18A /* Controllers */,
 				2DA2D5D120A2987C00A7C18A /* Models */,
 				2DA2D5D220A298B600A7C18A /* SupportFiles */,
-				2D33CBFF208E85CF00F7FEFC /* GoogleService-Info.plist */,
 				2D33CBD9208D8F0200F7FEFC /* Info.plist */,
 				2D33CBD1208D8F0100F7FEFC /* FBApp.xcdatamodeld */,
 			);
@@ -209,6 +208,7 @@
 		2DA2D5D220A298B600A7C18A /* SupportFiles */ = {
 			isa = PBXGroup;
 			children = (
+				84A9623D20B291DB001009CF /* GoogleService-Info.plist */,
 				2D33CBCE208D8F0100F7FEFC /* Main.storyboard */,
 				2D33CBD4208D8F0200F7FEFC /* Assets.xcassets */,
 				2D33CBD6208D8F0200F7FEFC /* LaunchScreen.storyboard */,
@@ -341,9 +341,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D33CBD8208D8F0200F7FEFC /* LaunchScreen.storyboard in Resources */,
+				84A9623E20B291DB001009CF /* GoogleService-Info.plist in Resources */,
 				2D33CBD5208D8F0200F7FEFC /* Assets.xcassets in Resources */,
 				2D33CBD0208D8F0100F7FEFC /* Main.storyboard in Resources */,
-				2D33CC00208E85CF00F7FEFC /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
