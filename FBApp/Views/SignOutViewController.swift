@@ -11,6 +11,7 @@ import Firebase
 import FirebaseAuth
 
 class SignOutViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    @IBOutlet weak var selectionsTableView: UITableView!
     
     let sections = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
     let fruit = ["Apple", "Orange", "Mango"]
@@ -38,9 +39,10 @@ class SignOutViewController: UIViewController, UITableViewDataSource, UITableVie
             //get user value
             let value = snapshot.value as? NSDictionary
             let recipeIDs = value?["monSelectionID"] as? String ?? ""
-            let selection = recipeIDs
-        self.monSelection.append(selection)
+        self.monSelection.append(recipeIDs)
         print("***Contents of Monday*** \(self.monSelection)")
+        //update the tableview HERE
+        self.selectionsTableView.reloadData()
         })
         
 
@@ -69,18 +71,32 @@ class SignOutViewController: UIViewController, UITableViewDataSource, UITableVie
         return sections.count
     }
     
+//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        switch section {
+//        case 0:
+//            //Fruit section
+//            return fruit.count
+//        case 1:
+//            //Vegetable section
+//            return vegetables.count
+//        default:
+//            return 0
+//        }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0:
             //Fruit section
-            return fruit.count
+            return monSelection.count
         case 1:
             //Vegetable section
-            return vegetables.count
+            return tueSelection.count
+        case 2:
+            return wedSelection.count
         default:
             return 0
         }
-        
+    
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -90,11 +106,11 @@ class SignOutViewController: UIViewController, UITableViewDataSource, UITableVie
         switch indexPath.section {
             case 0:
             //fruit section
-            cell.textLabel?.text = fruit[indexPath.row]
+            cell.textLabel?.text = monSelection[indexPath.row]
             break
         case 1:
             //Vegetable section
-            cell.textLabel?.text = vegetables[indexPath.row]
+            cell.textLabel?.text = tueSelection[indexPath.row]
             break
         default:
             break
