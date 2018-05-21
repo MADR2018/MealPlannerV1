@@ -26,7 +26,9 @@
 		2DD0B51F209B8E9000181025 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD0B51E209B8E9000181025 /* Recipe.swift */; };
 		2DD0B525209B8F8A00181025 /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD0B524209B8F8A00181025 /* AlertController.swift */; };
 		2DD0B527209B91DB00181025 /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD0B526209B91DB00181025 /* DatabaseService.swift */; };
-		84A9623E20B291DB001009CF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84A9623D20B291DB001009CF /* GoogleService-Info.plist */; };
+		8436F07A20B35816008D2AF9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8436F07920B35816008D2AF9 /* GoogleService-Info.plist */; };
+		8436F07C20B35D19008D2AF9 /* tableViewCellControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8436F07B20B35D19008D2AF9 /* tableViewCellControllerViewController.swift */; };
+		8436F07E20B36230008D2AF9 /* customTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8436F07D20B36230008D2AF9 /* customTableViewCell.swift */; };
 		89311A5244187B29972177B9 /* Pods_FBAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 549578A97ABF13BFBDA0D536 /* Pods_FBAppTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -76,7 +78,9 @@
 		43A94675B5AAA8BBD66BA138 /* Pods-FBAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FBAppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FBAppUITests/Pods-FBAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		549578A97ABF13BFBDA0D536 /* Pods_FBAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FBAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B98AED1D68E39E33648EC41 /* Pods-FBAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FBAppUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FBAppUITests/Pods-FBAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		84A9623D20B291DB001009CF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Desktop/Flash-Chat-iOS11-master/Flash Chat/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8436F07920B35816008D2AF9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Desktop/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8436F07B20B35D19008D2AF9 /* tableViewCellControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tableViewCellControllerViewController.swift; sourceTree = "<group>"; };
+		8436F07D20B36230008D2AF9 /* customTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customTableViewCell.swift; sourceTree = "<group>"; };
 		B43D876803DA561A20BE961A /* Pods-FBAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FBAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FBAppTests/Pods-FBAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C280BCB022713373AF65BB28 /* Pods-FBApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FBApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FBApp/Pods-FBApp.debug.xcconfig"; sourceTree = "<group>"; };
 		EC98FE63D30C70B2B7FB1B82 /* Pods_FBApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FBApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -178,10 +182,12 @@
 			isa = PBXGroup;
 			children = (
 				2DD0B514209B715800181025 /* SelectDietViewController.swift */,
+				8436F07D20B36230008D2AF9 /* customTableViewCell.swift */,
 				2D33CBCC208D8F0000F7FEFC /* SignInViewController.swift */,
 				2D99A652209800F000BE9F1D /* WelcomeViewController.swift */,
 				2D33CBFD208E7E8300F7FEFC /* SignOutViewController.swift */,
 				2DA2D5CE20A2980500A7C18A /* SignUpViewController.swift */,
+				8436F07B20B35D19008D2AF9 /* tableViewCellControllerViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -208,8 +214,8 @@
 		2DA2D5D220A298B600A7C18A /* SupportFiles */ = {
 			isa = PBXGroup;
 			children = (
-				84A9623D20B291DB001009CF /* GoogleService-Info.plist */,
 				2D33CBCE208D8F0100F7FEFC /* Main.storyboard */,
+				8436F07920B35816008D2AF9 /* GoogleService-Info.plist */,
 				2D33CBD4208D8F0200F7FEFC /* Assets.xcassets */,
 				2D33CBD6208D8F0200F7FEFC /* LaunchScreen.storyboard */,
 				2D33CBCA208D8F0000F7FEFC /* AppDelegate.swift */,
@@ -341,7 +347,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D33CBD8208D8F0200F7FEFC /* LaunchScreen.storyboard in Resources */,
-				84A9623E20B291DB001009CF /* GoogleService-Info.plist in Resources */,
+				8436F07A20B35816008D2AF9 /* GoogleService-Info.plist in Resources */,
 				2D33CBD5208D8F0200F7FEFC /* Assets.xcassets in Resources */,
 				2D33CBD0208D8F0100F7FEFC /* Main.storyboard in Resources */,
 			);
@@ -507,8 +513,10 @@
 				2DD0B525209B8F8A00181025 /* AlertController.swift in Sources */,
 				2DD0B515209B715800181025 /* SelectDietViewController.swift in Sources */,
 				2D99A653209800F000BE9F1D /* WelcomeViewController.swift in Sources */,
+				8436F07E20B36230008D2AF9 /* customTableViewCell.swift in Sources */,
 				2DD0B51F209B8E9000181025 /* Recipe.swift in Sources */,
 				2DD0B527209B91DB00181025 /* DatabaseService.swift in Sources */,
+				8436F07C20B35D19008D2AF9 /* tableViewCellControllerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
