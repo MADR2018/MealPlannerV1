@@ -13,8 +13,8 @@ class tableViewCellControllerViewController: UIViewController,UITableViewDelegat
     
     @IBOutlet weak var tableView: UITableView!
     
-    let pictureListLeft = ["Broccoli Peas","Canada Pancakes","Creamy Chicken","No-Pain Lo Mein","Peach Cobbler Pancakes"]
-    let pictureListRight = ["chicken orzo","Rice and Chicken Skillet","Roasted Pork Chops","Spaghetti Squash","Spiced Vegetable Stew"]
+    let pictureList = ["Broccoli Peas","Canada Pancakes","Creamy Chicken","No-Pain Lo Mein","Peach Cobbler Pancakes","chicken orzo","Rice and Chicken Skillet","Roasted Pork Chops","Spaghetti Squash","Spiced Vegetable Stew"]
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,21 +35,20 @@ class tableViewCellControllerViewController: UIViewController,UITableViewDelegat
         return 170
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return pictureListLeft.count
+        return pictureList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "customCell") as! customTableViewCell
         
-                cell.image1Text.text = pictureListLeft[indexPath.row]
-        cell.image2Text.text = pictureListRight[indexPath.row]
+        cell.image1Text.text = pictureList[indexPath.row]
         
-        cell.image1Text.numberOfLines = 2;
-        cell.image2Text.numberOfLines = 2;
-        cell.foodImage1.image = UIImage(named: pictureListLeft[indexPath.row])
-        cell.foodImage2.image = UIImage(named: pictureListRight[indexPath.row])
+        cell.image1Text.numberOfLines = 3;
         
-        cell.foodImage1.isUserInteractionEnabled = true
+        cell.foodImage1.image = UIImage(named: pictureList[indexPath.row])
+        
+        
+      
         
         
         return cell

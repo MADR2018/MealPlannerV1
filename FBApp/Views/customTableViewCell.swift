@@ -17,9 +17,9 @@ class customTableViewCell: UITableViewCell {
 
     @IBOutlet weak var cellView: UIView!
     @IBOutlet weak var foodImage1: UIImageView!
-    @IBOutlet weak var foodImage2: UIImageView!
+   
     @IBOutlet weak var image1Text: UILabel!
-    @IBOutlet weak var image2Text: UILabel!
+   
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
