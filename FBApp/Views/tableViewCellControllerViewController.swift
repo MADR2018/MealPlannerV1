@@ -22,15 +22,11 @@ class tableViewCellControllerViewController: UIViewController,UITableViewDelegat
         tableView.delegate = self
         tableView.dataSource = self
         
-        
-        
     }
     
 
-    @IBAction func image1Tap(_ sender: UITapGestureRecognizer) {
-        print("what is this")
-    }
-    
+   
+    // load data with receipes names an images
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 170
     }
@@ -47,15 +43,21 @@ class tableViewCellControllerViewController: UIViewController,UITableViewDelegat
         
         cell.foodImage1.image = UIImage(named: pictureList[indexPath.row])
         
-        
-      
-        
-        
         return cell
     }
-    func ImageTapped(){
-        print("image Tapped")
+    
+    // pass data at select index
+    var selectedIndex: Int = 0
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedIndex = indexPath.row
+        performSegue(withIdentifier: "showDetails", sender: self)
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? tableDetailViewController{
+            destination.receipeNamePassed = pictureList[selectedIndex]
+        }
+    }
+    
     
 
     

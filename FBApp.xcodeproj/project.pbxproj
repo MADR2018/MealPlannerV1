@@ -186,13 +186,13 @@
 			isa = PBXGroup;
 			children = (
 				2DD0B514209B715800181025 /* SelectDietViewController.swift */,
-				8436F07D20B36230008D2AF9 /* customTableViewCell.swift */,
 				2D33CBCC208D8F0000F7FEFC /* SignInViewController.swift */,
 				2D99A652209800F000BE9F1D /* WelcomeViewController.swift */,
 				2D33CBFD208E7E8300F7FEFC /* SignOutViewController.swift */,
-				8436F07F20B38E07008D2AF9 /* tableDetailViewController.swift */,
 				2DA2D5CE20A2980500A7C18A /* SignUpViewController.swift */,
+				8436F07F20B38E07008D2AF9 /* tableDetailViewController.swift */,
 				8436F07B20B35D19008D2AF9 /* tableViewCellControllerViewController.swift */,
+				8436F07D20B36230008D2AF9 /* customTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";

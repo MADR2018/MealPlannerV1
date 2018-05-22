@@ -7,7 +7,14 @@
 //
 import UIKit
 import Foundation
-class receipe{
+class receipeData{
     var name: String
     var imageName: UIImage
+    init(name: String){
+        self.name = name
+        imageName = UIImage(named: self.name)!
+    }
+    
+    
+    
 }
