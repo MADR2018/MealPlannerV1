@@ -38,8 +38,20 @@ class SignOutViewController: UIViewController, UITableViewDataSource, UITableVie
     ref.child("users").child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
             //get user value
             let value = snapshot.value as? NSDictionary
-            let recipeIDs = value?["monSelectionID"] as? String ?? ""
-        self.monSelection.append(recipeIDs)
+            let monRecipeIDs = value?["monSelectionID"] as? String ?? ""
+            let tueRecipeIDs = value?["tueSelectionID"] as? String ?? ""
+            let wedRecipeIDs = value?["wedSelectionID"] as? String ?? ""
+            let thuRecipeIDs = value?["thuSelectionID"] as? String ?? ""
+            let friRecipeIDs = value?["friSelectionID"] as? String ?? ""
+            let satRecipeIDs = value?["satSelectionID"] as? String ?? ""
+            let sunRecipeIDs = value?["sunSelectionID"] as? String ?? ""
+        self.monSelection.append(monRecipeIDs)
+        self.tueSelection.append(tueRecipeIDs)
+        self.wedSelection.append(wedRecipeIDs)
+        self.thuSelection.append(thuRecipeIDs)
+        self.friSelection.append(friRecipeIDs)
+        self.satSelection.append(satRecipeIDs)
+        self.sunSelection.append(sunRecipeIDs)
         print("***Contents of Monday*** \(self.monSelection)")
         //update the tableview HERE
         self.selectionsTableView.reloadData()
@@ -70,29 +82,24 @@ class SignOutViewController: UIViewController, UITableViewDataSource, UITableVie
     func numberOfSections(in tableView: UITableView) -> Int {
         return sections.count
     }
-    
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        switch section {
-//        case 0:
-//            //Fruit section
-//            return fruit.count
-//        case 1:
-//            //Vegetable section
-//            return vegetables.count
-//        default:
-//            return 0
-//        }
+
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0:
-            //Fruit section
             return monSelection.count
         case 1:
-            //Vegetable section
             return tueSelection.count
         case 2:
             return wedSelection.count
+        case 3:
+            return thuSelection.count
+        case 4:
+            return friSelection.count
+        case 5:
+            return satSelection.count
+        case 6:
+            return sunSelection.count
         default:
             return 0
         }
@@ -105,16 +112,42 @@ class SignOutViewController: UIViewController, UITableViewDataSource, UITableVie
         //Depending on the section, fill the textLabel with the relevant text
         switch indexPath.section {
             case 0:
-            //fruit section
+            //monday section
             cell.textLabel?.text = monSelection[indexPath.row]
             break
         case 1:
-            //Vegetable section
+            //tuesday section
             cell.textLabel?.text = tueSelection[indexPath.row]
+            break
+        case 2:
+            //wednesday section
+            cell.textLabel?.text = wedSelection[indexPath.row]
+            break
+        case 3:
+            //thursday section
+            cell.textLabel?.text = thuSelection[indexPath.row]
+            break
+        case 4:
+            //friday section
+            cell.textLabel?.text = friSelection[indexPath.row]
+            break
+        case 5:
+            //saturday section
+            cell.textLabel?.text = satSelection[indexPath.row]
+            break
+        case 6:
+            //sunday section
+            cell.textLabel?.text = sunSelection[indexPath.row]
             break
         default:
             break
         }
         return cell
     }
+}
+
+
+
+func getRecipeSnapshot(ref: DatabaseReference!, branch:String, child:String){
+    
 }
