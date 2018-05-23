@@ -93,11 +93,15 @@ class tableDetailViewController: UIViewController,UITableViewDelegate,UITableVie
 
         }
     }
+//    func performSegue1(identifier:String){
+//        performSegue(withIdentifier: "goToShoppingList", sender: self)
+//    }
     //MARK - Add new grocery list or new meal plan
     @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
         let alert = UIAlertController(title: "Add \(receipeNamePassed) to grocery list?", message: "", preferredStyle: .alert)
-        let actionGrocery = UIAlertAction(title: "Add \(receipeNamePassed)", style: .default){(action) in
+        let actionGrocery = UIAlertAction(title: "Add \(receipeNamePassed) to", style: .default){(action) in
             print("Success!")
+            self.performSegue(withIdentifier: "goToShoppingList", sender: self)
         }
         let actionFavorite = UIAlertAction(title: "Add \(receipeNamePassed) to favorites", style: .default){(action) in
             print("Success!")

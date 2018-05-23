@@ -338,7 +338,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cUE-Nv-csY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3634.4000000000001" y="17.541229385307346"/>
+            <point key="canvasLocation" x="3388" y="18"/>
         </scene>
         <!--Table Detail View Controller-->
         <scene sceneID="yTV-ju-b6Q">
@@ -470,16 +470,17 @@
                         <outlet property="foodLabel" destination="xHv-a5-BgV" id="fx2-IK-Nln"/>
                         <outlet property="receipeTableView" destination="vwS-e6-han" id="yxj-9B-o9d"/>
                         <outlet property="selectedFoodImage" destination="rVl-Fv-SUM" id="bHC-no-hYM"/>
+                        <segue destination="uJ5-OD-Trq" kind="show" identifier="goToShoppingList" id="jqO-el-gkV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ivJ-Lt-GGX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4477.6000000000004" y="17.541229385307346"/>
+            <point key="canvasLocation" x="4094" y="24"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Shopping List Table View Controller-->
         <scene sceneID="kDr-cr-GOc">
             <objects>
-                <tableViewController id="uJ5-OD-Trq" sceneMemberID="viewController">
+                <tableViewController id="uJ5-OD-Trq" customClass="ShoppingListTableViewController" customModule="FBApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="TJ9-Ui-B7p">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -502,7 +503,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z41-K9-qK3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5196" y="18"/>
+            <point key="canvasLocation" x="4940" y="24"/>
         </scene>
         <!--Select Diet View Controller-->
         <scene sceneID="dql-88-D3C">
