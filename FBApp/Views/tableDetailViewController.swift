@@ -92,11 +92,21 @@ class tableDetailViewController: UIViewController,UITableViewDelegate,UITableVie
             self.receipeTableView.reloadData()
 
         }
-
-    
-    
     }
-    
+    //MARK - Add new grocery list or new meal plan
+    @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
+        let alert = UIAlertController(title: "Add \(receipeNamePassed) to grocery list?", message: "", preferredStyle: .alert)
+        let actionGrocery = UIAlertAction(title: "Add \(receipeNamePassed)", style: .default){(action) in
+            print("Success!")
+        }
+        let actionFavorite = UIAlertAction(title: "Add \(receipeNamePassed) to favorites", style: .default){(action) in
+            print("Success!")
+        }
+        alert.addAction(actionFavorite)
+        alert.addAction(actionGrocery)
+        
+        present(alert, animated: true, completion: nil)
+    }
 }
 
 
