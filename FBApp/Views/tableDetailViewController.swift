@@ -12,8 +12,11 @@ import FirebaseDatabase
 
 class tableDetailViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
-    
     var pictureList = [String]()
+    var ingredientsList: [String] = []
+    var instructionList: [String] = []
+    
+    
     @IBOutlet weak var receipeTableView: UITableView!
     
     @IBOutlet weak var selectedFoodImage: UIImageView!
@@ -24,34 +27,14 @@ class tableDetailViewController: UIViewController,UITableViewDelegate,UITableVie
     
     @IBAction func IngredientsButton(_ sender: UIButton) {
         pictureList.removeAll()
-        let receipeDB = Database.database().reference().child("Recipes").child(receipeNamePassed)
-        receipeDB.observe(.value){(snapshot) in
-            let snapshotValue = snapshot.value as! Dictionary<String, String>
-            var temp = snapshotValue["Ingredients"]!
-            var tempArray = temp.split(separator: "#")
-            for singleItem in tempArray{
-                self.pictureList.append(String(singleItem))
-            }
-            
-            self.receipeTableView.reloadData()
-            //
-        }
+        pictureList = ingredientsList
+        self.receipeTableView.reloadData()
     }
     
     @IBAction func InstructionsButton(_ sender: Any) {
         pictureList.removeAll()
-        let receipeDB = Database.database().reference().child("Recipes").child(receipeNamePassed)
-        receipeDB.observe(.value){(snapshot) in
-            let snapshotValue = snapshot.value as! Dictionary<String, String>
-            var temp = snapshotValue["Instructions"]!
-            var tempArray = temp.split(separator: "#")
-            for singleItem in tempArray{
-                self.pictureList.append(String(singleItem))
-            }
-            
-            self.receipeTableView.reloadData()
-            //
-        }
+        pictureList = instructionList
+        self.receipeTableView.reloadData()
     }
     
     
@@ -59,15 +42,16 @@ class tableDetailViewController: UIViewController,UITableViewDelegate,UITableVie
         super.viewDidLoad()
         receipeTableView.delegate = self
         receipeTableView.dataSource = self
+        
         // set the text and image from datapass from tableviewCellController
         foodLabel.text = receipeNamePassed
         selectedFoodImage.image = UIImage(named: receipeNamePassed)
+        
         //get data from firebase
         retrieveMessages()
         
         
-
-        
+      
     }
     
     // load the tableview
@@ -80,7 +64,6 @@ class tableDetailViewController: UIViewController,UITableViewDelegate,UITableVie
         let cell = tableView.dequeueReusableCell(withIdentifier: "receipesCell", for: indexPath)
         cell.textLabel?.text = pictureList[indexPath.row]
         cell.textLabel?.numberOfLines = 10;
-        
         cell.textLabel?.lineBreakMode = .byWordWrapping;
         return cell
     }
@@ -91,17 +74,21 @@ class tableDetailViewController: UIViewController,UITableViewDelegate,UITableVie
     func retrieveMessages(){
         
         let receipeDB = Database.database().reference().child("Recipes").child(receipeNamePassed)
-        receipeDB.observe(.value){(snapshot) in
+        receipeDB.observeSingleEvent(of:.value){(snapshot) in
             let snapshotValue = snapshot.value as! Dictionary<String, String>
-            var temp = snapshotValue["Ingredients"]!
-            //print("what is in the temp \(temp)" )
-            //print(temp.split(separator: "#"))
-            var tempArray = temp.split(separator: "#")
-            for singleItem in tempArray{
-                //print(singleItem)
+            let tempIngredients = snapshotValue["Ingredients"]!
+            let tempInstruction = snapshotValue["Instructions"]!
+            //print("what is in the temp \(tempIngredients)" )
+            //print(tempIngredients.split(separator: "#"))
+            let tempArrayIngredients = tempIngredients.split(separator: "#")
+            let tempArrayInstructions = tempInstruction.split(separator: "#")
+            for singleItem in tempArrayIngredients{
                 self.pictureList.append(String(singleItem))
             }
-            
+            for singleItem2 in tempArrayInstructions{
+                self.instructionList.append(String(singleItem2))
+            }
+            self.ingredientsList = self.pictureList
             self.receipeTableView.reloadData()
 
         }

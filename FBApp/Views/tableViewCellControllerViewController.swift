@@ -39,7 +39,7 @@ class tableViewCellControllerViewController: UIViewController,UITableViewDelegat
         
         cell.image1Text.text = pictureList[indexPath.row]
         
-        cell.image1Text.numberOfLines = 3;
+        cell.image1Text.numberOfLines = 4;
         
         cell.foodImage1.image = UIImage(named: pictureList[indexPath.row])
         
