@@ -11,8 +11,7 @@ import Firebase
 import FirebaseDatabase
 
 class tableDetailViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
-    var ref:DatabaseReference?
-    var handle: DatabaseHandle?
+    
     
     var pictureList = [String]()
     @IBOutlet weak var receipeTableView: UITableView!
@@ -20,7 +19,7 @@ class tableDetailViewController: UIViewController,UITableViewDelegate,UITableVie
     @IBOutlet weak var selectedFoodImage: UIImageView!
     
     @IBOutlet weak var foodLabel: UILabel!
-    var detail:receipeData!
+    
     var receipeNamePassed : String = ""
     
     
@@ -35,20 +34,9 @@ class tableDetailViewController: UIViewController,UITableViewDelegate,UITableVie
         selectedFoodImage.image = UIImage(named: receipeNamePassed)
         //get data from firebase
         retrieveMessages()
-        print("after temp")
         
-//        handle = ref?.child("Recipes").child("Instructions").observe(.value, with: { (snapshot) in
-//            if let item = snapshot.value as? String{
-//                for a in item{
-//                    let b = a.value as? String
-//                }
-//                self.pictureList.append(item)
-//                print("data from firebase is" + item)
-//                self.receipeTableView.reloadData()
-//                self.ref?.keepSynced(true)
-//            }
+        
 //
-//        })
         
     }
     
@@ -65,23 +53,20 @@ class tableDetailViewController: UIViewController,UITableViewDelegate,UITableVie
     }
     func retrieveMessages(){
         
-        let receipeDB = Database.database().reference().child("Recipes")
-        receipeDB.observe(.childAdded){(snapshot) in
+        let receipeDB = Database.database().reference().child("Recipes").child(receipeNamePassed)
+        receipeDB.observe(.value){(snapshot) in
             let snapshotValue = snapshot.value as! Dictionary<String, String>
-            var temp = snapshotValue["ReceipesName"]!
+            var temp = snapshotValue["Ingredients"]!
             print("what is in the temp \(temp)" )
-            self.pictureList.append(temp)
+            print(temp.split(separator: "#"))
+            var tempArray = temp.split(separator: "#")
+            for singleItem in tempArray{
+                print(singleItem)
+                self.pictureList.append(String(singleItem))
+            }
+            
             self.receipeTableView.reloadData()
-//            receipeDB.child("ReceipesName").observeSingleEvent(of: .value, with: { (snapshot) in
-//                // Get user value
-//                let value = snapshot.value as? NSDictionary
-//                let temp = value?["ReceipesName"] as? String ?? "lalalal"
-//                self.pictureList.append(temp)
-//                print("what is in the temp \(temp)" )
-//                self.receipeTableView.reloadData()
 //
-//
-//        })
         }
 
     

@@ -13,7 +13,7 @@ class tableViewCellControllerViewController: UIViewController,UITableViewDelegat
     
     @IBOutlet weak var tableView: UITableView!
     
-    let pictureList = ["Broccoli Peas","Canada Pancakes","Creamy Chicken","No-Pain Lo Mein","Peach Cobbler Pancakes","chicken orzo","Rice and Chicken Skillet","Roasted Pork Chops","Spaghetti Squash","Spiced Vegetable Stew"]
+    let pictureList = ["Cauliflower Tikka Masala","No-Pain Lo Mein","One-Pot Farfalle Primavera","One-Pot Spaghetti with Fresh Tomato Sauce","Pan Roasted Pork Chops and Broccoli","Pea and Goat's Cheese Risotto"]
     
 
     override func viewDidLoad() {
