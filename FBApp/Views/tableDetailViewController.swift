@@ -93,13 +93,11 @@ class tableDetailViewController: UIViewController,UITableViewDelegate,UITableVie
 
         }
     }
-//    func performSegue1(identifier:String){
-//        performSegue(withIdentifier: "goToShoppingList", sender: self)
-//    }
+
     //MARK - Add new grocery list or new meal plan
     @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
-        let alert = UIAlertController(title: "Add \(receipeNamePassed) to grocery list?", message: "", preferredStyle: .alert)
-        let actionGrocery = UIAlertAction(title: "Add \(receipeNamePassed) to", style: .default){(action) in
+        let alert = UIAlertController(title: "Add \(receipeNamePassed) to grocery list or favorites?", message: "", preferredStyle: .alert)
+        let actionGrocery = UIAlertAction(title: "Add \(receipeNamePassed) to grocerylist", style: .default){(action) in
             print("Success!")
             self.performSegue(withIdentifier: "goToShoppingList", sender: self)
         }
@@ -110,6 +108,12 @@ class tableDetailViewController: UIViewController,UITableViewDelegate,UITableVie
         alert.addAction(actionGrocery)
         
         present(alert, animated: true, completion: nil)
+    }
+    // pass selected shopping list to shopping list table view controller
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? ShoppingListTableViewController{
+            destination.shoppingListReceived = ingredientsList
+        }
     }
 }
 

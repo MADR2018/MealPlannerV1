@@ -7,17 +7,15 @@
 //
 
 import UIKit
+import Firebase
 
 class ShoppingListTableViewController: UITableViewController {
-
+    var shoppingListReceived : [String] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+       writeShoppingListToFirebaseForThisUser()
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,24 +27,29 @@ class ShoppingListTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return shoppingListReceived.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "shoppingListCell", for: indexPath)
+        cell.textLabel?.text = shoppingListReceived[indexPath.row]
+        cell.textLabel?.numberOfLines = 10;
+        cell.textLabel?.lineBreakMode = .byWordWrapping;
         return cell
     }
-    */
-
+    
+    func writeShoppingListToFirebaseForThisUser(){
+        let shoppingListDB = Database.database().reference().child("users").child("shoppingList").child("aa@b.com")
+        shoppingListDB.setValue("something")
+        print("set value into database")
+        
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -55,7 +58,7 @@ class ShoppingListTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
@@ -65,7 +68,7 @@ class ShoppingListTableViewController: UITableViewController {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
-    */
+    
 
     /*
     // Override to support rearranging the table view.
