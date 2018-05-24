@@ -11,27 +11,30 @@ import Firebase
 
 class ShoppingListTableViewController: UITableViewController {
     var shoppingListReceived : [String] = []
+    var FireBaseShoppingList :  [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-       writeShoppingListToFirebaseForThisUser()
+        loadShoppingListFromFirebaseForThisUser()
+        
+    }
+    func addShoppingListToFireBaseShoppingList(){
+        for singleItem in shoppingListReceived{
+            FireBaseShoppingList.append(String(singleItem))
+        }
+        print("after append what is in the firebase \(self.FireBaseShoppingList) ")
+   
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return shoppingListReceived.count
     }
 
@@ -45,11 +48,24 @@ class ShoppingListTableViewController: UITableViewController {
     }
     
     func writeShoppingListToFirebaseForThisUser(){
-        let shoppingListDB = Database.database().reference().child("users").child("shoppingList").child("aa@b.com")
-        shoppingListDB.setValue("something")
-        print("set value into database")
-        
+        let shoppingListDB = Database.database().reference().child("users").child("MH48tjT3KZgulzvrKgBpKj3Qwy22").child("shoppingList")
+        shoppingListDB.setValue(FireBaseShoppingList)
+
     }
+    func loadShoppingListFromFirebaseForThisUser(){
+        let shoppingListDB = Database.database().reference().child("users").child("MH48tjT3KZgulzvrKgBpKj3Qwy22").child("shoppingList")
+        shoppingListDB.observeSingleEvent(of:.value){(snapshot) in
+            let snapshotValue = snapshot.value as! Array<String>
+            self.FireBaseShoppingList = snapshotValue
+            print("load from firebase \(self.FireBaseShoppingList) ")
+            self.addShoppingListToFireBaseShoppingList()
+            self.writeShoppingListToFirebaseForThisUser()
+        
+
+        }
+    }
+    
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -70,29 +86,8 @@ class ShoppingListTableViewController: UITableViewController {
     }
     
 
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+   
+ 
+ 
 
 }
