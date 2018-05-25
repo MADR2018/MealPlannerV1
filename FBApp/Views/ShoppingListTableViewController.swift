@@ -12,10 +12,10 @@ import Firebase
 class ShoppingListTableViewController: UITableViewController {
     var shoppingListReceived : [String] = []
     var FireBaseShoppingList :  [String] = []
-    
+   
     override func viewDidLoad() {
         super.viewDidLoad()
-
+         FireBaseShoppingList = [""]
         loadShoppingListFromFirebaseForThisUser()
         
     }
@@ -30,26 +30,28 @@ class ShoppingListTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return shoppingListReceived.count
+        return FireBaseShoppingList.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "shoppingListCell", for: indexPath)
-        cell.textLabel?.text = shoppingListReceived[indexPath.row]
+        cell.textLabel?.text = String(indexPath.row) + ".   " + FireBaseShoppingList[indexPath.row]
+        cell.textLabel?.textColor = UIColor.blue
         cell.textLabel?.numberOfLines = 10;
         cell.textLabel?.lineBreakMode = .byWordWrapping;
         return cell
     }
     
+    // write and load data from firebase
+    
     func writeShoppingListToFirebaseForThisUser(){
         let shoppingListDB = Database.database().reference().child("users").child("MH48tjT3KZgulzvrKgBpKj3Qwy22").child("shoppingList")
         shoppingListDB.setValue(FireBaseShoppingList)
+        //shoppingListDB.setValue(shoppingListReceived)
 
     }
     func loadShoppingListFromFirebaseForThisUser(){
@@ -58,8 +60,9 @@ class ShoppingListTableViewController: UITableViewController {
             let snapshotValue = snapshot.value as! Array<String>
             self.FireBaseShoppingList = snapshotValue
             print("load from firebase \(self.FireBaseShoppingList) ")
-            self.addShoppingListToFireBaseShoppingList()
+            //self.addShoppingListToFireBaseShoppingList()
             self.writeShoppingListToFirebaseForThisUser()
+            self.tableView.reloadData()
         
 
         }

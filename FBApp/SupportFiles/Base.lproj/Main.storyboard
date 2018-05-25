@@ -298,6 +298,9 @@
                                         <state key="normal" title="Grocery List">
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="uJ5-OD-Trq" kind="show" id="lGH-NJ-3w6"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pf6-Fi-SpM">
                                         <rect key="frame" x="187.5" y="0.0" width="94" height="40"/>
@@ -413,6 +416,9 @@
                                         <state key="normal" title="Grocery List">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="uJ5-OD-Trq" kind="show" id="n0e-cn-sgL"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IQG-Dq-Qqo">
                                         <rect key="frame" x="187.5" y="0.0" width="94" height="40"/>
@@ -475,7 +481,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ivJ-Lt-GGX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4094" y="24"/>
+            <point key="canvasLocation" x="4154" y="-137"/>
         </scene>
         <!--Shopping List Table View Controller-->
         <scene sceneID="kDr-cr-GOc">
@@ -503,7 +509,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z41-K9-qK3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4940" y="24"/>
+            <point key="canvasLocation" x="3839" y="798"/>
         </scene>
         <!--Select Diet View Controller-->
         <scene sceneID="dql-88-D3C">
@@ -677,6 +683,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="4Uz-1c-ILh"/>
+        <segue reference="n0e-cn-sgL"/>
         <segue reference="Gz7-wK-HWV"/>
         <segue reference="bxe-JM-bht"/>
     </inferredMetricsTieBreakers>
