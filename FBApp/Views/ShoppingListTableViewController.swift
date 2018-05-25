@@ -23,7 +23,7 @@ class ShoppingListTableViewController: UITableViewController {
         for singleItem in shoppingListReceived{
             FireBaseShoppingList.append(String(singleItem))
         }
-        print("after append what is in the firebase \(self.FireBaseShoppingList) ")
+        //print("after append what is in the firebase \(self.FireBaseShoppingList) ")
    
     }
 
@@ -59,8 +59,8 @@ class ShoppingListTableViewController: UITableViewController {
         shoppingListDB.observeSingleEvent(of:.value){(snapshot) in
             let snapshotValue = snapshot.value as! Array<String>
             self.FireBaseShoppingList = snapshotValue
-            print("load from firebase \(self.FireBaseShoppingList) ")
-            //self.addShoppingListToFireBaseShoppingList()
+            //print("load from firebase \(self.FireBaseShoppingList) ")
+            self.addShoppingListToFireBaseShoppingList()
             self.writeShoppingListToFirebaseForThisUser()
             self.tableView.reloadData()
         
