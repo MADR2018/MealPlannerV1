@@ -17,7 +17,7 @@ class ShoppingListTableViewController: UITableViewController {
    
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("the result of grocery Button is   " + String(groceryButtonPress))
+        //print("the result of grocery Button is   " + String(groceryButtonPress))
          FireBaseShoppingList = [""]
         //writeShoppingListToFirebaseForThisUser()
         loadShoppingListFromFirebaseForThisUser()

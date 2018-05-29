@@ -20,7 +20,7 @@ class favouriteTableViewController: UIViewController, UITableViewDataSource,UITa
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("the result of favourite Button is   " + String(favouriteButtonPress))
+        //print("the result of favourite Button is   " + String(favouriteButtonPress))
         tableView.delegate = self
         tableView.dataSource = self
         //writeFavouriteListToFirebaseForThisUser()
@@ -58,7 +58,7 @@ class favouriteTableViewController: UIViewController, UITableViewDataSource,UITa
         shoppingListDB.observeSingleEvent(of:.value){(snapshot) in
             let snapshotValue = snapshot.value as! Array<String>
             self.favouriteList = snapshotValue
-            print("load from firebase \(self.favouriteList) ")
+            //print("load from firebase \(self.favouriteList) ")
             for singleItem in self.favouriteList{
                 if(singleItem == self.PassedfavouriteReceipe){
                     self.repeatedReceipe = true
