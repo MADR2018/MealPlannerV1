@@ -308,6 +308,9 @@
                                         <state key="normal" title="Favorites">
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="xSP-bk-4yK" kind="showDetail" id="FYM-QX-oF2"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yma-1b-nQb">
                                         <rect key="frame" x="281.5" y="0.0" width="93.5" height="40"/>
@@ -426,6 +429,9 @@
                                         <state key="normal" title="Favorites">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="xSP-bk-4yK" kind="show" id="w3z-cq-1vC"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TQe-53-CF9">
                                         <rect key="frame" x="281.5" y="0.0" width="93.5" height="40"/>
@@ -477,11 +483,96 @@
                         <outlet property="receipeTableView" destination="vwS-e6-han" id="yxj-9B-o9d"/>
                         <outlet property="selectedFoodImage" destination="rVl-Fv-SUM" id="bHC-no-hYM"/>
                         <segue destination="uJ5-OD-Trq" kind="show" identifier="goToShoppingList" id="jqO-el-gkV"/>
+                        <segue destination="xSP-bk-4yK" kind="show" identifier="goToFavouriteList" id="xHE-Cq-rub"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ivJ-Lt-GGX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4154" y="-137"/>
+            <point key="canvasLocation" x="4194" y="-91"/>
+        </scene>
+        <!--Favourite Table View Controller-->
+        <scene sceneID="Hym-bK-W0v">
+            <objects>
+                <viewController id="xSP-bk-4yK" customClass="favouriteTableViewController" customModule="FBApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6CU-aD-qhc"/>
+                        <viewControllerLayoutGuide type="bottom" id="pOs-db-AKp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6EH-vm-9uP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4fo-Ur-Ykh" userLabel="favouriteTable">
+                                <rect key="frame" x="0.0" y="64" width="375" height="559"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="favoriteCell" rowHeight="100" id="cMG-xZ-pwJ" customClass="favoriteTableViewCell" customModule="FBApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cMG-xZ-pwJ" id="jiG-vL-58k">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1h9-1P-lFT">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eFc-eC-Qx3">
+                                                            <rect key="frame" x="0.0" y="0.0" width="201" height="100"/>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ve9-iO-Ivn">
+                                                            <rect key="frame" x="201" y="0.0" width="174" height="100"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="174" id="asU-QQ-dzJ"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="1" green="0.50719269910454212" blue="0.38675174058853001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="Ve9-iO-Ivn" secondAttribute="trailing" id="FV4-wW-aDr"/>
+                                                        <constraint firstItem="Ve9-iO-Ivn" firstAttribute="top" secondItem="1h9-1P-lFT" secondAttribute="top" id="IsB-a3-5Uk"/>
+                                                        <constraint firstAttribute="bottom" secondItem="eFc-eC-Qx3" secondAttribute="bottom" id="Mtn-h6-W88"/>
+                                                        <constraint firstItem="Ve9-iO-Ivn" firstAttribute="leading" secondItem="eFc-eC-Qx3" secondAttribute="trailing" id="OzO-hz-3J0"/>
+                                                        <constraint firstItem="eFc-eC-Qx3" firstAttribute="top" secondItem="1h9-1P-lFT" secondAttribute="top" id="VFW-yt-srH"/>
+                                                        <constraint firstAttribute="bottom" secondItem="Ve9-iO-Ivn" secondAttribute="bottom" id="i4V-i5-VmL"/>
+                                                        <constraint firstItem="eFc-eC-Qx3" firstAttribute="leading" secondItem="1h9-1P-lFT" secondAttribute="leading" id="xCW-Ij-tCa"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" white="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="1h9-1P-lFT" secondAttribute="bottom" id="61t-DP-wyR"/>
+                                                <constraint firstItem="1h9-1P-lFT" firstAttribute="leading" secondItem="jiG-vL-58k" secondAttribute="leading" id="AHi-ff-Moe"/>
+                                                <constraint firstAttribute="trailing" secondItem="1h9-1P-lFT" secondAttribute="trailing" id="J13-5X-BFb"/>
+                                                <constraint firstItem="1h9-1P-lFT" firstAttribute="top" secondItem="jiG-vL-58k" secondAttribute="top" id="ueV-er-7d7"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="cellView" destination="1h9-1P-lFT" id="ebm-0g-pSb"/>
+                                            <outlet property="favImage" destination="eFc-eC-Qx3" id="Tya-lN-hpL"/>
+                                            <outlet property="favLabel" destination="Ve9-iO-Ivn" id="gMZ-i7-6uU"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="pOs-db-AKp" firstAttribute="top" secondItem="4fo-Ur-Ykh" secondAttribute="bottom" id="D9a-D1-MLn"/>
+                            <constraint firstAttribute="trailing" secondItem="4fo-Ur-Ykh" secondAttribute="trailing" id="ET2-ep-JMf"/>
+                            <constraint firstItem="4fo-Ur-Ykh" firstAttribute="top" secondItem="6CU-aD-qhc" secondAttribute="bottom" id="FGH-VX-eCb"/>
+                            <constraint firstItem="4fo-Ur-Ykh" firstAttribute="leading" secondItem="6EH-vm-9uP" secondAttribute="leading" id="iLk-cZ-Ohd"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="4fo-Ur-Ykh" id="erR-Qo-k2C"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8qS-an-U8k" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4271" y="856"/>
         </scene>
         <!--Shopping List Table View Controller-->
         <scene sceneID="kDr-cr-GOc">
@@ -509,7 +600,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z41-K9-qK3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3839" y="798"/>
+            <point key="canvasLocation" x="3439" y="843"/>
         </scene>
         <!--Select Diet View Controller-->
         <scene sceneID="dql-88-D3C">
@@ -684,6 +775,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="4Uz-1c-ILh"/>
         <segue reference="n0e-cn-sgL"/>
+        <segue reference="w3z-cq-1vC"/>
         <segue reference="Gz7-wK-HWV"/>
         <segue reference="bxe-JM-bht"/>
     </inferredMetricsTieBreakers>

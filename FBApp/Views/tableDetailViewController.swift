@@ -103,18 +103,25 @@ class tableDetailViewController: UIViewController,UITableViewDelegate,UITableVie
         }
         let actionFavorite = UIAlertAction(title: "Add \(receipeNamePassed) to favorites", style: .default){(action) in
             print("Success!")
+            self.performSegue(withIdentifier: "goToFavouriteList", sender: self)
         }
         alert.addAction(actionFavorite)
         alert.addAction(actionGrocery)
         
         present(alert, animated: true, completion: nil)
     }
-    // pass selected shopping list to shopping list table view controller
+    // pass selected shopping list to shopping list table view controller and pass selected food receipe to favourite receipe list
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? ShoppingListTableViewController{
             destination.shoppingListReceived = ingredientsList
         }
+        if let destination = segue.destination as? favouriteTableViewController{
+            destination.PassedfavouriteReceipe = receipeNamePassed
+        }
     }
+    
+
+   
 }
 
 

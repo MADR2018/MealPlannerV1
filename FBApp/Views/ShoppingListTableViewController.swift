@@ -16,6 +16,7 @@ class ShoppingListTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
          FireBaseShoppingList = [""]
+        //writeShoppingListToFirebaseForThisUser()
         loadShoppingListFromFirebaseForThisUser()
         
     }
@@ -59,7 +60,7 @@ class ShoppingListTableViewController: UITableViewController {
         shoppingListDB.observeSingleEvent(of:.value){(snapshot) in
             let snapshotValue = snapshot.value as! Array<String>
             self.FireBaseShoppingList = snapshotValue
-            //print("load from firebase \(self.FireBaseShoppingList) ")
+            print("load from firebase \(self.FireBaseShoppingList) ")
             self.addShoppingListToFireBaseShoppingList()
             self.writeShoppingListToFirebaseForThisUser()
             self.tableView.reloadData()
