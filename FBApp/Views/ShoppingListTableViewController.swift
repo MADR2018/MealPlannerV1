@@ -13,9 +13,11 @@ class ShoppingListTableViewController: UITableViewController {
     var shoppingListReceived : [String] = []
     var FireBaseShoppingList :  [String] = []
     var repeatedShoppingList: Bool = false
+    var groceryButtonPress: Bool = false
    
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("the result of grocery Button is   " + String(groceryButtonPress))
          FireBaseShoppingList = [""]
         //writeShoppingListToFirebaseForThisUser()
         loadShoppingListFromFirebaseForThisUser()
@@ -66,7 +68,7 @@ class ShoppingListTableViewController: UITableViewController {
                     self.repeatedShoppingList = true
                 }
             }
-            if self.repeatedShoppingList == false{
+            if self.repeatedShoppingList == false && self.groceryButtonPress == false{
                 self.addShoppingListToFireBaseShoppingList()
                 self.writeShoppingListToFirebaseForThisUser()
             }

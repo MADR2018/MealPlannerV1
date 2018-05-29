@@ -20,7 +20,7 @@ class favouriteTableViewController: UIViewController, UITableViewDataSource,UITa
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("the result of favourite Button is" + String(favouriteButtonPress))
+        print("the result of favourite Button is   " + String(favouriteButtonPress))
         tableView.delegate = self
         tableView.dataSource = self
         //writeFavouriteListToFirebaseForThisUser()
@@ -64,7 +64,7 @@ class favouriteTableViewController: UIViewController, UITableViewDataSource,UITa
                     self.repeatedReceipe = true
                 }
             }
-            if self.repeatedReceipe == false && self.PassedfavouriteReceipe != ""{
+            if self.repeatedReceipe == false && self.PassedfavouriteReceipe != "" && self.favouriteButtonPress == false{
                 self.addFavouriteListToFireBaseFavouriteList()
                 self.pictureList = self.favouriteList
                 self.writeFavouriteListToFirebaseForThisUser()
@@ -79,7 +79,7 @@ class favouriteTableViewController: UIViewController, UITableViewDataSource,UITa
         
             favouriteList.append(PassedfavouriteReceipe)
         
-        print("after append what is in the firebase \(self.favouriteList) ")
+        //print("after append what is in the firebase \(self.favouriteList) ")
         
     }
 

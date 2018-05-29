@@ -16,14 +16,13 @@ class tableDetailViewController: UIViewController,UITableViewDelegate,UITableVie
     var ingredientsList: [String] = []
     var instructionList: [String] = []
     var FavouriteButtonResult:Bool = false
+    var groceryButtonResult:Bool = false
     @IBAction func groceryButton(_ sender: Any) {
-        
-        
+        groceryButtonResult = true
     }
     
     @IBAction func FavouriteButton(_ sender: Any) {
         FavouriteButtonResult = true
-        //performSegue(withIdentifier: "goToFavouriteList ", sender: self)
     }
     
     
@@ -126,6 +125,7 @@ class tableDetailViewController: UIViewController,UITableViewDelegate,UITableVie
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? ShoppingListTableViewController{
             destination.shoppingListReceived = ingredientsList
+            destination.groceryButtonPress = groceryButtonResult
         }
         if let destination = segue.destination as? favouriteTableViewController{
             destination.PassedfavouriteReceipe = receipeNamePassed
