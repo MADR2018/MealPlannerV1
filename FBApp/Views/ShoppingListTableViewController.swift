@@ -12,6 +12,7 @@ import Firebase
 class ShoppingListTableViewController: UITableViewController {
     var shoppingListReceived : [String] = []
     var FireBaseShoppingList :  [String] = []
+    var repeatedShoppingList: Bool = false
    
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,9 +61,15 @@ class ShoppingListTableViewController: UITableViewController {
         shoppingListDB.observeSingleEvent(of:.value){(snapshot) in
             let snapshotValue = snapshot.value as! Array<String>
             self.FireBaseShoppingList = snapshotValue
-            print("load from firebase \(self.FireBaseShoppingList) ")
-            self.addShoppingListToFireBaseShoppingList()
-            self.writeShoppingListToFirebaseForThisUser()
+            for singleItem in self.FireBaseShoppingList{
+                if(singleItem == self.shoppingListReceived[0]){
+                    self.repeatedShoppingList = true
+                }
+            }
+            if self.repeatedShoppingList == false{
+                self.addShoppingListToFireBaseShoppingList()
+                self.writeShoppingListToFirebaseForThisUser()
+            }
             self.tableView.reloadData()
         
 

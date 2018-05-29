@@ -15,11 +15,15 @@ class tableDetailViewController: UIViewController,UITableViewDelegate,UITableVie
     var pictureList = [String]()
     var ingredientsList: [String] = []
     var instructionList: [String] = []
-    
+    var FavouriteButtonResult:Bool = false
     @IBAction func groceryButton(_ sender: Any) {
+        
+        
     }
     
     @IBAction func FavouriteButton(_ sender: Any) {
+        FavouriteButtonResult = true
+        //performSegue(withIdentifier: "goToFavouriteList ", sender: self)
     }
     
     
@@ -125,6 +129,7 @@ class tableDetailViewController: UIViewController,UITableViewDelegate,UITableVie
         }
         if let destination = segue.destination as? favouriteTableViewController{
             destination.PassedfavouriteReceipe = receipeNamePassed
+            destination.favouriteButtonPress = FavouriteButtonResult
         }
     }
     
