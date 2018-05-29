@@ -16,6 +16,14 @@ class tableDetailViewController: UIViewController,UITableViewDelegate,UITableVie
     var ingredientsList: [String] = []
     var instructionList: [String] = []
     
+    @IBAction func groceryButton(_ sender: Any) {
+    }
+    
+    @IBAction func FavouriteButton(_ sender: Any) {
+    }
+    
+    
+    
     
     @IBOutlet weak var receipeTableView: UITableView!
     

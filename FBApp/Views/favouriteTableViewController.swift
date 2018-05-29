@@ -13,6 +13,9 @@ class favouriteTableViewController: UIViewController, UITableViewDataSource,UITa
     var favouriteList: [String] = []
     var PassedfavouriteReceipe = ""
     
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
