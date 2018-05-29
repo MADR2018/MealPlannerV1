@@ -82,6 +82,18 @@ class favouriteTableViewController: UIViewController, UITableViewDataSource,UITa
         //print("after append what is in the firebase \(self.favouriteList) ")
         
     }
+    
+    // pass data at select index
+    var selectedIndex: Int = 0
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedIndex = indexPath.row
+        performSegue(withIdentifier: "showDetailsFav", sender: self)
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? tableDetailViewController{
+            destination.receipeNamePassed = pictureList[selectedIndex]
+        }
+    }
 
     
 
