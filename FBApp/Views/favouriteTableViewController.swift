@@ -12,6 +12,7 @@ class favouriteTableViewController: UIViewController, UITableViewDataSource,UITa
     var pictureList = ["Cauliflower Tikka Masala"]
     var favouriteList: [String] = []
     var PassedfavouriteReceipe = ""
+    var repeatedReceipe:Bool = false
     
     
     
@@ -57,11 +58,17 @@ class favouriteTableViewController: UIViewController, UITableViewDataSource,UITa
             let snapshotValue = snapshot.value as! Array<String>
             self.favouriteList = snapshotValue
             print("load from firebase \(self.favouriteList) ")
-            self.addFavouriteListToFireBaseFavouriteList()
-            self.pictureList = self.favouriteList
-            if self.PassedfavouriteReceipe != ""{
+            for singleItem in self.favouriteList{
+                if(singleItem == self.PassedfavouriteReceipe){
+                    self.repeatedReceipe = true
+                }
+            }
+            if self.repeatedReceipe == false && self.repeatedReceipe == false{
+                self.addFavouriteListToFireBaseFavouriteList()
+                self.pictureList = self.favouriteList
                 self.writeFavouriteListToFirebaseForThisUser()
             }
+            self.pictureList = self.favouriteList
             self.tableView.reloadData()
             
             
