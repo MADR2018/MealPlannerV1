@@ -18,6 +18,7 @@ class favouriteTableViewController: UIViewController, UITableViewDataSource,UITa
 
         tableView.delegate = self
         tableView.dataSource = self
+        //writeFavouriteListToFirebaseForThisUser()
         loadFavouriteListFromFirebaseForThisUser()
         
     }
@@ -55,7 +56,9 @@ class favouriteTableViewController: UIViewController, UITableViewDataSource,UITa
             print("load from firebase \(self.favouriteList) ")
             self.addFavouriteListToFireBaseFavouriteList()
             self.pictureList = self.favouriteList
-            self.writeFavouriteListToFirebaseForThisUser()
+            if self.PassedfavouriteReceipe != ""{
+                self.writeFavouriteListToFirebaseForThisUser()
+            }
             self.tableView.reloadData()
             
             

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="wIl-I2-UHY">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="DDP-1M-jjl">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -299,17 +299,17 @@
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
                                         <connections>
-                                            <segue destination="uJ5-OD-Trq" kind="show" id="lGH-NJ-3w6"/>
+                                            <segue destination="uJ5-OD-Trq" kind="show" id="yWf-PM-gaT"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pf6-Fi-SpM">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="syu-Ig-P7P">
                                         <rect key="frame" x="187.5" y="0.0" width="94" height="40"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <state key="normal" title="Favorites">
+                                        <state key="normal" title="Favourite">
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
                                         <connections>
-                                            <segue destination="xSP-bk-4yK" kind="showDetail" id="FYM-QX-oF2"/>
+                                            <segue destination="xSP-bk-4yK" kind="show" id="43k-Tu-Ion"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yma-1b-nQb">
@@ -344,7 +344,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cUE-Nv-csY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3388" y="18"/>
+            <point key="canvasLocation" x="4327.1999999999998" y="17.541229385307346"/>
         </scene>
         <!--Table Detail View Controller-->
         <scene sceneID="yTV-ju-b6Q">
@@ -488,7 +488,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ivJ-Lt-GGX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4194" y="-91"/>
+            <point key="canvasLocation" x="5132" y="-91.304347826086968"/>
         </scene>
         <!--Favourite Table View Controller-->
         <scene sceneID="Hym-bK-W0v">
@@ -503,7 +503,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4fo-Ur-Ykh" userLabel="favouriteTable">
-                                <rect key="frame" x="0.0" y="64" width="375" height="559"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="favoriteCell" rowHeight="100" id="cMG-xZ-pwJ" customClass="favoriteTableViewCell" customModule="FBApp" customModuleProvider="target">
@@ -572,7 +572,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8qS-an-U8k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4271" y="856"/>
+            <point key="canvasLocation" x="4078" y="963"/>
         </scene>
         <!--Shopping List Table View Controller-->
         <scene sceneID="kDr-cr-GOc">
@@ -600,7 +600,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z41-K9-qK3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3439" y="843"/>
+            <point key="canvasLocation" x="4967" y="927"/>
         </scene>
         <!--Select Diet View Controller-->
         <scene sceneID="dql-88-D3C">
@@ -751,22 +751,22 @@
             <point key="canvasLocation" x="263" y="752"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="HWH-Jj-YXp">
+        <scene sceneID="Zm8-bt-6xh">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wIl-I2-UHY" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DDP-1M-jjl" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ehn-FH-tCc">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="QBO-ZH-mMT">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="ehF-PR-toi" kind="relationship" relationship="rootViewController" id="ezK-oG-dPl"/>
+                        <segue destination="ehF-PR-toi" kind="relationship" relationship="rootViewController" id="yCz-HQ-cuI"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="uow-Yr-HI5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uf7-2X-a5Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2693.5999999999999" y="17.541229385307346"/>
+            <point key="canvasLocation" x="3388" y="17.541229385307346"/>
         </scene>
     </scenes>
     <resources>
@@ -774,8 +774,8 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="4Uz-1c-ILh"/>
-        <segue reference="n0e-cn-sgL"/>
-        <segue reference="w3z-cq-1vC"/>
+        <segue reference="yWf-PM-gaT"/>
+        <segue reference="43k-Tu-Ion"/>
         <segue reference="Gz7-wK-HWV"/>
         <segue reference="bxe-JM-bht"/>
     </inferredMetricsTieBreakers>
