@@ -64,8 +64,10 @@ class ShoppingListTableViewController: UITableViewController {
             let snapshotValue = snapshot.value as! Array<String>
             self.FireBaseShoppingList = snapshotValue
             for singleItem in self.FireBaseShoppingList{
-                if(singleItem == self.shoppingListReceived[0]){
-                    self.repeatedShoppingList = true
+                if self.groceryButtonPress == false{
+                    if(singleItem == self.shoppingListReceived[0]){
+                        self.repeatedShoppingList = true
+                    }
                 }
             }
             if self.repeatedShoppingList == false && self.groceryButtonPress == false{

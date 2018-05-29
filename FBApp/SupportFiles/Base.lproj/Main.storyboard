@@ -299,6 +299,7 @@
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
                                         <connections>
+                                            <action selector="groceryButtonList:" destination="ehF-PR-toi" eventType="touchUpInside" id="dVX-CP-czu"/>
                                             <segue destination="uJ5-OD-Trq" kind="show" id="yWf-PM-gaT"/>
                                         </connections>
                                     </button>
@@ -505,7 +506,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4fo-Ur-Ykh" userLabel="favouriteTable">
-                                <rect key="frame" x="0.0" y="64" width="375" height="559"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="favoriteCell" rowHeight="100" id="cMG-xZ-pwJ" customClass="favoriteTableViewCell" customModule="FBApp" customModuleProvider="target">
@@ -776,8 +777,8 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="4Uz-1c-ILh"/>
-        <segue reference="n0e-cn-sgL"/>
-        <segue reference="xHE-Cq-rub"/>
+        <segue reference="yWf-PM-gaT"/>
+        <segue reference="43k-Tu-Ion"/>
         <segue reference="Gz7-wK-HWV"/>
         <segue reference="bxe-JM-bht"/>
     </inferredMetricsTieBreakers>
