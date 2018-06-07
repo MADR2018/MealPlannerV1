@@ -14,8 +14,6 @@ class SignOutViewController: UIViewController, UITableViewDataSource, UITableVie
     @IBOutlet weak var selectionsTableView: UITableView!
     
     let sections = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
-    let fruit = ["Apple", "Orange", "Mango"]
-    
     //Assume one entry each for now
     var monSelection = [String]()
     var tueSelection = [String]()
@@ -25,39 +23,67 @@ class SignOutViewController: UIViewController, UITableViewDataSource, UITableVie
     var satSelection = [String]()
     var sunSelection = [String]()
     
-    let vegetables = ["Carrot", "Broccoli", "Cucumber"]
+
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+//        self.monSelection.append("This recipe 1")
+//        self.monSelection.append("This recipe 2")
         var ref:DatabaseReference!
         ref = Database.database().reference()
-        //TODO: load user recipe selections
+        //TODO: load user recipe selections, and MAKE THIS OOP!
         let userID = Auth.auth().currentUser?.uid
-    ref.child("users").child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
+        ref.child("users").child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
             //get user value
             let value = snapshot.value as? NSDictionary
             let monRecipeIDs = value?["monSelectionID"] as? String ?? ""
+            self.monSelection.append(monRecipeIDs)
+            self.selectionsTableView.reloadData()
+            
             let tueRecipeIDs = value?["tueSelectionID"] as? String ?? ""
+            
+            self.tueSelection.append(tueRecipeIDs)
+            self.selectionsTableView.reloadData()
             let wedRecipeIDs = value?["wedSelectionID"] as? String ?? ""
+            
+            self.wedSelection.append(wedRecipeIDs)
+            self.selectionsTableView.reloadData()
             let thuRecipeIDs = value?["thuSelectionID"] as? String ?? ""
+            
+            
+            self.thuSelection.append(thuRecipeIDs)
+            self.selectionsTableView.reloadData()
+            
             let friRecipeIDs = value?["friSelectionID"] as? String ?? ""
+            
+            self.friSelection.append(friRecipeIDs)
+            self.selectionsTableView.reloadData()
+            
             let satRecipeIDs = value?["satSelectionID"] as? String ?? ""
+            
+            self.satSelection.append(satRecipeIDs)
+            self.selectionsTableView.reloadData()
+            
             let sunRecipeIDs = value?["sunSelectionID"] as? String ?? ""
-        self.monSelection.append(monRecipeIDs)
-        self.tueSelection.append(tueRecipeIDs)
-        self.wedSelection.append(wedRecipeIDs)
-        self.thuSelection.append(thuRecipeIDs)
-        self.friSelection.append(friRecipeIDs)
-        self.satSelection.append(satRecipeIDs)
-        self.sunSelection.append(sunRecipeIDs)
-        print("***Contents of Monday*** \(self.monSelection)")
-        //update the tableview HERE
-        self.selectionsTableView.reloadData()
+            
+            self.sunSelection.append(sunRecipeIDs)
+            self.selectionsTableView.reloadData()
+            
+            //            self.monSelection.append(monRecipeIDs)
+            //            self.tueSelection.append(tueRecipeIDs)
+            //            self.wedSelection.append(wedRecipeIDs)
+            //            self.thuSelection.append(thuRecipeIDs)
+            //            self.friSelection.append(friRecipeIDs)
+            //            self.satSelection.append(satRecipeIDs)
+            
+            print("***Contents of Monday*** \(self.monSelection)")
+            //update the tableview HERE
+            //self.selectionsTableView.reloadData()
         })
         
-
+        
         
         
         //        guard let email = Auth.auth().currentUser?.email else { return }
@@ -82,7 +108,7 @@ class SignOutViewController: UIViewController, UITableViewDataSource, UITableVie
     func numberOfSections(in tableView: UITableView) -> Int {
         return sections.count
     }
-
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
@@ -103,7 +129,7 @@ class SignOutViewController: UIViewController, UITableViewDataSource, UITableVie
         default:
             return 0
         }
-    
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -111,7 +137,7 @@ class SignOutViewController: UIViewController, UITableViewDataSource, UITableVie
         let cell = tableView.dequeueReusableCell(withIdentifier: "PlainCell", for: indexPath)
         //Depending on the section, fill the textLabel with the relevant text
         switch indexPath.section {
-            case 0:
+        case 0:
             //monday section
             cell.textLabel?.text = monSelection[indexPath.row]
             break
@@ -148,6 +174,12 @@ class SignOutViewController: UIViewController, UITableViewDataSource, UITableVie
 
 
 
-func getRecipeSnapshot(ref: DatabaseReference!, branch:String, child:String){
-    
+func getRecipeSnapshot(ref: DatabaseReference!, child:String){
+    //    ref.child("Recipes").child(child).observeSingleEvent(of: .value, with: { (snapshot) in
+    //        //get user value
+    //        let value = snapshot.value as? NSDictionary
+    //        let recipeName = value?["ReceipesName"] as? String ?? ""
+    //        self.monSelection.append(recipeName)
+    //        selectionsTableView.reloadData()
+    //    })
 }

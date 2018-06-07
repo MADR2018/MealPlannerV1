@@ -19,6 +19,8 @@
 		2D33CBEE208D8F0200F7FEFC /* FBAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D33CBED208D8F0200F7FEFC /* FBAppUITests.swift */; };
 		2D33CBFE208E7E8300F7FEFC /* SignOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D33CBFD208E7E8300F7FEFC /* SignOutViewController.swift */; };
 		2D33CC00208E85CF00F7FEFC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2D33CBFF208E85CF00F7FEFC /* GoogleService-Info.plist */; };
+		2D4FD97920C99FAF0043D183 /* DailySelectionSnap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4FD97820C99FAF0043D183 /* DailySelectionSnap.swift */; };
+		2D861DA620BD048B00619621 /* DailySelections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D861DA520BD048B00619621 /* DailySelections.swift */; };
 		2D99A653209800F000BE9F1D /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D99A652209800F000BE9F1D /* WelcomeViewController.swift */; };
 		2DA2D5CF20A2980500A7C18A /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA2D5CE20A2980500A7C18A /* SignUpViewController.swift */; };
 		2DA2D5D420A29C4A00A7C18A /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA2D5D320A29C4A00A7C18A /* UserData.swift */; };
@@ -66,6 +68,8 @@
 		2D33CBEF208D8F0200F7FEFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2D33CBFD208E7E8300F7FEFC /* SignOutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignOutViewController.swift; sourceTree = "<group>"; };
 		2D33CBFF208E85CF00F7FEFC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		2D4FD97820C99FAF0043D183 /* DailySelectionSnap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailySelectionSnap.swift; sourceTree = "<group>"; };
+		2D861DA520BD048B00619621 /* DailySelections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailySelections.swift; sourceTree = "<group>"; };
 		2D99A652209800F000BE9F1D /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		2DA2D5CE20A2980500A7C18A /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		2DA2D5D320A29C4A00A7C18A /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
@@ -202,6 +206,8 @@
 				2DD0B51A209B8DA600181025 /* CurrentUser.swift */,
 				2DD0B526209B91DB00181025 /* DatabaseService.swift */,
 				2DA2D5D320A29C4A00A7C18A /* UserData.swift */,
+				2D861DA520BD048B00619621 /* DailySelections.swift */,
+				2D4FD97820C99FAF0043D183 /* DailySelectionSnap.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -499,11 +505,13 @@
 			files = (
 				2DA2D5CF20A2980500A7C18A /* SignUpViewController.swift in Sources */,
 				2D33CBD3208D8F0100F7FEFC /* FBApp.xcdatamodeld in Sources */,
+				2D861DA620BD048B00619621 /* DailySelections.swift in Sources */,
 				2D33CBCD208D8F0000F7FEFC /* SignInViewController.swift in Sources */,
 				2D33CBFE208E7E8300F7FEFC /* SignOutViewController.swift in Sources */,
 				2DD0B51B209B8DA600181025 /* CurrentUser.swift in Sources */,
 				2D33CBCB208D8F0000F7FEFC /* AppDelegate.swift in Sources */,
 				2DA2D5D420A29C4A00A7C18A /* UserData.swift in Sources */,
+				2D4FD97920C99FAF0043D183 /* DailySelectionSnap.swift in Sources */,
 				2DD0B525209B8F8A00181025 /* AlertController.swift in Sources */,
 				2DD0B515209B715800181025 /* SelectDietViewController.swift in Sources */,
 				2D99A653209800F000BE9F1D /* WelcomeViewController.swift in Sources */,
