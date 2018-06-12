@@ -14,6 +14,7 @@ class ShoppingListTableViewController: UITableViewController {
     var FireBaseShoppingList :  [String] = []
     var repeatedShoppingList: Bool = false
     var groceryButtonPress: Bool = false
+    var emptyShoppingList = ["No Grocery list has been added yet"]
    
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,16 +59,11 @@ class ShoppingListTableViewController: UITableViewController {
         //shoppingListDB.setValue(shoppingListReceived)
 
     }
-    func deleteShoppingListItemAtFirebaseForThisUserAtIndex(){
-        let shoppingListDB = Database.database().reference().child("users").child("MH48tjT3KZgulzvrKgBpKj3Qwy22").child("shoppingList")
-        shoppingListDB.child("1").removeValue()
-        //shoppingListDB.setValue(shoppingListReceived)
-        
-    }
+    
     func loadShoppingListFromFirebaseForThisUser(){
         let shoppingListDB = Database.database().reference().child("users").child("MH48tjT3KZgulzvrKgBpKj3Qwy22").child("shoppingList")
         shoppingListDB.observeSingleEvent(of:.value){(snapshot) in
-            let snapshotValue = snapshot.value as! Array<String>
+            let snapshotValue = snapshot.value as? Array<String> ?? self.emptyShoppingList
             self.FireBaseShoppingList = snapshotValue
             for singleItem in self.FireBaseShoppingList{
                 if self.groceryButtonPress == false{
@@ -76,7 +72,12 @@ class ShoppingListTableViewController: UITableViewController {
                     }
                 }
             }
+            
+            
             if self.repeatedShoppingList == false && self.groceryButtonPress == false{
+                if self.FireBaseShoppingList[0] == self.emptyShoppingList[0]{
+                    self.FireBaseShoppingList.remove(at: 0)
+                }
                 self.addShoppingListToFireBaseShoppingList()
                 self.writeShoppingListToFirebaseForThisUser()
             }
