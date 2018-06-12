@@ -19,6 +19,8 @@ class tableDetailViewController: UIViewController,UITableViewDelegate,UITableVie
     var groceryButtonResult:Bool = false
     var FavouriteAlertResult:Bool = false
     var groceryAlertResult:Bool = false
+    var comeFromFavouriteList:Bool = false
+    
     @IBAction func groceryButton(_ sender: Any) {
         groceryButtonResult = true
     }
@@ -64,7 +66,7 @@ class tableDetailViewController: UIViewController,UITableViewDelegate,UITableVie
         retrieveMessages()
         
         
-      
+        
     }
     
     // load the tableview
@@ -80,9 +82,9 @@ class tableDetailViewController: UIViewController,UITableViewDelegate,UITableVie
         cell.textLabel?.lineBreakMode = .byWordWrapping;
         return cell
     }
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return 100
-//    }
+    //    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    //        return 100
+    //    }
     // retrieveMessages from firebase
     func retrieveMessages(){
         
@@ -103,10 +105,10 @@ class tableDetailViewController: UIViewController,UITableViewDelegate,UITableVie
             }
             self.ingredientsList = self.pictureList
             self.receipeTableView.reloadData()
-
+            
         }
     }
-
+    
     //MARK - Add new grocery list or new meal plan
     @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
         let alert = UIAlertController(title: "Add \(receipeNamePassed) to grocery list or favorites?", message: "", preferredStyle: .alert)
@@ -117,13 +119,18 @@ class tableDetailViewController: UIViewController,UITableViewDelegate,UITableVie
             self.groceryAlertResult = false
             
         }
-        let actionFavorite = UIAlertAction(title: "Add \(receipeNamePassed) to favorites", style: .default){(action) in
-            print("Success!")
-            self.FavouriteAlertResult = true
-            self.performSegue(withIdentifier: "goToFavouriteList", sender: self)
-            self.FavouriteAlertResult = false
+      
+        
+        if (comeFromFavouriteList == false){
+            let actionFavorite = UIAlertAction(title: "Add \(receipeNamePassed) to favorites", style: .default){(action) in
+                print("Success!")
+                self.FavouriteAlertResult = true
+                self.performSegue(withIdentifier: "goToFavouriteList", sender: self)
+                self.FavouriteAlertResult = false
+            }
+            alert.addAction(actionFavorite)
         }
-        alert.addAction(actionFavorite)
+        
         alert.addAction(actionGrocery)
         
         present(alert, animated: true, completion: nil)
@@ -142,8 +149,8 @@ class tableDetailViewController: UIViewController,UITableViewDelegate,UITableVie
         }
     }
     
-
-   
+    
+    
 }
 
 

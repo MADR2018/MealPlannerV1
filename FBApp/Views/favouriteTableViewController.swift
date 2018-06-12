@@ -98,6 +98,7 @@ class favouriteTableViewController: UIViewController, UITableViewDataSource,UITa
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? tableDetailViewController{
             destination.receipeNamePassed = pictureList[selectedIndex]
+            destination.comeFromFavouriteList = true
         }
     }
     
