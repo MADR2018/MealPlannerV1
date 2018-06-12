@@ -114,8 +114,9 @@ class ShoppingListTableViewController: UITableViewController, UISearchBarDelegat
     
     
     
-    var searchFilteredShoppingList :  [String] = []
+    
    //added UI Search Bar
+    var searchFilteredShoppingList :  [String] = []
     @IBOutlet weak var searchBar: UISearchBar!
     
     private func setUPSearchBar(){

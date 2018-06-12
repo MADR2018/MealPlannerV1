@@ -228,7 +228,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oYQ-m1-4o8">
-                                <rect key="frame" x="0.0" y="64" width="375" height="563"/>
+                                <rect key="frame" x="0.0" y="120" width="375" height="507"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="customCell" rowHeight="180" id="dDG-4I-pvP" customClass="customTableViewCell" customModule="FBApp" customModuleProvider="target">
@@ -325,20 +325,31 @@
                                     <constraint firstAttribute="height" constant="40" id="8he-Jg-pwc"/>
                                 </constraints>
                             </stackView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Tqr-Sp-qdX">
+                                <rect key="frame" x="0.0" y="64" width="375" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="tYC-xL-meF"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="oYQ-m1-4o8" firstAttribute="top" secondItem="Tqr-Sp-qdX" secondAttribute="bottom" id="2Sh-W5-esL"/>
                             <constraint firstItem="KPg-6e-rUh" firstAttribute="leading" secondItem="znw-JR-WH7" secondAttribute="leading" id="6St-66-PDe"/>
-                            <constraint firstItem="oYQ-m1-4o8" firstAttribute="top" secondItem="W2M-xH-mxN" secondAttribute="bottom" id="GqI-Nf-Vae"/>
                             <constraint firstAttribute="trailing" secondItem="KPg-6e-rUh" secondAttribute="trailing" id="J8A-vc-Ght"/>
+                            <constraint firstAttribute="trailing" secondItem="oYQ-m1-4o8" secondAttribute="trailing" id="KWk-nP-oub"/>
                             <constraint firstItem="uK1-Yn-SOo" firstAttribute="top" secondItem="KPg-6e-rUh" secondAttribute="bottom" id="MsH-gA-qYQ"/>
-                            <constraint firstItem="oYQ-m1-4o8" firstAttribute="leading" secondItem="znw-JR-WH7" secondAttribute="leading" id="Qch-lw-ik4"/>
-                            <constraint firstItem="oYQ-m1-4o8" firstAttribute="trailing" secondItem="znw-JR-WH7" secondAttribute="trailing" id="az6-7j-35y"/>
-                            <constraint firstItem="uK1-Yn-SOo" firstAttribute="top" secondItem="oYQ-m1-4o8" secondAttribute="bottom" constant="40" id="z87-kO-NSp"/>
+                            <constraint firstItem="Tqr-Sp-qdX" firstAttribute="leading" secondItem="znw-JR-WH7" secondAttribute="leading" id="OoY-DZ-jmM"/>
+                            <constraint firstAttribute="trailing" secondItem="Tqr-Sp-qdX" secondAttribute="trailing" id="RAe-qn-StR"/>
+                            <constraint firstItem="KPg-6e-rUh" firstAttribute="top" secondItem="oYQ-m1-4o8" secondAttribute="bottom" id="Rxm-HF-txB"/>
+                            <constraint firstItem="oYQ-m1-4o8" firstAttribute="leading" secondItem="znw-JR-WH7" secondAttribute="leading" id="hAH-75-MWz"/>
+                            <constraint firstItem="Tqr-Sp-qdX" firstAttribute="top" secondItem="W2M-xH-mxN" secondAttribute="bottom" id="meC-yG-Yt1"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Meal Plans" id="QFK-XC-xeY"/>
                     <connections>
+                        <outlet property="searchBar" destination="Tqr-Sp-qdX" id="u15-ff-TAJ"/>
                         <outlet property="tableView" destination="oYQ-m1-4o8" id="yYA-hi-wX1"/>
                         <segue destination="wnh-CY-gtP" kind="show" identifier="showDetails" id="eSh-W8-jlS"/>
                     </connections>

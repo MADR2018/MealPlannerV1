@@ -8,12 +8,12 @@
 
 import UIKit
 
-class tableViewCellControllerViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
+class tableViewCellControllerViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,UISearchBarDelegate {
    
     
     @IBOutlet weak var tableView: UITableView!
     
-    let pictureList = ["Cauliflower Tikka Masala","No-Pain Lo Mein","One-Pot Farfalle Primavera","One-Pot Spaghetti with Fresh Tomato Sauce","Pan Roasted Pork Chops and Broccoli","Pea and Goat's Cheese Risotto"]
+    var pictureList = ["Cauliflower Tikka Masala","No-Pain Lo Mein","One-Pot Farfalle Primavera","One-Pot Spaghetti with Fresh Tomato Sauce","Pan Roasted Pork Chops and Broccoli","Pea and Goat's Cheese Risotto"]
     var groceryButton1Result: Bool = false
 
     override func viewDidLoad() {
@@ -21,6 +21,8 @@ class tableViewCellControllerViewController: UIViewController,UITableViewDelegat
         
         tableView.delegate = self
         tableView.dataSource = self
+        searchFilteredReceipeList = pictureList
+        setUPSearchBar()
         
     }
     
@@ -66,7 +68,27 @@ class tableViewCellControllerViewController: UIViewController,UITableViewDelegat
     }
     
     
-
+    
+    
+    
+    // added a UI search Bar
+    var searchFilteredReceipeList :  [String] = []
+    @IBOutlet weak var searchBar: UISearchBar!
+    
+    private func setUPSearchBar(){
+        searchBar.delegate = self
+    }
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        pictureList = searchFilteredReceipeList.filter({ (wantedToSearch) -> Bool in
+            wantedToSearch.lowercased().contains(searchText.lowercased())
+        })
+        tableView.reloadData()
+        if searchBar.text?.count == 0{
+            pictureList = searchFilteredReceipeList
+            tableView.reloadData()
+        }
+        
+    }
     
 
 }
