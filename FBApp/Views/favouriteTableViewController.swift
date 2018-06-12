@@ -14,7 +14,7 @@ class favouriteTableViewController: UIViewController, UITableViewDataSource,UITa
     var PassedfavouriteReceipe = ""
     var repeatedReceipe:Bool = false
     var favouriteButtonPress: Bool = false
-    
+    var favouriteAlertPress: Bool = false
     
     
     
@@ -64,17 +64,28 @@ class favouriteTableViewController: UIViewController, UITableViewDataSource,UITa
                     self.repeatedReceipe = true
                 }
             }
-            if self.repeatedReceipe == false && self.PassedfavouriteReceipe != "" && self.favouriteButtonPress == false{
-                self.addFavouriteListToFireBaseFavouriteList()
-                self.pictureList = self.favouriteList
-                self.writeFavouriteListToFirebaseForThisUser()
+            print("repeatedReceipe  \(self.repeatedReceipe)  PassedfavouriteReceipe  \(self.PassedfavouriteReceipe) favouritebuttonpressed  \(self.favouriteButtonPress)  favourite alert result  \(self.favouriteAlertPress)")
+//            if self.repeatedReceipe == false && self.PassedfavouriteReceipe != "" && self.favouriteButtonPress == false{
+//                self.updateFireBaseAndLocalList()
+//            }
+            if self.favouriteAlertPress == true && self.repeatedReceipe == false{
+                self.updateFireBaseAndLocalList()
             }
+            
             self.pictureList = self.favouriteList
             self.tableView.reloadData()
             
             
         }
     }
+    func updateFireBaseAndLocalList(){
+        print("this is triggered")
+        addFavouriteListToFireBaseFavouriteList()
+        pictureList = self.favouriteList
+        writeFavouriteListToFirebaseForThisUser()
+    }
+    
+    
     func addFavouriteListToFireBaseFavouriteList(){
         
             favouriteList.append(PassedfavouriteReceipe)

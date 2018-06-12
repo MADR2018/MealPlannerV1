@@ -215,7 +215,7 @@
             </objects>
             <point key="canvasLocation" x="1063" y="18"/>
         </scene>
-        <!--Table View Cell Controller View Controller-->
+        <!--Meal Plans-->
         <scene sceneID="8e4-z2-QRI">
             <objects>
                 <viewController id="ehF-PR-toi" customClass="tableViewCellControllerViewController" customModule="FBApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -337,7 +337,7 @@
                             <constraint firstItem="uK1-Yn-SOo" firstAttribute="top" secondItem="oYQ-m1-4o8" secondAttribute="bottom" constant="40" id="z87-kO-NSp"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="UHS-cB-fmM"/>
+                    <navigationItem key="navigationItem" title="Meal Plans" id="QFK-XC-xeY"/>
                     <connections>
                         <outlet property="tableView" destination="oYQ-m1-4o8" id="yYA-hi-wX1"/>
                         <segue destination="wnh-CY-gtP" kind="show" identifier="showDetails" id="eSh-W8-jlS"/>
@@ -493,7 +493,7 @@
             </objects>
             <point key="canvasLocation" x="5132" y="-91.304347826086968"/>
         </scene>
-        <!--Favourite Table View Controller-->
+        <!--Favourite List-->
         <scene sceneID="Hym-bK-W0v">
             <objects>
                 <viewController id="xSP-bk-4yK" customClass="favouriteTableViewController" customModule="FBApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -569,6 +569,7 @@
                             <constraint firstItem="4fo-Ur-Ykh" firstAttribute="leading" secondItem="6EH-vm-9uP" secondAttribute="leading" id="iLk-cZ-Ohd"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Favourite List" id="MAS-rd-9V6"/>
                     <connections>
                         <outlet property="tableView" destination="4fo-Ur-Ykh" id="erR-Qo-k2C"/>
                         <segue destination="wnh-CY-gtP" kind="show" identifier="showDetailsFav" id="PWF-CL-qSd"/>
@@ -578,7 +579,7 @@
             </objects>
             <point key="canvasLocation" x="4233" y="934"/>
         </scene>
-        <!--Shopping List Table View Controller-->
+        <!--Grocery List-->
         <scene sceneID="kDr-cr-GOc">
             <objects>
                 <tableViewController id="uJ5-OD-Trq" customClass="ShoppingListTableViewController" customModule="FBApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -601,6 +602,7 @@
                             <outlet property="delegate" destination="uJ5-OD-Trq" id="222-oV-yYS"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Grocery List" id="8K4-cX-YZk"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z41-K9-qK3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

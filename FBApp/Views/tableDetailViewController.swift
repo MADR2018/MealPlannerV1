@@ -17,6 +17,8 @@ class tableDetailViewController: UIViewController,UITableViewDelegate,UITableVie
     var instructionList: [String] = []
     var FavouriteButtonResult:Bool = false
     var groceryButtonResult:Bool = false
+    var FavouriteAlertResult:Bool = false
+    var groceryAlertResult:Bool = false
     @IBAction func groceryButton(_ sender: Any) {
         groceryButtonResult = true
     }
@@ -111,9 +113,11 @@ class tableDetailViewController: UIViewController,UITableViewDelegate,UITableVie
         let actionGrocery = UIAlertAction(title: "Add \(receipeNamePassed) to grocerylist", style: .default){(action) in
             print("Success!")
             self.performSegue(withIdentifier: "goToShoppingList", sender: self)
+            self.groceryAlertResult = true
         }
         let actionFavorite = UIAlertAction(title: "Add \(receipeNamePassed) to favorites", style: .default){(action) in
             print("Success!")
+            self.FavouriteAlertResult = true
             self.performSegue(withIdentifier: "goToFavouriteList", sender: self)
         }
         alert.addAction(actionFavorite)
@@ -130,6 +134,7 @@ class tableDetailViewController: UIViewController,UITableViewDelegate,UITableVie
         if let destination = segue.destination as? favouriteTableViewController{
             destination.PassedfavouriteReceipe = receipeNamePassed
             destination.favouriteButtonPress = FavouriteButtonResult
+            destination.favouriteAlertPress = FavouriteAlertResult
         }
     }
     
