@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 class favouriteTableViewController: UIViewController, UITableViewDataSource,UITableViewDelegate {
-    var pictureList = ["Cauliflower Tikka Masala"]
+    var pictureList = ["empty list"]
     var favouriteList: [String] = []
     var PassedfavouriteReceipe = ""
     var repeatedReceipe:Bool = false
@@ -56,7 +56,7 @@ class favouriteTableViewController: UIViewController, UITableViewDataSource,UITa
     func loadFavouriteListFromFirebaseForThisUser(){
         let shoppingListDB = Database.database().reference().child("users").child("MH48tjT3KZgulzvrKgBpKj3Qwy22").child("favourites")
         shoppingListDB.observeSingleEvent(of:.value){(snapshot) in
-            let snapshotValue = snapshot.value as! Array<String>
+            let snapshotValue = snapshot.value as? Array<String> ?? self.favouriteList
             self.favouriteList = snapshotValue
             //print("load from firebase \(self.favouriteList) ")
             for singleItem in self.favouriteList{
@@ -92,6 +92,19 @@ class favouriteTableViewController: UIViewController, UITableViewDataSource,UITa
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? tableDetailViewController{
             destination.receipeNamePassed = pictureList[selectedIndex]
+        }
+    }
+    
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            // Delete the row from the data source
+            pictureList.remove(at: indexPath.row)
+            writeFavouriteListToFirebaseForThisUser()
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            tableView.reloadData()
+        } else if editingStyle == .insert {
+            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }
     }
 
