@@ -14,6 +14,7 @@ class ShoppingListTableViewController: UITableViewController {
     var FireBaseShoppingList :  [String] = []
     var repeatedShoppingList: Bool = false
     var groceryButtonPress: Bool = false
+    var groceryAlertPress: Bool = false
     var emptyShoppingList = ["No Grocery list has been added yet"]
    
     override func viewDidLoad() {
@@ -72,9 +73,7 @@ class ShoppingListTableViewController: UITableViewController {
                     }
                 }
             }
-            
-            
-            if self.repeatedShoppingList == false && self.groceryButtonPress == false{
+            if self.repeatedShoppingList == false && self.groceryAlertPress == true{
                 if self.FireBaseShoppingList[0] == self.emptyShoppingList[0]{
                     self.FireBaseShoppingList.remove(at: 0)
                 }

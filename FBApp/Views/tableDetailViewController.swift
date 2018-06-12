@@ -112,13 +112,16 @@ class tableDetailViewController: UIViewController,UITableViewDelegate,UITableVie
         let alert = UIAlertController(title: "Add \(receipeNamePassed) to grocery list or favorites?", message: "", preferredStyle: .alert)
         let actionGrocery = UIAlertAction(title: "Add \(receipeNamePassed) to grocerylist", style: .default){(action) in
             print("Success!")
-            self.performSegue(withIdentifier: "goToShoppingList", sender: self)
             self.groceryAlertResult = true
+            self.performSegue(withIdentifier: "goToShoppingList", sender: self)
+            self.groceryAlertResult = false
+            
         }
         let actionFavorite = UIAlertAction(title: "Add \(receipeNamePassed) to favorites", style: .default){(action) in
             print("Success!")
             self.FavouriteAlertResult = true
             self.performSegue(withIdentifier: "goToFavouriteList", sender: self)
+            self.FavouriteAlertResult = false
         }
         alert.addAction(actionFavorite)
         alert.addAction(actionGrocery)
@@ -130,6 +133,7 @@ class tableDetailViewController: UIViewController,UITableViewDelegate,UITableVie
         if let destination = segue.destination as? ShoppingListTableViewController{
             destination.shoppingListReceived = ingredientsList
             destination.groceryButtonPress = groceryButtonResult
+            destination.groceryAlertPress = groceryAlertResult
         }
         if let destination = segue.destination as? favouriteTableViewController{
             destination.PassedfavouriteReceipe = receipeNamePassed

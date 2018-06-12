@@ -64,10 +64,6 @@ class favouriteTableViewController: UIViewController, UITableViewDataSource,UITa
                     self.repeatedReceipe = true
                 }
             }
-            print("repeatedReceipe  \(self.repeatedReceipe)  PassedfavouriteReceipe  \(self.PassedfavouriteReceipe) favouritebuttonpressed  \(self.favouriteButtonPress)  favourite alert result  \(self.favouriteAlertPress)")
-//            if self.repeatedReceipe == false && self.PassedfavouriteReceipe != "" && self.favouriteButtonPress == false{
-//                self.updateFireBaseAndLocalList()
-//            }
             if self.favouriteAlertPress == true && self.repeatedReceipe == false{
                 self.updateFireBaseAndLocalList()
             }
@@ -79,7 +75,6 @@ class favouriteTableViewController: UIViewController, UITableViewDataSource,UITa
         }
     }
     func updateFireBaseAndLocalList(){
-        print("this is triggered")
         addFavouriteListToFireBaseFavouriteList()
         pictureList = self.favouriteList
         writeFavouriteListToFirebaseForThisUser()
