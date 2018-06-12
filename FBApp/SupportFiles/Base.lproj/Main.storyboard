@@ -587,9 +587,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="gDu-eU-piq">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="shoppingListCell" id="Jqq-u2-49a">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="72" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Jqq-u2-49a" id="jnN-vf-pIX">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -603,6 +608,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Grocery List" id="8K4-cX-YZk"/>
+                    <connections>
+                        <outlet property="searchBar" destination="gDu-eU-piq" id="0JR-im-eqh"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z41-K9-qK3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -782,7 +790,7 @@
         <segue reference="4Uz-1c-ILh"/>
         <segue reference="yWf-PM-gaT"/>
         <segue reference="43k-Tu-Ion"/>
-        <segue reference="PWF-CL-qSd"/>
+        <segue reference="eSh-W8-jlS"/>
         <segue reference="Gz7-wK-HWV"/>
         <segue reference="bxe-JM-bht"/>
     </inferredMetricsTieBreakers>

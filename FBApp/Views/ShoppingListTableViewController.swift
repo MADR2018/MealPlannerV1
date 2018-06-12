@@ -9,9 +9,10 @@
 import UIKit
 import Firebase
 
-class ShoppingListTableViewController: UITableViewController {
+class ShoppingListTableViewController: UITableViewController, UISearchBarDelegate {
     var shoppingListReceived : [String] = []
     var FireBaseShoppingList :  [String] = []
+    
     var repeatedShoppingList: Bool = false
     var groceryButtonPress: Bool = false
     var groceryAlertPress: Bool = false
@@ -19,10 +20,10 @@ class ShoppingListTableViewController: UITableViewController {
    
     override func viewDidLoad() {
         super.viewDidLoad()
-        //print("the result of grocery Button is   " + String(groceryButtonPress))
          FireBaseShoppingList = [""]
         //writeShoppingListToFirebaseForThisUser()
         loadShoppingListFromFirebaseForThisUser()
+        setUPSearchBar()
         
     }
     func addShoppingListToFireBaseShoppingList(){
@@ -80,6 +81,7 @@ class ShoppingListTableViewController: UITableViewController {
                 self.addShoppingListToFireBaseShoppingList()
                 self.writeShoppingListToFirebaseForThisUser()
             }
+            self.searchFilteredShoppingList = self.FireBaseShoppingList
             self.tableView.reloadData()
         
 
@@ -96,7 +98,7 @@ class ShoppingListTableViewController: UITableViewController {
     */
 
     
-    // Override to support editing the table view.
+    //Swipe to delete a tableview cell
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
@@ -109,8 +111,28 @@ class ShoppingListTableViewController: UITableViewController {
         }    
     }
     
-
-   
+    
+    
+    
+    var searchFilteredShoppingList :  [String] = []
+   //added UI Search Bar
+    @IBOutlet weak var searchBar: UISearchBar!
+    
+    private func setUPSearchBar(){
+        searchBar.delegate = self
+    }
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        FireBaseShoppingList = searchFilteredShoppingList.filter({ (wantedToSearch) -> Bool in
+           wantedToSearch.lowercased().contains(searchText.lowercased())
+        })
+        tableView.reloadData()
+        if searchBar.text?.count == 0{
+            FireBaseShoppingList = searchFilteredShoppingList
+            tableView.reloadData()
+        }
+        
+    }
+    
  
  
 
