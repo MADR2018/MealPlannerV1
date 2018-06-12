@@ -58,6 +58,12 @@ class ShoppingListTableViewController: UITableViewController {
         //shoppingListDB.setValue(shoppingListReceived)
 
     }
+    func deleteShoppingListItemAtFirebaseForThisUserAtIndex(){
+        let shoppingListDB = Database.database().reference().child("users").child("MH48tjT3KZgulzvrKgBpKj3Qwy22").child("shoppingList")
+        shoppingListDB.child("1").removeValue()
+        //shoppingListDB.setValue(shoppingListReceived)
+        
+    }
     func loadShoppingListFromFirebaseForThisUser(){
         let shoppingListDB = Database.database().reference().child("users").child("MH48tjT3KZgulzvrKgBpKj3Qwy22").child("shoppingList")
         shoppingListDB.observeSingleEvent(of:.value){(snapshot) in
@@ -94,7 +100,10 @@ class ShoppingListTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
+            FireBaseShoppingList.remove(at: indexPath.row)
+            writeShoppingListToFirebaseForThisUser()
             tableView.deleteRows(at: [indexPath], with: .fade)
+            tableView.reloadData()
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    

@@ -576,7 +576,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8qS-an-U8k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4238" y="977"/>
+            <point key="canvasLocation" x="4233" y="934"/>
         </scene>
         <!--Shopping List Table View Controller-->
         <scene sceneID="kDr-cr-GOc">
