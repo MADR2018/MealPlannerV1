@@ -24,6 +24,7 @@
 		2DA2D5D420A29C4A00A7C18A /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA2D5D320A29C4A00A7C18A /* UserData.swift */; };
 		2DC796FF20E1539C007DDB53 /* favouriteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC796FE20E1539C007DDB53 /* favouriteTableViewController.swift */; };
 		2DC7970120E1550B007DDB53 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2DC7970020E1550B007DDB53 /* GoogleService-Info.plist */; };
+		2DC7970320E183D0007DDB53 /* LogOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC7970220E183D0007DDB53 /* LogOutViewController.swift */; };
 		2DD0B515209B715800181025 /* SelectDietViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD0B514209B715800181025 /* SelectDietViewController.swift */; };
 		2DD0B51B209B8DA600181025 /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD0B51A209B8DA600181025 /* CurrentUser.swift */; };
 		2DD0B51F209B8E9000181025 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD0B51E209B8E9000181025 /* Recipe.swift */; };
@@ -79,6 +80,7 @@
 		2DA2D5D320A29C4A00A7C18A /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		2DC796FE20E1539C007DDB53 /* favouriteTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = favouriteTableViewController.swift; path = ../../favouriteTableViewController.swift; sourceTree = "<group>"; };
 		2DC7970020E1550B007DDB53 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		2DC7970220E183D0007DDB53 /* LogOutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOutViewController.swift; sourceTree = "<group>"; };
 		2DD0B514209B715800181025 /* SelectDietViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDietViewController.swift; sourceTree = "<group>"; };
 		2DD0B51A209B8DA600181025 /* CurrentUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
 		2DD0B51E209B8E9000181025 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 		2DA2D5CD20A2979600A7C18A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				2DC7970220E183D0007DDB53 /* LogOutViewController.swift */,
 				2DD0B514209B715800181025 /* SelectDietViewController.swift */,
 				2D33CBCC208D8F0000F7FEFC /* SignInViewController.swift */,
 				2D99A652209800F000BE9F1D /* WelcomeViewController.swift */,
@@ -527,6 +530,7 @@
 				2D861DA620BD048B00619621 /* DailySelections.swift in Sources */,
 				2D33CBCD208D8F0000F7FEFC /* SignInViewController.swift in Sources */,
 				8436F08220B393B5008D2AF9 /* receipeData.swift in Sources */,
+				2DC7970320E183D0007DDB53 /* LogOutViewController.swift in Sources */,
 				2D33CBFE208E7E8300F7FEFC /* SignOutViewController.swift in Sources */,
 				2DD0B51B209B8DA600181025 /* CurrentUser.swift in Sources */,
 				2D33CBCB208D8F0000F7FEFC /* AppDelegate.swift in Sources */,

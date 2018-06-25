@@ -22,7 +22,7 @@ class ShoppingListTableViewController: UITableViewController, UISearchBarDelegat
         super.viewDidLoad()
          FireBaseShoppingList = [""]
         //writeShoppingListToFirebaseForThisUser()
-        loadShoppingListFromFirebaseForThisUser()
+        //loadShoppingListFromFirebaseForThisUser()
         setUPSearchBar()
         
     }

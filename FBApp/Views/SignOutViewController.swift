@@ -28,10 +28,6 @@ class SignOutViewController: UIViewController, UITableViewDataSource, UITableVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
         //        self.monSelection.append("This recipe 1")
         //        self.monSelection.append("This recipe 2")
         var ref:DatabaseReference!
@@ -85,6 +81,11 @@ class SignOutViewController: UIViewController, UITableViewDataSource, UITableVie
             //update the tableview HERE
             //self.selectionsTableView.reloadData()
         })
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+    
         
         //        guard let email = Auth.auth().currentUser?.email else { return }
         //        label.text = "Hello \(email)"
