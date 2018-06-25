@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/admin/Documents/GitHub/MealPlannerV1/FBApp/Views/favouriteTableViewController.swift">
+      location = "group:favouriteTableViewController.swift">
    </FileRef>
    <FileRef
       location = "group:FBApp.xcodeproj">

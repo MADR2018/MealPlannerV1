@@ -18,12 +18,12 @@
 		2D33CBE3208D8F0200F7FEFC /* FBAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D33CBE2208D8F0200F7FEFC /* FBAppTests.swift */; };
 		2D33CBEE208D8F0200F7FEFC /* FBAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D33CBED208D8F0200F7FEFC /* FBAppUITests.swift */; };
 		2D33CBFE208E7E8300F7FEFC /* SignOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D33CBFD208E7E8300F7FEFC /* SignOutViewController.swift */; };
-
-		2D33CC00208E85CF00F7FEFC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2D33CBFF208E85CF00F7FEFC /* GoogleService-Info.plist */; };
 		2D861DA620BD048B00619621 /* DailySelections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D861DA520BD048B00619621 /* DailySelections.swift */; };
 		2D99A653209800F000BE9F1D /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D99A652209800F000BE9F1D /* WelcomeViewController.swift */; };
 		2DA2D5CF20A2980500A7C18A /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA2D5CE20A2980500A7C18A /* SignUpViewController.swift */; };
 		2DA2D5D420A29C4A00A7C18A /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA2D5D320A29C4A00A7C18A /* UserData.swift */; };
+		2DC796FF20E1539C007DDB53 /* favouriteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC796FE20E1539C007DDB53 /* favouriteTableViewController.swift */; };
+		2DC7970120E1550B007DDB53 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2DC7970020E1550B007DDB53 /* GoogleService-Info.plist */; };
 		2DD0B515209B715800181025 /* SelectDietViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD0B514209B715800181025 /* SelectDietViewController.swift */; };
 		2DD0B51B209B8DA600181025 /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD0B51A209B8DA600181025 /* CurrentUser.swift */; };
 		2DD0B51F209B8E9000181025 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD0B51E209B8E9000181025 /* Recipe.swift */; };
@@ -34,7 +34,6 @@
 		8436F08020B38E07008D2AF9 /* tableDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8436F07F20B38E07008D2AF9 /* tableDetailViewController.swift */; };
 		8436F08220B393B5008D2AF9 /* receipeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8436F08120B393B5008D2AF9 /* receipeData.swift */; };
 		84387E7A20BD3D7100F79623 /* favoriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84387E7920BD3D7100F79623 /* favoriteTableViewCell.swift */; };
-		84387E7E20BD424F00F79623 /* favouriteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84387E7D20BD424F00F79623 /* favouriteTableViewController.swift */; };
 		84E496E320B6266D00E69B80 /* ShoppingListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E496E220B6266D00E69B80 /* ShoppingListTableViewController.swift */; };
 		89311A5244187B29972177B9 /* Pods_FBAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 549578A97ABF13BFBDA0D536 /* Pods_FBAppTests.framework */; };
 /* End PBXBuildFile section */
@@ -74,11 +73,12 @@
 		2D33CBED208D8F0200F7FEFC /* FBAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBAppUITests.swift; sourceTree = "<group>"; };
 		2D33CBEF208D8F0200F7FEFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2D33CBFD208E7E8300F7FEFC /* SignOutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignOutViewController.swift; sourceTree = "<group>"; };
-
 		2D861DA520BD048B00619621 /* DailySelections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailySelections.swift; sourceTree = "<group>"; };
 		2D99A652209800F000BE9F1D /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		2DA2D5CE20A2980500A7C18A /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		2DA2D5D320A29C4A00A7C18A /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
+		2DC796FE20E1539C007DDB53 /* favouriteTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = favouriteTableViewController.swift; path = ../../favouriteTableViewController.swift; sourceTree = "<group>"; };
+		2DC7970020E1550B007DDB53 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2DD0B514209B715800181025 /* SelectDietViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDietViewController.swift; sourceTree = "<group>"; };
 		2DD0B51A209B8DA600181025 /* CurrentUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
 		2DD0B51E209B8E9000181025 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
@@ -87,14 +87,12 @@
 		43A94675B5AAA8BBD66BA138 /* Pods-FBAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FBAppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FBAppUITests/Pods-FBAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		549578A97ABF13BFBDA0D536 /* Pods_FBAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FBAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B98AED1D68E39E33648EC41 /* Pods-FBAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FBAppUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FBAppUITests/Pods-FBAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		8436F07920B35816008D2AF9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Desktop/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8436F07B20B35D19008D2AF9 /* tableViewCellControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tableViewCellControllerViewController.swift; sourceTree = "<group>"; };
 		8436F07D20B36230008D2AF9 /* customTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customTableViewCell.swift; sourceTree = "<group>"; };
 		8436F07F20B38E07008D2AF9 /* tableDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tableDetailViewController.swift; sourceTree = "<group>"; };
 		8436F08120B393B5008D2AF9 /* receipeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = receipeData.swift; sourceTree = "<group>"; };
 		84387E7920BD3D7100F79623 /* favoriteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = favoriteTableViewCell.swift; sourceTree = "<group>"; };
-		84387E7D20BD424F00F79623 /* favouriteTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = favouriteTableViewController.swift; path = /Users/admin/Documents/GitHub/MealPlannerV1/FBApp/Views/favouriteTableViewController.swift; sourceTree = "<absolute>"; };
-		84E496E220B6266D00E69B80 /* ShoppingListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListTableViewController.swift; sourceTree = "<group>"; };
+		84E496E220B6266D00E69B80 /* ShoppingListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ShoppingListTableViewController.swift; path = /Users/sophieamin/Desktop/FireBaseProjects/FBApp/FBApp/Views/ShoppingListTableViewController.swift; sourceTree = "<absolute>"; };
 		B43D876803DA561A20BE961A /* Pods-FBAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FBAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FBAppTests/Pods-FBAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C280BCB022713373AF65BB28 /* Pods-FBApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FBApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FBApp/Pods-FBApp.debug.xcconfig"; sourceTree = "<group>"; };
 		EC98FE63D30C70B2B7FB1B82 /* Pods_FBApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FBApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -203,8 +201,8 @@
 				8436F07F20B38E07008D2AF9 /* tableDetailViewController.swift */,
 				8436F07B20B35D19008D2AF9 /* tableViewCellControllerViewController.swift */,
 				8436F07D20B36230008D2AF9 /* customTableViewCell.swift */,
+				2DC796FE20E1539C007DDB53 /* favouriteTableViewController.swift */,
 				84387E7920BD3D7100F79623 /* favoriteTableViewCell.swift */,
-				84387E7D20BD424F00F79623 /* favouriteTableViewController.swift */,
 				84E496E220B6266D00E69B80 /* ShoppingListTableViewController.swift */,
 			);
 			path = Views;
@@ -233,9 +231,9 @@
 		2DA2D5D220A298B600A7C18A /* SupportFiles */ = {
 			isa = PBXGroup;
 			children = (
+				2DC7970020E1550B007DDB53 /* GoogleService-Info.plist */,
 				2D33CBCE208D8F0100F7FEFC /* Main.storyboard */,
 				8436F08120B393B5008D2AF9 /* receipeData.swift */,
-				8436F07920B35816008D2AF9 /* GoogleService-Info.plist */,
 				2D33CBD4208D8F0200F7FEFC /* Assets.xcassets */,
 				2D33CBD6208D8F0200F7FEFC /* LaunchScreen.storyboard */,
 				2D33CBCA208D8F0000F7FEFC /* AppDelegate.swift */,
@@ -367,7 +365,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D33CBD8208D8F0200F7FEFC /* LaunchScreen.storyboard in Resources */,
-				8436F07A20B35816008D2AF9 /* GoogleService-Info.plist in Resources */,
+				2DC7970120E1550B007DDB53 /* GoogleService-Info.plist in Resources */,
 				2D33CBD5208D8F0200F7FEFC /* Assets.xcassets in Resources */,
 				2D33CBD0208D8F0100F7FEFC /* Main.storyboard in Resources */,
 			);
@@ -523,8 +521,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84387E7E20BD424F00F79623 /* favouriteTableViewController.swift in Sources */,
 				2DA2D5CF20A2980500A7C18A /* SignUpViewController.swift in Sources */,
+				2DC796FF20E1539C007DDB53 /* favouriteTableViewController.swift in Sources */,
 				2D33CBD3208D8F0100F7FEFC /* FBApp.xcdatamodeld in Sources */,
 				2D861DA620BD048B00619621 /* DailySelections.swift in Sources */,
 				2D33CBCD208D8F0000F7FEFC /* SignInViewController.swift in Sources */,
