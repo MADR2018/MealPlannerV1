@@ -188,9 +188,47 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="l8g-MP-ncO">
-                                <rect key="frame" x="0.0" y="20" width="375" height="590"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="ThI-g4-Wjt">
+                                <rect key="frame" x="0.0" y="627" width="375" height="40"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="soQ-db-3FI">
+                                        <rect key="frame" x="0.0" y="0.0" width="94" height="40"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <state key="normal" title="Meal Plan">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h3V-cd-M4t">
+                                        <rect key="frame" x="94" y="0.0" width="93.5" height="40"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <state key="normal" title="Grocery List">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HG2-wH-EgZ">
+                                        <rect key="frame" x="187.5" y="0.0" width="94" height="40"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <state key="normal" title="Favourite">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lQk-nL-T4s">
+                                        <rect key="frame" x="281.5" y="0.0" width="93.5" height="40"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <state key="normal" title="Logout">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onLogoutTapped:" destination="njc-Gq-dy3" eventType="touchUpInside" id="KqA-PM-i79"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Oel-8A-NTX"/>
+                                </constraints>
+                            </stackView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="l8g-MP-ncO">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="627"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PlainCell" id="R3N-Pi-5GW">
@@ -207,58 +245,18 @@
                                     <outlet property="delegate" destination="njc-Gq-dy3" id="KPy-BP-jdH"/>
                                 </connections>
                             </tableView>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="m4b-8r-I5B">
-                                <rect key="frame" x="0.0" y="610" width="375" height="57"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="ThI-g4-Wjt">
-                                        <rect key="frame" x="15" y="13" width="345" height="30"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="soQ-db-3FI">
-                                                <rect key="frame" x="0.0" y="0.0" width="60" height="30"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="60" id="zfn-12-HS2"/>
-                                                </constraints>
-                                                <state key="normal" title="Home"/>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h3V-cd-M4t">
-                                                <rect key="frame" x="95" y="0.0" width="60" height="30"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="60" id="HlL-0F-ZR0"/>
-                                                    <constraint firstAttribute="height" constant="30" id="oxJ-oH-00W"/>
-                                                </constraints>
-                                                <state key="normal" title="List"/>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HG2-wH-EgZ">
-                                                <rect key="frame" x="190" y="0.0" width="60" height="30"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="30" id="DHS-ZZ-43H"/>
-                                                    <constraint firstAttribute="width" constant="60" id="JgN-Gv-sJb"/>
-                                                </constraints>
-                                                <state key="normal" title="Faves"/>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lQk-nL-T4s">
-                                                <rect key="frame" x="285" y="0.0" width="60" height="30"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="30" id="VRl-6j-3oK"/>
-                                                    <constraint firstAttribute="width" constant="60" id="ghy-cf-HqX"/>
-                                                </constraints>
-                                                <state key="normal" title="Logout"/>
-                                                <connections>
-                                                    <action selector="onLogoutTapped:" destination="njc-Gq-dy3" eventType="touchUpInside" id="KqA-PM-i79"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstItem="ThI-g4-Wjt" firstAttribute="centerY" secondItem="m4b-8r-I5B" secondAttribute="centerY" id="5gt-Sy-oj6"/>
-                                    <constraint firstItem="ThI-g4-Wjt" firstAttribute="centerX" secondItem="m4b-8r-I5B" secondAttribute="centerX" id="ODz-N5-2Cm"/>
-                                    <constraint firstAttribute="height" constant="57" id="sFO-LV-iKd"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="l8g-MP-ncO" firstAttribute="top" secondItem="whR-gu-xoF" secondAttribute="top" id="5my-uV-lTM"/>
+                            <constraint firstItem="l8g-MP-ncO" firstAttribute="leading" secondItem="whR-gu-xoF" secondAttribute="leading" id="6b6-wa-Fjt"/>
+                            <constraint firstItem="ThI-g4-Wjt" firstAttribute="top" secondItem="l8g-MP-ncO" secondAttribute="bottom" id="Emc-jp-BeF"/>
+                            <constraint firstAttribute="trailing" secondItem="ThI-g4-Wjt" secondAttribute="trailing" id="S5J-jv-1Bs"/>
+                            <constraint firstAttribute="trailing" secondItem="l8g-MP-ncO" secondAttribute="trailing" id="WtB-JS-qci"/>
+                            <constraint firstItem="ThI-g4-Wjt" firstAttribute="leading" secondItem="whR-gu-xoF" secondAttribute="leading" id="h09-R2-vsa"/>
+                            <constraint firstItem="kVU-As-Z3h" firstAttribute="top" secondItem="ThI-g4-Wjt" secondAttribute="bottom" id="hzB-0w-W4Y"/>
+                            <constraint firstItem="ThI-g4-Wjt" firstAttribute="top" secondItem="l8g-MP-ncO" secondAttribute="bottom" id="rLr-SI-pRP"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="selectionsTableView" destination="l8g-MP-ncO" id="azE-oo-F6W"/>
@@ -281,6 +279,56 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="KPg-6e-rUh">
+                                <rect key="frame" x="0.0" y="627" width="375" height="40"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bx6-VZ-23P">
+                                        <rect key="frame" x="0.0" y="0.0" width="94" height="40"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <state key="normal" title="Meal Plan">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i5Y-vD-IHB">
+                                        <rect key="frame" x="94" y="0.0" width="93.5" height="40"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <state key="normal" title="Grocery List">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="groceryButtonList:" destination="ehF-PR-toi" eventType="touchUpInside" id="dVX-CP-czu"/>
+                                            <segue destination="uJ5-OD-Trq" kind="show" id="yWf-PM-gaT"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="syu-Ig-P7P">
+                                        <rect key="frame" x="187.5" y="0.0" width="94" height="40"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <state key="normal" title="Favourite">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="xSP-bk-4yK" kind="show" id="43k-Tu-Ion"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yma-1b-nQb">
+                                        <rect key="frame" x="281.5" y="0.0" width="93.5" height="40"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <state key="normal" title="Log Out">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="8he-Jg-pwc"/>
+                                </constraints>
+                            </stackView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Tqr-Sp-qdX">
+                                <rect key="frame" x="0.0" y="64" width="375" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="tYC-xL-meF"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oYQ-m1-4o8">
                                 <rect key="frame" x="0.0" y="120" width="375" height="507"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -336,56 +384,6 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="KPg-6e-rUh">
-                                <rect key="frame" x="0.0" y="627" width="375" height="40"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bx6-VZ-23P">
-                                        <rect key="frame" x="0.0" y="0.0" width="94" height="40"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <state key="normal" title="Meal Plan">
-                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i5Y-vD-IHB">
-                                        <rect key="frame" x="94" y="0.0" width="93.5" height="40"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <state key="normal" title="Grocery List">
-                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="groceryButtonList:" destination="ehF-PR-toi" eventType="touchUpInside" id="dVX-CP-czu"/>
-                                            <segue destination="uJ5-OD-Trq" kind="show" id="yWf-PM-gaT"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="syu-Ig-P7P">
-                                        <rect key="frame" x="187.5" y="0.0" width="94" height="40"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <state key="normal" title="Favourite">
-                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="xSP-bk-4yK" kind="show" id="43k-Tu-Ion"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yma-1b-nQb">
-                                        <rect key="frame" x="281.5" y="0.0" width="93.5" height="40"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <state key="normal" title="Setting">
-                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        </state>
-                                    </button>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="8he-Jg-pwc"/>
-                                </constraints>
-                            </stackView>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Tqr-Sp-qdX">
-                                <rect key="frame" x="0.0" y="64" width="375" height="56"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="56" id="tYC-xL-meF"/>
-                                </constraints>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -410,7 +408,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cUE-Nv-csY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4327.1999999999998" y="17.541229385307346"/>
+            <point key="canvasLocation" x="3143" y="-57"/>
         </scene>
         <!--Table Detail View Controller-->
         <scene sceneID="yTV-ju-b6Q">
@@ -504,7 +502,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TQe-53-CF9">
                                         <rect key="frame" x="281.5" y="0.0" width="93.5" height="40"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <state key="normal" title="Setting">
+                                        <state key="normal" title="Log Out">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                     </button>
@@ -556,7 +554,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ivJ-Lt-GGX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5132" y="-91.304347826086968"/>
+            <point key="canvasLocation" x="3948" y="-166"/>
         </scene>
         <!--Favourite List-->
         <scene sceneID="Hym-bK-W0v">
@@ -642,7 +640,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8qS-an-U8k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4233" y="934"/>
+            <point key="canvasLocation" x="3049" y="859"/>
         </scene>
         <!--Grocery List-->
         <scene sceneID="kDr-cr-GOc">
@@ -679,7 +677,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z41-K9-qK3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5132" y="740"/>
+            <point key="canvasLocation" x="3948" y="665"/>
         </scene>
         <!--Select Diet View Controller-->
         <scene sceneID="dql-88-D3C">
@@ -845,18 +843,18 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uf7-2X-a5Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3388" y="17.541229385307346"/>
+            <point key="canvasLocation" x="2204" y="-57"/>
         </scene>
     </scenes>
     <resources>
         <image name="Cauliflower Tikka Masala" width="600" height="400"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="PDq-hy-8Fd"/>
+        <segue reference="4Uz-1c-ILh"/>
         <segue reference="yWf-PM-gaT"/>
         <segue reference="43k-Tu-Ion"/>
-        <segue reference="PWF-CL-qSd"/>
-        <segue reference="Gz7-wK-HWV"/>
-        <segue reference="bxe-JM-bht"/>
+        <segue reference="eSh-W8-jlS"/>
+        <segue reference="NPf-jQ-eeP"/>
+        <segue reference="e3h-jd-wBT"/>
     </inferredMetricsTieBreakers>
 </document>
