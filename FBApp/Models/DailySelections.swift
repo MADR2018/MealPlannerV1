@@ -19,6 +19,7 @@ struct DailySelections{
     var friSelectionID: String = ""
     var satSelectionID: String = ""
     var sunSelectionID: String = ""
+    //might be better to just do objects for particular days?
     
     init?(uid: String, dict: [String: Any]){
         self.uid = uid

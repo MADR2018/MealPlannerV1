@@ -29,8 +29,11 @@ class SignOutViewController: UIViewController, UITableViewDataSource, UITableVie
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        self.monSelection.append("This recipe 1")
-//        self.monSelection.append("This recipe 2")
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        //        self.monSelection.append("This recipe 1")
+        //        self.monSelection.append("This recipe 2")
         var ref:DatabaseReference!
         ref = Database.database().reference()
         //TODO: load user recipe selections, and MAKE THIS OOP!
@@ -83,14 +86,10 @@ class SignOutViewController: UIViewController, UITableViewDataSource, UITableVie
             //self.selectionsTableView.reloadData()
         })
         
-        
-        
-        
         //        guard let email = Auth.auth().currentUser?.email else { return }
         //        label.text = "Hello \(email)"
         // Do any additional setup after loading the view.
     }
-    
     @IBAction func onLogoutTapped(_ sender: UIButton) {
         do {
             try Auth.auth().signOut()
