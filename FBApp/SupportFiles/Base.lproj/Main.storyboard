@@ -188,32 +188,86 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hello Someone!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sEe-bK-0xi">
-                                <rect key="frame" x="127" y="54" width="121" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="isb-2o-pQz">
-                                <rect key="frame" x="163" y="121" width="48" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Logout"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="l8g-MP-ncO">
+                                <rect key="frame" x="0.0" y="20" width="375" height="590"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PlainCell" id="R3N-Pi-5GW">
+                                        <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="R3N-Pi-5GW" id="VG3-kp-Jy8">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                                 <connections>
-                                    <action selector="onSignOutTapped:" destination="njc-Gq-dy3" eventType="touchUpInside" id="a6j-rD-I7y"/>
+                                    <outlet property="dataSource" destination="njc-Gq-dy3" id="Xa2-tM-iHW"/>
+                                    <outlet property="delegate" destination="njc-Gq-dy3" id="KPy-BP-jdH"/>
                                 </connections>
-                            </button>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m4b-8r-I5B">
+                                <rect key="frame" x="0.0" y="610" width="375" height="57"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="ThI-g4-Wjt">
+                                        <rect key="frame" x="15" y="13" width="345" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="soQ-db-3FI">
+                                                <rect key="frame" x="0.0" y="0.0" width="60" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="60" id="zfn-12-HS2"/>
+                                                </constraints>
+                                                <state key="normal" title="Home"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h3V-cd-M4t">
+                                                <rect key="frame" x="95" y="0.0" width="60" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="60" id="HlL-0F-ZR0"/>
+                                                    <constraint firstAttribute="height" constant="30" id="oxJ-oH-00W"/>
+                                                </constraints>
+                                                <state key="normal" title="List"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HG2-wH-EgZ">
+                                                <rect key="frame" x="190" y="0.0" width="60" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="DHS-ZZ-43H"/>
+                                                    <constraint firstAttribute="width" constant="60" id="JgN-Gv-sJb"/>
+                                                </constraints>
+                                                <state key="normal" title="Faves"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lQk-nL-T4s">
+                                                <rect key="frame" x="285" y="0.0" width="60" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="VRl-6j-3oK"/>
+                                                    <constraint firstAttribute="width" constant="60" id="ghy-cf-HqX"/>
+                                                </constraints>
+                                                <state key="normal" title="Logout"/>
+                                                <connections>
+                                                    <action selector="onLogoutTapped:" destination="njc-Gq-dy3" eventType="touchUpInside" id="KqA-PM-i79"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="ThI-g4-Wjt" firstAttribute="centerY" secondItem="m4b-8r-I5B" secondAttribute="centerY" id="5gt-Sy-oj6"/>
+                                    <constraint firstItem="ThI-g4-Wjt" firstAttribute="centerX" secondItem="m4b-8r-I5B" secondAttribute="centerX" id="ODz-N5-2Cm"/>
+                                    <constraint firstAttribute="height" constant="57" id="sFO-LV-iKd"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+
                     </view>
                     <connections>
-                        <outlet property="label" destination="sEe-bK-0xi" id="BQc-lB-qz4"/>
+                        <outlet property="selectionsTableView" destination="l8g-MP-ncO" id="azE-oo-F6W"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="signOutSegue" id="bxe-JM-bht"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vrv-j1-vrg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1063" y="18"/>
+            <point key="canvasLocation" x="1061.5999999999999" y="17.541229385307346"/>
         </scene>
         <!--Meal Plans-->
         <scene sceneID="8e4-z2-QRI">
@@ -798,10 +852,9 @@
         <image name="Cauliflower Tikka Masala" width="600" height="400"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="4Uz-1c-ILh"/>
-        <segue reference="yWf-PM-gaT"/>
-        <segue reference="43k-Tu-Ion"/>
-        <segue reference="PWF-CL-qSd"/>
+
+        <segue reference="PDq-hy-8Fd"/>
+
         <segue reference="Gz7-wK-HWV"/>
         <segue reference="bxe-JM-bht"/>
     </inferredMetricsTieBreakers>

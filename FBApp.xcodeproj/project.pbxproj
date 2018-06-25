@@ -18,6 +18,9 @@
 		2D33CBE3208D8F0200F7FEFC /* FBAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D33CBE2208D8F0200F7FEFC /* FBAppTests.swift */; };
 		2D33CBEE208D8F0200F7FEFC /* FBAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D33CBED208D8F0200F7FEFC /* FBAppUITests.swift */; };
 		2D33CBFE208E7E8300F7FEFC /* SignOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D33CBFD208E7E8300F7FEFC /* SignOutViewController.swift */; };
+
+		2D33CC00208E85CF00F7FEFC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2D33CBFF208E85CF00F7FEFC /* GoogleService-Info.plist */; };
+		2D861DA620BD048B00619621 /* DailySelections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D861DA520BD048B00619621 /* DailySelections.swift */; };
 		2D99A653209800F000BE9F1D /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D99A652209800F000BE9F1D /* WelcomeViewController.swift */; };
 		2DA2D5CF20A2980500A7C18A /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA2D5CE20A2980500A7C18A /* SignUpViewController.swift */; };
 		2DA2D5D420A29C4A00A7C18A /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA2D5D320A29C4A00A7C18A /* UserData.swift */; };
@@ -26,7 +29,6 @@
 		2DD0B51F209B8E9000181025 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD0B51E209B8E9000181025 /* Recipe.swift */; };
 		2DD0B525209B8F8A00181025 /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD0B524209B8F8A00181025 /* AlertController.swift */; };
 		2DD0B527209B91DB00181025 /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD0B526209B91DB00181025 /* DatabaseService.swift */; };
-		8436F07A20B35816008D2AF9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8436F07920B35816008D2AF9 /* GoogleService-Info.plist */; };
 		8436F07C20B35D19008D2AF9 /* tableViewCellControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8436F07B20B35D19008D2AF9 /* tableViewCellControllerViewController.swift */; };
 		8436F07E20B36230008D2AF9 /* customTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8436F07D20B36230008D2AF9 /* customTableViewCell.swift */; };
 		8436F08020B38E07008D2AF9 /* tableDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8436F07F20B38E07008D2AF9 /* tableDetailViewController.swift */; };
@@ -72,6 +74,8 @@
 		2D33CBED208D8F0200F7FEFC /* FBAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBAppUITests.swift; sourceTree = "<group>"; };
 		2D33CBEF208D8F0200F7FEFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2D33CBFD208E7E8300F7FEFC /* SignOutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignOutViewController.swift; sourceTree = "<group>"; };
+
+		2D861DA520BD048B00619621 /* DailySelections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailySelections.swift; sourceTree = "<group>"; };
 		2D99A652209800F000BE9F1D /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		2DA2D5CE20A2980500A7C18A /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		2DA2D5D320A29C4A00A7C18A /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
@@ -221,6 +225,7 @@
 				2DD0B51A209B8DA600181025 /* CurrentUser.swift */,
 				2DD0B526209B91DB00181025 /* DatabaseService.swift */,
 				2DA2D5D320A29C4A00A7C18A /* UserData.swift */,
+				2D861DA520BD048B00619621 /* DailySelections.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -521,6 +526,7 @@
 				84387E7E20BD424F00F79623 /* favouriteTableViewController.swift in Sources */,
 				2DA2D5CF20A2980500A7C18A /* SignUpViewController.swift in Sources */,
 				2D33CBD3208D8F0100F7FEFC /* FBApp.xcdatamodeld in Sources */,
+				2D861DA620BD048B00619621 /* DailySelections.swift in Sources */,
 				2D33CBCD208D8F0000F7FEFC /* SignInViewController.swift in Sources */,
 				8436F08220B393B5008D2AF9 /* receipeData.swift in Sources */,
 				2D33CBFE208E7E8300F7FEFC /* SignOutViewController.swift in Sources */,

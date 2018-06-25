@@ -15,6 +15,6 @@ class DatabaseService {
     private init() {}
     
     //create a user reference to store the data in the "users" path
-    let userReference = Database.database().reference().child("users")
+    let userReference = Database.database().reference().child("users") //TODO: Change to be only the database reference, more nodes under general ref now
     
 }
