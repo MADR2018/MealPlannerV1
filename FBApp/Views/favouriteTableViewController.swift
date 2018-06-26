@@ -1,7 +1,7 @@
 
 //
 //  favouriteTableViewController.swift
-//  
+//
 //
 //  Created by Administrator on 5/29/18.
 //
@@ -13,16 +13,18 @@ class favouriteTableViewController: UIViewController, UITableViewDataSource,UITa
     var favouriteList: [String] = []
     var PassedfavouriteReceipe = ""
     var repeatedReceipe:Bool = false
-    var favouriteButtonPress: Bool = false
     var favouriteAlertPress: Bool = false
+    let userID = Auth.auth().currentUser!.uid
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //print("the result of favourite Button is   " + String(favouriteButtonPress))
+        PassedfavouriteReceipe = globalVariables.selectedRecipeName
+        favouriteAlertPress = globalVariables.favouriteAlertButton
         tableView.delegate = self
         tableView.dataSource = self
+        //updateFireBaseAndLocalList()
         //writeFavouriteListToFirebaseForThisUser()
         loadFavouriteListFromFirebaseForThisUser()
         
@@ -48,17 +50,17 @@ class favouriteTableViewController: UIViewController, UITableViewDataSource,UITa
     
     
     func writeFavouriteListToFirebaseForThisUser(){
-        let favouriteListDB = Database.database().reference().child("users").child("MH48tjT3KZgulzvrKgBpKj3Qwy22").child("favourites")
+        let favouriteListDB = Database.database().reference().child("users").child(userID).child("favourites")
         favouriteListDB.setValue(pictureList)
         
         
     }
     func loadFavouriteListFromFirebaseForThisUser(){
-        let shoppingListDB = Database.database().reference().child("users").child("MH48tjT3KZgulzvrKgBpKj3Qwy22").child("favourites")
+        let shoppingListDB = Database.database().reference().child("users").child(userID).child("favourites")
         shoppingListDB.observeSingleEvent(of:.value){(snapshot) in
             let snapshotValue = snapshot.value as? Array<String> ?? self.favouriteList
             self.favouriteList = snapshotValue
-            //print("load from firebase \(self.favouriteList) ")
+            print("load from firebase \(self.favouriteList) ")
             for singleItem in self.favouriteList{
                 if(singleItem == self.PassedfavouriteReceipe){
                     self.repeatedReceipe = true
@@ -82,11 +84,8 @@ class favouriteTableViewController: UIViewController, UITableViewDataSource,UITa
     
     
     func addFavouriteListToFireBaseFavouriteList(){
-        
-            favouriteList.append(PassedfavouriteReceipe)
-        
+        favouriteList.append(PassedfavouriteReceipe)
         //print("after append what is in the firebase \(self.favouriteList) ")
-        
     }
     
     // pass data at select index
@@ -114,7 +113,8 @@ class favouriteTableViewController: UIViewController, UITableViewDataSource,UITa
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }
     }
-
     
-
+    
+    
 }
+

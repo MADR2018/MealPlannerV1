@@ -119,7 +119,7 @@ class tableDetailViewController: UIViewController,UITableViewDelegate,UITableVie
             self.groceryAlertResult = false
             
         }
-      
+        
         
         if (comeFromFavouriteList == false){
             let actionFavorite = UIAlertAction(title: "Add \(receipeNamePassed) to favorites", style: .default){(action) in
@@ -127,6 +127,8 @@ class tableDetailViewController: UIViewController,UITableViewDelegate,UITableVie
                 self.FavouriteAlertResult = true
                 self.performSegue(withIdentifier: "goToFavouriteList", sender: self)
                 self.FavouriteAlertResult = false
+                globalVariables.selectedRecipeName = self.receipeNamePassed
+                globalVariables.favouriteAlertButton = true
             }
             alert.addAction(actionFavorite)
         }
@@ -142,15 +144,12 @@ class tableDetailViewController: UIViewController,UITableViewDelegate,UITableVie
             destination.groceryButtonPress = groceryButtonResult
             destination.groceryAlertPress = groceryAlertResult
         }
-        if let destination = segue.destination as? favouriteTableViewController{
-            destination.PassedfavouriteReceipe = receipeNamePassed
-            destination.favouriteButtonPress = FavouriteButtonResult
-            destination.favouriteAlertPress = FavouriteAlertResult
-        }
+        
     }
     
     
     
 }
+
 
 
