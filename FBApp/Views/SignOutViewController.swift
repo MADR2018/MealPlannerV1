@@ -22,6 +22,7 @@ class SignOutViewController: UIViewController, UITableViewDataSource, UITableVie
     var friSelection = [String]()
     var satSelection = [String]()
     var sunSelection = [String]()
+    var RecipeName:String = "none" //make sure to guard
     let userID = Auth.auth().currentUser!.uid
     
     
@@ -188,17 +189,12 @@ class SignOutViewController: UIViewController, UITableViewDataSource, UITableVie
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         switch indexPath.section {
         case 0:
-            print("cell1")
             if editingStyle == .delete {
                 // Delete the row from the data source
-                 print("remove array entry\n")
                 monSelection.remove(at: indexPath.row)
-                 print("delete firebase entry\n")
                 deleteFirebaseDayEntry(dayID: "monSelectionID")
                 //writeFavouriteListToFirebaseForThisUser()
-                print("delete rows\n")
                 tableView.deleteRows(at: [indexPath], with: .fade)
-                print("reload data\n")
                 tableView.reloadData()
             } else if editingStyle == .insert {
                 // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
@@ -280,11 +276,29 @@ class SignOutViewController: UIViewController, UITableViewDataSource, UITableVie
     var selectedIndex: Int = 0
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedIndex = indexPath.row
+        switch indexPath.section {
+        case 0:
+            RecipeName = monSelection[0]
+        case 1:
+            RecipeName = tueSelection[0]
+        case 2:
+            RecipeName = wedSelection[0]
+        case 3:
+            RecipeName = thuSelection[0]
+        case 4:
+            RecipeName = friSelection[0]
+        case 5:
+            RecipeName = satSelection[0]
+        case 6:
+            RecipeName = sunSelection[0]
+        default:
+            print("wat")
+        }
         performSegue(withIdentifier: "showMealDetails", sender: self)
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? tableDetailViewController{
-            destination.receipeNamePassed = "Cauliflower Tikka Masala"
+           destination.receipeNamePassed = RecipeName
         }
     }
     

@@ -240,7 +240,7 @@
                     <navigationItem key="navigationItem" id="7mB-2j-Eub"/>
                     <connections>
                         <outlet property="selectionsTableView" destination="l8g-MP-ncO" id="azE-oo-F6W"/>
-                        <segue destination="wnh-CY-gtP" kind="showDetail" identifier="showMealDetails" id="g6n-oQ-xA0"/>
+                        <segue destination="wnh-CY-gtP" kind="show" identifier="showMealDetails" id="g6n-oQ-xA0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vrv-j1-vrg" userLabel="First Responder" sceneMemberID="firstResponder"/>
