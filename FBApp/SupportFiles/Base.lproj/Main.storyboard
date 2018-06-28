@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -177,7 +178,7 @@
             </objects>
             <point key="canvasLocation" x="1538" y="-134"/>
         </scene>
-        <!--Meal Plan-->
+        <!--Sign Out View Controller-->
         <scene sceneID="4Rd-PV-Obi">
             <objects>
                 <viewController id="njc-Gq-dy3" customClass="SignOutViewController" customModule="FBApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -200,31 +201,24 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IlD-bk-EPG">
-                                                    <rect key="frame" x="0.0" y="0.0" width="201" height="100"/>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vh7-PO-2EK">
-                                                    <rect key="frame" x="201" y="0.0" width="174" height="100"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vh7-PO-2EK">
+                                                    <rect key="frame" x="14" y="-1" width="347" height="100"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="174" id="UC0-rq-Htg"/>
+                                                        <constraint firstAttribute="height" constant="100" id="FJh-lk-zom"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="IlD-bk-EPG" firstAttribute="leading" secondItem="VG3-kp-Jy8" secondAttribute="leading" id="1nK-VK-wOy"/>
-                                                <constraint firstItem="IlD-bk-EPG" firstAttribute="top" secondItem="VG3-kp-Jy8" secondAttribute="top" id="5ej-qA-DGa"/>
-                                                <constraint firstAttribute="bottom" secondItem="Vh7-PO-2EK" secondAttribute="bottom" id="8ut-P7-4jH"/>
-                                                <constraint firstAttribute="bottom" secondItem="IlD-bk-EPG" secondAttribute="bottom" id="BZc-3a-tSH"/>
-                                                <constraint firstItem="Vh7-PO-2EK" firstAttribute="leading" secondItem="IlD-bk-EPG" secondAttribute="trailing" id="CCP-dB-hhM"/>
-                                                <constraint firstItem="Vh7-PO-2EK" firstAttribute="top" secondItem="VG3-kp-Jy8" secondAttribute="top" id="a4Y-e5-FQh"/>
-                                                <constraint firstAttribute="trailing" secondItem="Vh7-PO-2EK" secondAttribute="trailing" id="kSf-vA-wEZ"/>
+                                                <constraint firstItem="Vh7-PO-2EK" firstAttribute="centerY" secondItem="VG3-kp-Jy8" secondAttribute="centerY" id="2Qn-yU-0gI"/>
+                                                <constraint firstItem="Vh7-PO-2EK" firstAttribute="leading" secondItem="VG3-kp-Jy8" secondAttribute="leadingMargin" constant="-1" id="9pT-Mb-Rtw"/>
+                                                <constraint firstItem="Vh7-PO-2EK" firstAttribute="top" secondItem="VG3-kp-Jy8" secondAttribute="topMargin" constant="-12" id="KO1-ed-qpq"/>
+                                                <constraint firstItem="Vh7-PO-2EK" firstAttribute="centerX" secondItem="VG3-kp-Jy8" secondAttribute="centerX" id="uwF-wg-ff6"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="mealImageView" destination="IlD-bk-EPG" id="TcG-cE-3p6"/>
                                             <outlet property="mealLabel" destination="Vh7-PO-2EK" id="9rg-8H-jhu"/>
                                         </connections>
                                     </tableViewCell>
@@ -243,14 +237,15 @@
                             <constraint firstAttribute="trailing" secondItem="l8g-MP-ncO" secondAttribute="trailing" id="dOE-ou-kjB"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Meal Plan" image="home" id="Mx1-Bv-IjI"/>
+                    <navigationItem key="navigationItem" id="7mB-2j-Eub"/>
                     <connections>
                         <outlet property="selectionsTableView" destination="l8g-MP-ncO" id="azE-oo-F6W"/>
+                        <segue destination="wnh-CY-gtP" kind="showDetail" identifier="showMealDetails" id="g6n-oQ-xA0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vrv-j1-vrg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3733.5999999999999" y="-132.68365817091455"/>
+            <point key="canvasLocation" x="5934" y="-886"/>
         </scene>
         <!--Meals-->
         <scene sceneID="8e4-z2-QRI">
@@ -742,7 +737,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="njc-Gq-dy3" kind="relationship" relationship="viewControllers" id="F8k-dC-WUD"/>
+                        <segue destination="PCN-Ot-oOp" kind="relationship" relationship="viewControllers" id="F8k-dC-WUD"/>
                         <segue destination="ngT-tt-6J9" kind="relationship" relationship="viewControllers" id="Lot-qr-sxk"/>
                         <segue destination="2iC-OS-R9Z" kind="relationship" relationship="viewControllers" id="ufj-fw-JA4"/>
                         <segue destination="uJ5-OD-Trq" kind="relationship" relationship="viewControllers" id="xIP-0s-D56"/>
@@ -831,6 +826,25 @@
             </objects>
             <point key="canvasLocation" x="3113" y="685"/>
         </scene>
+        <!--Meal Plan-->
+        <scene sceneID="9ZN-is-Rub">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PCN-Ot-oOp" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Meal Plan" image="home" id="Mx1-Bv-IjI"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ABC-nb-Hy6">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="njc-Gq-dy3" kind="relationship" relationship="rootViewController" id="flX-6J-qS9"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="arc-kQ-GfT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4741.6000000000004" y="-863.1184407796103"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Cauliflower Tikka Masala" width="600" height="400"/>
@@ -845,7 +859,7 @@
         <segue reference="NPf-jQ-eeP"/>
         <segue reference="4Uz-1c-ILh"/>
         <segue reference="xIP-0s-D56"/>
-        <segue reference="eSh-W8-jlS"/>
+        <segue reference="g6n-oQ-xA0"/>
         <segue reference="JZB-89-e7k"/>
     </inferredMetricsTieBreakers>
 </document>

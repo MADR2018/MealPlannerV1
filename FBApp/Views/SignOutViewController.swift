@@ -22,20 +22,20 @@ class SignOutViewController: UIViewController, UITableViewDataSource, UITableVie
     var friSelection = [String]()
     var satSelection = [String]()
     var sunSelection = [String]()
+    let userID = Auth.auth().currentUser!.uid
     
-
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         //        self.monSelection.append("This recipe 1")
         //        self.monSelection.append("This recipe 2")
-  
+        
         
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        
         monSelection.removeAll(keepingCapacity: false)
         tueSelection.removeAll(keepingCapacity: false)
         wedSelection.removeAll(keepingCapacity: false)
@@ -141,53 +141,160 @@ class SignOutViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cellIdentifier = "MealPlanTableViewCell"
         //Create an object of the dynamic cell "PlainCell"
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? MealPlanTableViewCell else {
+            fatalError("the dequeued cell is not an instance of MealPlanTableViewCell")
+        }
         //Depending on the section, fill the textLabel with the relevant text
         switch indexPath.section {
         case 0:
             //monday section
-            cell.textLabel?.text = monSelection[indexPath.row]
+            cell.mealLabel.text = monSelection[indexPath.row]
+            
             break
         case 1:
             //tuesday section
-            cell.textLabel?.text = tueSelection[indexPath.row]
+            //cell.textLabel?.text = tueSelection[indexPath.row]
+            cell.mealLabel.text = tueSelection[indexPath.row]
             break
         case 2:
             //wednesday section
-            cell.textLabel?.text = wedSelection[indexPath.row]
+            cell.mealLabel.text = wedSelection[indexPath.row]
             break
         case 3:
             //thursday section
-            cell.textLabel?.text = thuSelection[indexPath.row]
+            cell.mealLabel.text = thuSelection[indexPath.row]
             break
         case 4:
             //friday section
-            cell.textLabel?.text = friSelection[indexPath.row]
+            cell.mealLabel.text = friSelection[indexPath.row]
             break
         case 5:
             //saturday section
-            cell.textLabel?.text = satSelection[indexPath.row]
+            cell.mealLabel.text = satSelection[indexPath.row]
             break
         case 6:
             //sunday section
-            cell.textLabel?.text = sunSelection[indexPath.row]
+            cell.mealLabel.text = sunSelection[indexPath.row]
             break
         default:
             break
         }
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        switch indexPath.section {
+        case 0:
+            print("cell1")
+            if editingStyle == .delete {
+                // Delete the row from the data source
+                 print("remove array entry\n")
+                monSelection.remove(at: indexPath.row)
+                 print("delete firebase entry\n")
+                deleteFirebaseDayEntry(dayID: "monSelectionID")
+                //writeFavouriteListToFirebaseForThisUser()
+                print("delete rows\n")
+                tableView.deleteRows(at: [indexPath], with: .fade)
+                print("reload data\n")
+                tableView.reloadData()
+            } else if editingStyle == .insert {
+                // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+            }
+        case 1:
+            if editingStyle == .delete {
+                // Delete the row from the data source
+                tueSelection.remove(at: indexPath.row)
+                deleteFirebaseDayEntry(dayID: "tueSelectionID")
+                //writeFavouriteListToFirebaseForThisUser()
+                tableView.deleteRows(at: [indexPath], with: .fade)
+                tableView.reloadData()
+            } else if editingStyle == .insert {
+                // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+            }
+        case 2:
+            if editingStyle == .delete {
+                // Delete the row from the data source
+                wedSelection.remove(at: indexPath.row)
+                deleteFirebaseDayEntry(dayID: "wedSelectionID")
+                //writeFavouriteListToFirebaseForThisUser()
+                tableView.deleteRows(at: [indexPath], with: .fade)
+                tableView.reloadData()
+            } else if editingStyle == .insert {
+                // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+            }
+        case 3:
+            if editingStyle == .delete {
+                // Delete the row from the data source
+                thuSelection.remove(at: indexPath.row)
+                deleteFirebaseDayEntry(dayID: "thuSelectionID")
+                //writeFavouriteListToFirebaseForThisUser()
+                tableView.deleteRows(at: [indexPath], with: .fade)
+                tableView.reloadData()
+            } else if editingStyle == .insert {
+                // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+            }
+        case 4:
+            if editingStyle == .delete {
+                // Delete the row from the data source
+                friSelection.remove(at: indexPath.row)
+                deleteFirebaseDayEntry(dayID: "friSelectionID")
+                //writeFavouriteListToFirebaseForThisUser()
+                tableView.deleteRows(at: [indexPath], with: .fade)
+                tableView.reloadData()
+            } else if editingStyle == .insert {
+                // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+            }
+        case 5:
+            if editingStyle == .delete {
+                // Delete the row from the data source
+                satSelection.remove(at: indexPath.row)
+                deleteFirebaseDayEntry(dayID: "satSelectionID")
+                //writeFavouriteListToFirebaseForThisUser()
+                tableView.deleteRows(at: [indexPath], with: .fade)
+                tableView.reloadData()
+            } else if editingStyle == .insert {
+                // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+            }
+        case 6:
+            if editingStyle == .delete {
+                // Delete the row from the data source
+                sunSelection.remove(at: indexPath.row)
+                deleteFirebaseDayEntry(dayID: "sunSelectionID")
+                //writeFavouriteListToFirebaseForThisUser()
+                tableView.deleteRows(at: [indexPath], with: .fade)
+                tableView.reloadData()
+            } else if editingStyle == .insert {
+                // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+            }
+            
+        default:
+            print("default")
+       
+        }
+        
+    }
+    
+    var selectedIndex: Int = 0
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedIndex = indexPath.row
+        performSegue(withIdentifier: "showMealDetails", sender: self)
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? tableDetailViewController{
+            destination.receipeNamePassed = "Cauliflower Tikka Masala"
+        }
+    }
+    
+    func deleteFirebaseDayEntry(dayID: String){
+        let favouriteListDB = Database.database().reference().child("users").child(userID).child(dayID)
+        favouriteListDB.setValue(monSelection)
+    }
+    
 }
 
 
 
-func getRecipeSnapshot(ref: DatabaseReference!, child:String){
-    //    ref.child("Recipes").child(child).observeSingleEvent(of: .value, with: { (snapshot) in
-    //        //get user value
-    //        let value = snapshot.value as? NSDictionary
-    //        let recipeName = value?["ReceipesName"] as? String ?? ""
-    //        self.monSelection.append(recipeName)
-    //        selectionsTableView.reloadData()
-    //    })
-}
+

@@ -10,7 +10,7 @@ import UIKit
 
 class MealPlanTableViewCell: UITableViewCell {
     //MARK: Properties
-    @IBOutlet weak var mealImageView: UIImageView!
+    //@IBOutlet weak var mealImageView: UIImageView?
     @IBOutlet weak var mealLabel: UILabel!
     
     override func awakeFromNib() {
