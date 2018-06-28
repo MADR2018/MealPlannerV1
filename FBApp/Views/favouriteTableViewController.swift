@@ -15,17 +15,17 @@ class favouriteTableViewController: UIViewController, UITableViewDataSource,UITa
     var repeatedReceipe:Bool = false
     var favouriteAlertPress: Bool = false
     let userID = Auth.auth().currentUser!.uid
-    
+    var gameTimer: Timer!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        PassedfavouriteReceipe = globalVariables.selectedRecipeName
-        favouriteAlertPress = globalVariables.favouriteAlertButton
+        
         tableView.delegate = self
         tableView.dataSource = self
         //writeFavouriteListToFirebaseForThisUser()
         loadFavouriteListFromFirebaseForThisUser()
+        gameTimer = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(loadFavouriteListFromFirebaseForThisUser), userInfo: nil, repeats: true)
         
     }
     @IBOutlet weak var tableView: UITableView!
@@ -47,43 +47,24 @@ class favouriteTableViewController: UIViewController, UITableViewDataSource,UITa
         return cell
     }
     
-    //write and favourite data from firebase
+    //load favourite data from firebase
+    var emptyFavouriteList = ["No favourite food selected"]
+    @objc func loadFavouriteListFromFirebaseForThisUser(){
+        let shoppingListDB = Database.database().reference().child("users").child(userID).child("favourites")
+        shoppingListDB.observeSingleEvent(of:.value){(snapshot) in
+            let snapshotValue = snapshot.value as? Array<String> ?? self.emptyFavouriteList
+            self.favouriteList = snapshotValue
+            print("load from firebase \(self.favouriteList) ")
+            self.pictureList = self.favouriteList
+            self.tableView.reloadData()
+        }
+    }
+    // write favourite list to the firebase
     func writeFavouriteListToFirebaseForThisUser(){
         let favouriteListDB = Database.database().reference().child("users").child(userID).child("favourites")
         favouriteListDB.setValue(pictureList)
     }
-    func loadFavouriteListFromFirebaseForThisUser(){
-        let shoppingListDB = Database.database().reference().child("users").child(userID).child("favourites")
-        shoppingListDB.observeSingleEvent(of:.value){(snapshot) in
-            let snapshotValue = snapshot.value as? Array<String> ?? self.favouriteList
-            self.favouriteList = snapshotValue
-            print("load from firebase \(self.favouriteList) ")
-            for singleItem in self.favouriteList{
-                if(singleItem == self.PassedfavouriteReceipe){
-                    self.repeatedReceipe = true
-                }
-            }
-            if self.favouriteAlertPress == true && self.repeatedReceipe == false{
-                self.updateFireBaseAndLocalList()
-            }
-            
-            self.pictureList = self.favouriteList
-            self.tableView.reloadData()
-            
-            
-        }
-    }
-    func updateFireBaseAndLocalList(){
-        addFavouriteListToFireBaseFavouriteList()
-        pictureList = self.favouriteList
-        writeFavouriteListToFirebaseForThisUser()
-    }
     
-    
-    func addFavouriteListToFireBaseFavouriteList(){
-        favouriteList.append(PassedfavouriteReceipe)
-        //print("after append what is in the firebase \(self.favouriteList) ")
-    }
     
     // pass data at select index
     var selectedIndex: Int = 0

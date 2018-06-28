@@ -31,7 +31,6 @@
 		2DD0B527209B91DB00181025 /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD0B526209B91DB00181025 /* DatabaseService.swift */; };
 		8435E4EA20E2C9D00040EA2D /* favouriteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8435E4E920E2C9D00040EA2D /* favouriteTableViewController.swift */; };
 		8435E4EC20E2CA410040EA2D /* ShoppingListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8435E4EB20E2CA410040EA2D /* ShoppingListTableViewController.swift */; };
-		8435E4EE20E2CA800040EA2D /* global variables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8435E4ED20E2CA800040EA2D /* global variables.swift */; };
 		8436F07C20B35D19008D2AF9 /* tableViewCellControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8436F07B20B35D19008D2AF9 /* tableViewCellControllerViewController.swift */; };
 		8436F07E20B36230008D2AF9 /* customTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8436F07D20B36230008D2AF9 /* customTableViewCell.swift */; };
 		8436F08020B38E07008D2AF9 /* tableDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8436F07F20B38E07008D2AF9 /* tableDetailViewController.swift */; };
@@ -91,7 +90,6 @@
 		6B98AED1D68E39E33648EC41 /* Pods-FBAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FBAppUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FBAppUITests/Pods-FBAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		8435E4E920E2C9D00040EA2D /* favouriteTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = favouriteTableViewController.swift; sourceTree = "<group>"; };
 		8435E4EB20E2CA410040EA2D /* ShoppingListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListTableViewController.swift; sourceTree = "<group>"; };
-		8435E4ED20E2CA800040EA2D /* global variables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "global variables.swift"; sourceTree = "<group>"; };
 		8436F07B20B35D19008D2AF9 /* tableViewCellControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tableViewCellControllerViewController.swift; sourceTree = "<group>"; };
 		8436F07D20B36230008D2AF9 /* customTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customTableViewCell.swift; sourceTree = "<group>"; };
 		8436F07F20B38E07008D2AF9 /* tableDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tableDetailViewController.swift; sourceTree = "<group>"; };
@@ -224,7 +222,6 @@
 		2DA2D5D120A2987C00A7C18A /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				8435E4ED20E2CA800040EA2D /* global variables.swift */,
 				2DD0B51E209B8E9000181025 /* Recipe.swift */,
 				2DD0B51A209B8DA600181025 /* CurrentUser.swift */,
 				2DD0B526209B91DB00181025 /* DatabaseService.swift */,
@@ -546,7 +543,6 @@
 				2D99A653209800F000BE9F1D /* WelcomeViewController.swift in Sources */,
 				8436F07E20B36230008D2AF9 /* customTableViewCell.swift in Sources */,
 				2DD0B51F209B8E9000181025 /* Recipe.swift in Sources */,
-				8435E4EE20E2CA800040EA2D /* global variables.swift in Sources */,
 				8435E4EC20E2CA410040EA2D /* ShoppingListTableViewController.swift in Sources */,
 				2DD0B527209B91DB00181025 /* DatabaseService.swift in Sources */,
 				8436F07C20B35D19008D2AF9 /* tableViewCellControllerViewController.swift in Sources */,

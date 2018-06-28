@@ -15,7 +15,6 @@ class tableDetailViewController: UIViewController,UITableViewDelegate,UITableVie
     var pictureList = [String]()
     var ingredientsList: [String] = []
     var instructionList: [String] = []
-    var FavouriteAlertResult:Bool = false
     var groceryAlertResult:Bool = false
     var comeFromFavouriteList:Bool = false
     let userID = Auth.auth().currentUser!.uid
@@ -112,11 +111,7 @@ class tableDetailViewController: UIViewController,UITableViewDelegate,UITableVie
         if (comeFromFavouriteList == false){
             let actionFavorite = UIAlertAction(title: "Add \(receipeNamePassed) to favorites", style: .default){(action) in
                 print("Success!")
-                self.FavouriteAlertResult = true
-                self.performSegue(withIdentifier: "goToFavouriteList", sender: self)
-                self.FavouriteAlertResult = false
-                globalVariables.selectedRecipeName = self.receipeNamePassed
-                globalVariables.favouriteAlertButton = true
+                self.loadFavouriteListFromFirebaseForThisUser()
             }
             alert.addAction(actionFavorite)
         }
@@ -160,6 +155,45 @@ class tableDetailViewController: UIViewController,UITableViewDelegate,UITableVie
     func writeMealPlanToFirebaseForThisUser(selectDayIdforFirebase : String){
         let mealPlanDB = Database.database().reference().child("users").child(userID).child(selectDayIdforFirebase)
         mealPlanDB.setValue(receipeNamePassed)
+    }
+    
+    
+    
+    
+    
+    
+    
+    // update the favouriteList
+    var favouriteList: [String] = []
+    var repeatedReceipe:Bool = false
+    func writeFavouriteListToFirebaseForThisUser(){
+        let favouriteListDB = Database.database().reference().child("users").child(userID).child("favourites")
+        favouriteListDB.setValue(favouriteList)
+    }
+    func loadFavouriteListFromFirebaseForThisUser(){
+        let shoppingListDB = Database.database().reference().child("users").child(userID).child("favourites")
+        shoppingListDB.observeSingleEvent(of:.value){(snapshot) in
+            let snapshotValue = snapshot.value as? Array<String> ?? self.favouriteList
+            self.favouriteList = snapshotValue
+            print("load from firebase \(self.favouriteList) ")
+            for singleItem in self.favouriteList{
+                if(singleItem == self.receipeNamePassed){
+                    self.repeatedReceipe = true
+                }
+            }
+            if (self.repeatedReceipe == false){
+                self.updateFireBaseAndLocalList()
+            }
+            self.pictureList = self.favouriteList
+        }
+    }
+    func updateFireBaseAndLocalList(){
+        addFavouriteListToFireBaseFavouriteList()
+        writeFavouriteListToFirebaseForThisUser()
+    }
+    func addFavouriteListToFireBaseFavouriteList(){
+        favouriteList.append(receipeNamePassed)
+        //print("after append what is in the firebase \(self.favouriteList) ")
     }
         
     

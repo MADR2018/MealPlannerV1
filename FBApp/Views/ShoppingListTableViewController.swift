@@ -25,7 +25,7 @@ class ShoppingListTableViewController: UITableViewController, UISearchBarDelegat
         //writeShoppingListToFirebaseForThisUser()
         loadShoppingListFromFirebaseForThisUser()
         setUPSearchBar()
-        gameTimer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(loadShoppingListFromFirebaseForThisUser), userInfo: nil, repeats: true)
+        gameTimer = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(loadShoppingListFromFirebaseForThisUser), userInfo: nil, repeats: true)
     }
     
     
