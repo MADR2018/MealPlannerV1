@@ -13,11 +13,11 @@ import ChameleonFramework
 class ShoppingListTableViewController: UITableViewController, UISearchBarDelegate {
     var shoppingListReceived : [String] = []
     var FireBaseShoppingList :  [String] = []
-    
     var repeatedShoppingList: Bool = false
     var groceryAlertPress: Bool = false
     var emptyShoppingList = ["No Grocery list has been added yet"]
     let userID = Auth.auth().currentUser!.uid
+    var gameTimer: Timer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,8 +25,10 @@ class ShoppingListTableViewController: UITableViewController, UISearchBarDelegat
         //writeShoppingListToFirebaseForThisUser()
         loadShoppingListFromFirebaseForThisUser()
         setUPSearchBar()
-        
+        gameTimer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(loadShoppingListFromFirebaseForThisUser), userInfo: nil, repeats: true)
     }
+    
+    
     func addShoppingListToFireBaseShoppingList(){
         for singleItem in shoppingListReceived{
             FireBaseShoppingList.append(String(singleItem))
@@ -67,7 +69,7 @@ class ShoppingListTableViewController: UITableViewController, UISearchBarDelegat
         
     }
     
-    func loadShoppingListFromFirebaseForThisUser(){
+    @objc func loadShoppingListFromFirebaseForThisUser(){
         let shoppingListDB = Database.database().reference().child("users").child(userID).child("shoppingList")
         shoppingListDB.observeSingleEvent(of:.value){(snapshot) in
             let snapshotValue = snapshot.value as? Array<String> ?? self.emptyShoppingList
