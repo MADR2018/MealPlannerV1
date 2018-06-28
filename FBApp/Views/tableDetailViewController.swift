@@ -20,6 +20,7 @@ class tableDetailViewController: UIViewController,UITableViewDelegate,UITableVie
     var FavouriteAlertResult:Bool = false
     var groceryAlertResult:Bool = false
     var comeFromFavouriteList:Bool = false
+    let userID = Auth.auth().currentUser!.uid
     
     @IBAction func groceryButton(_ sender: Any) {
         groceryButtonResult = true
@@ -137,6 +138,9 @@ class tableDetailViewController: UIViewController,UITableViewDelegate,UITableVie
         
         present(alert, animated: true, completion: nil)
     }
+    
+    
+    
     // pass selected shopping list to shopping list table view controller and pass selected food receipe to favourite receipe list
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? ShoppingListTableViewController{
@@ -146,6 +150,30 @@ class tableDetailViewController: UIViewController,UITableViewDelegate,UITableVie
         }
         
     }
+    
+    @IBAction func addToMealPlan(_ sender: UIBarButtonItem) {
+        let alert = UIAlertController(title: "Add \(receipeNamePassed) to Meal plans?", message: "", preferredStyle: .alert)
+        let actionGrocery = UIAlertAction(title: "Add \(receipeNamePassed) to monday", style: .default){(action) in
+            print("Success!")
+            //self.performSegue(withIdentifier: "goToShoppingList", sender: self)
+            self.writeMealPlantToFirebaseForThisUser()
+        }
+        alert.addAction(actionGrocery)
+        
+        present(alert, animated: true, completion: nil)
+    }
+    func writeMealPlantToFirebaseForThisUser(){
+        let shoppingListDB = Database.database().reference().child("users").child(userID).child("monSelectionID")
+        shoppingListDB.setValue(receipeNamePassed)
+        //shoppingListDB.setValue(shoppingListReceived)
+        
+    }
+    
+    
+    
+    
+    
+    
     
     
     

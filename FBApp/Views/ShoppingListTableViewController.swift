@@ -68,13 +68,13 @@ class ShoppingListTableViewController: UITableViewController, UISearchBarDelegat
         shoppingListDB.observeSingleEvent(of:.value){(snapshot) in
             let snapshotValue = snapshot.value as? Array<String> ?? self.emptyShoppingList
             self.FireBaseShoppingList = snapshotValue
-            //            for singleItem in self.FireBaseShoppingList{
-            //                if self.groceryButtonPress == false{
-            //                    if(singleItem == self.shoppingListReceived[0]){
-            //                        self.repeatedShoppingList = true
-            //                    }
-            //                }
-            //            }
+                    for singleItem in self.FireBaseShoppingList{
+                            if self.groceryButtonPress == true{
+                                if(singleItem == self.shoppingListReceived[0]){
+                                    self.repeatedShoppingList = true
+                            }
+                        }
+                    }
             if self.repeatedShoppingList == false && self.groceryAlertPress == true{
                 if self.FireBaseShoppingList[0] == self.emptyShoppingList[0]{
                     self.FireBaseShoppingList.remove(at: 0)
