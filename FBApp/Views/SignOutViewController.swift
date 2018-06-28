@@ -35,6 +35,7 @@ class SignOutViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        
         monSelection.removeAll(keepingCapacity: false)
         tueSelection.removeAll(keepingCapacity: false)
         wedSelection.removeAll(keepingCapacity: false)
@@ -141,7 +142,7 @@ class SignOutViewController: UIViewController, UITableViewDataSource, UITableVie
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //Create an object of the dynamic cell "PlainCell"
-        let cell = tableView.dequeueReusableCell(withIdentifier: "PlainCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
         //Depending on the section, fill the textLabel with the relevant text
         switch indexPath.section {
         case 0:
