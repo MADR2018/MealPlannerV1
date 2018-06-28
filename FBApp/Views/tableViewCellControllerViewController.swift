@@ -62,9 +62,6 @@ class tableViewCellControllerViewController: UIViewController,UITableViewDelegat
         if let destination = segue.destination as? tableDetailViewController{
             destination.receipeNamePassed = pictureList[selectedIndex]
         }
-        if let destination = segue.destination as? ShoppingListTableViewController{
-            destination.groceryButtonPress = groceryButton1Result
-        }
     }
     
     

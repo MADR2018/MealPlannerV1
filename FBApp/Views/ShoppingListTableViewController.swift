@@ -8,13 +8,13 @@
 
 import UIKit
 import Firebase
+import ChameleonFramework
 
 class ShoppingListTableViewController: UITableViewController, UISearchBarDelegate {
     var shoppingListReceived : [String] = []
     var FireBaseShoppingList :  [String] = []
     
     var repeatedShoppingList: Bool = false
-    var groceryButtonPress: Bool = false
     var groceryAlertPress: Bool = false
     var emptyShoppingList = ["No Grocery list has been added yet"]
     let userID = Auth.auth().currentUser!.uid
@@ -48,13 +48,17 @@ class ShoppingListTableViewController: UITableViewController, UISearchBarDelegat
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "shoppingListCell", for: indexPath)
         cell.textLabel?.text = String(indexPath.row) + ".   " + FireBaseShoppingList[indexPath.row]
-        cell.textLabel?.textColor = UIColor.blue
+        //cell.textLabel?.textColor = UIColor.blue
+        if let colour = FlatSkyBlue().darken(byPercentage:CGFloat(indexPath.row) / CGFloat((FireBaseShoppingList.count)  )){
+            cell.backgroundColor = colour
+            cell.textLabel?.textColor = ContrastColorOf(colour, returnFlat: true)
+        }
         cell.textLabel?.numberOfLines = 10;
         cell.textLabel?.lineBreakMode = .byWordWrapping;
         return cell
     }
     
-    // write and load data from firebase
+    // write and load shopping list data from firebase
     
     func writeShoppingListToFirebaseForThisUser(){
         let shoppingListDB = Database.database().reference().child("users").child(userID).child("shoppingList")
@@ -69,8 +73,8 @@ class ShoppingListTableViewController: UITableViewController, UISearchBarDelegat
             let snapshotValue = snapshot.value as? Array<String> ?? self.emptyShoppingList
             self.FireBaseShoppingList = snapshotValue
                     for singleItem in self.FireBaseShoppingList{
-                            if self.groceryButtonPress == true{
-                                if(singleItem == self.shoppingListReceived[0]){
+                            if self.groceryAlertPress == true{
+                                if(singleItem == self.shoppingListReceived[0]||singleItem == self.shoppingListReceived[1]){
                                     self.repeatedShoppingList = true
                             }
                         }
@@ -85,18 +89,8 @@ class ShoppingListTableViewController: UITableViewController, UISearchBarDelegat
             self.searchFilteredShoppingList = self.FireBaseShoppingList
             self.tableView.reloadData()
             
-            
         }
     }
-    
-    
-    /*
-     // Override to support conditional editing of the table view.
-     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-     // Return false if you do not want the specified item to be editable.
-     return true
-     }
-     */
     
     
     //Swipe to delete a tableview cell

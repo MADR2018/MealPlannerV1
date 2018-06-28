@@ -15,21 +15,10 @@ class tableDetailViewController: UIViewController,UITableViewDelegate,UITableVie
     var pictureList = [String]()
     var ingredientsList: [String] = []
     var instructionList: [String] = []
-    var FavouriteButtonResult:Bool = false
-    var groceryButtonResult:Bool = false
     var FavouriteAlertResult:Bool = false
     var groceryAlertResult:Bool = false
     var comeFromFavouriteList:Bool = false
     let userID = Auth.auth().currentUser!.uid
-    
-    @IBAction func groceryButton(_ sender: Any) {
-        groceryButtonResult = true
-    }
-    
-    @IBAction func FavouriteButton(_ sender: Any) {
-        FavouriteButtonResult = true
-    }
-    
     
     
     
@@ -117,8 +106,6 @@ class tableDetailViewController: UIViewController,UITableViewDelegate,UITableVie
             print("Success!")
             self.groceryAlertResult = true
             self.performSegue(withIdentifier: "goToShoppingList", sender: self)
-            self.groceryAlertResult = false
-            
         }
         
         
@@ -145,11 +132,12 @@ class tableDetailViewController: UIViewController,UITableViewDelegate,UITableVie
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? ShoppingListTableViewController{
             destination.shoppingListReceived = ingredientsList
-            destination.groceryButtonPress = groceryButtonResult
             destination.groceryAlertPress = groceryAlertResult
         }
         
     }
+    
+    // Add selected food recipe to Meal Plan
     var alert:UIAlertController? = nil
     @IBAction func addToMealPlan(_ sender: UIBarButtonItem) {
         alert = UIAlertController(title: "Add \(receipeNamePassed) to Meal plans?", message: "", preferredStyle: .alert)
@@ -174,14 +162,6 @@ class tableDetailViewController: UIViewController,UITableViewDelegate,UITableVie
         mealPlanDB.setValue(receipeNamePassed)
     }
         
-    
-    
-    
-    
-    
-    
-    
-    
     
 }
 

@@ -24,7 +24,6 @@ class favouriteTableViewController: UIViewController, UITableViewDataSource,UITa
         favouriteAlertPress = globalVariables.favouriteAlertButton
         tableView.delegate = self
         tableView.dataSource = self
-        //updateFireBaseAndLocalList()
         //writeFavouriteListToFirebaseForThisUser()
         loadFavouriteListFromFirebaseForThisUser()
         
@@ -48,12 +47,10 @@ class favouriteTableViewController: UIViewController, UITableViewDataSource,UITa
         return cell
     }
     
-    
+    //write and favourite data from firebase
     func writeFavouriteListToFirebaseForThisUser(){
         let favouriteListDB = Database.database().reference().child("users").child(userID).child("favourites")
         favouriteListDB.setValue(pictureList)
-        
-        
     }
     func loadFavouriteListFromFirebaseForThisUser(){
         let shoppingListDB = Database.database().reference().child("users").child(userID).child("favourites")
