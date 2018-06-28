@@ -150,24 +150,30 @@ class tableDetailViewController: UIViewController,UITableViewDelegate,UITableVie
         }
         
     }
-    
+    var alert:UIAlertController? = nil
     @IBAction func addToMealPlan(_ sender: UIBarButtonItem) {
-        let alert = UIAlertController(title: "Add \(receipeNamePassed) to Meal plans?", message: "", preferredStyle: .alert)
-        let actionGrocery = UIAlertAction(title: "Add \(receipeNamePassed) to monday", style: .default){(action) in
-            print("Success!")
-            //self.performSegue(withIdentifier: "goToShoppingList", sender: self)
-            self.writeMealPlantToFirebaseForThisUser()
+        alert = UIAlertController(title: "Add \(receipeNamePassed) to Meal plans?", message: "", preferredStyle: .alert)
+        addToMealPlanMonToSun(selectDay: "Monday",selectDayId : "monSelectionID")
+        addToMealPlanMonToSun(selectDay: "Tuesday",selectDayId : "tueSelectionID")
+        addToMealPlanMonToSun(selectDay: "Wednesday",selectDayId : "wedSelectionID")
+        addToMealPlanMonToSun(selectDay: "Thursday",selectDayId : "thuSelectionID")
+        addToMealPlanMonToSun(selectDay: "Friday",selectDayId : "friSelectionID")
+        addToMealPlanMonToSun(selectDay: "Saturday",selectDayId : "satSelectionID")
+        addToMealPlanMonToSun(selectDay: "Sunday",selectDayId : "sunSelectionID")
+        present(alert!, animated: true, completion: nil)
+    }
+    
+    func addToMealPlanMonToSun(selectDay : String, selectDayId : String){
+        let actionAddtoMealPlan = UIAlertAction(title: "Add \(receipeNamePassed) to \(selectDay)", style: .default){(action) in
+            self.writeMealPlanToFirebaseForThisUser(selectDayIdforFirebase : selectDayId)
         }
-        alert.addAction(actionGrocery)
-        
-        present(alert, animated: true, completion: nil)
+        alert?.addAction(actionAddtoMealPlan)
     }
-    func writeMealPlantToFirebaseForThisUser(){
-        let shoppingListDB = Database.database().reference().child("users").child(userID).child("monSelectionID")
-        shoppingListDB.setValue(receipeNamePassed)
-        //shoppingListDB.setValue(shoppingListReceived)
-        
+    func writeMealPlanToFirebaseForThisUser(selectDayIdforFirebase : String){
+        let mealPlanDB = Database.database().reference().child("users").child(userID).child(selectDayIdforFirebase)
+        mealPlanDB.setValue(receipeNamePassed)
     }
+        
     
     
     
