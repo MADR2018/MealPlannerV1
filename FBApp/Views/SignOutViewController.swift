@@ -30,6 +30,19 @@ class SignOutViewController: UIViewController, UITableViewDataSource, UITableVie
         super.viewDidLoad()
         //        self.monSelection.append("This recipe 1")
         //        self.monSelection.append("This recipe 2")
+  
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        monSelection.removeAll(keepingCapacity: false)
+        tueSelection.removeAll(keepingCapacity: false)
+        wedSelection.removeAll(keepingCapacity: false)
+        thuSelection.removeAll(keepingCapacity: false)
+        friSelection.removeAll(keepingCapacity: false)
+        satSelection.removeAll(keepingCapacity: false)
+        sunSelection.removeAll(keepingCapacity: false)
+        
         var ref:DatabaseReference!
         ref = Database.database().reference()
         //TODO: load user recipe selections, and MAKE THIS OOP!
@@ -81,12 +94,6 @@ class SignOutViewController: UIViewController, UITableViewDataSource, UITableVie
             //update the tableview HERE
             //self.selectionsTableView.reloadData()
         })
-        
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-    
-        
         //        guard let email = Auth.auth().currentUser?.email else { return }
         //        label.text = "Hello \(email)"
         // Do any additional setup after loading the view.
