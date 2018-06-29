@@ -22,7 +22,7 @@ class SignOutViewController: UIViewController, UITableViewDataSource, UITableVie
     var friSelection = [String]()
     var satSelection = [String]()
     var sunSelection = [String]()
-    var RecipeName:String = "none" //make sure to guard
+    var RecipeName:String = ""//make sure to guard
     let userID = Auth.auth().currentUser!.uid
     
     
@@ -268,7 +268,7 @@ class SignOutViewController: UIViewController, UITableViewDataSource, UITableVie
             
         default:
             print("default")
-       
+            
         }
         
     }
@@ -278,27 +278,68 @@ class SignOutViewController: UIViewController, UITableViewDataSource, UITableVie
         selectedIndex = indexPath.row
         switch indexPath.section {
         case 0:
-            RecipeName = monSelection[0]
+                if(!monSelection[0].isEmpty){
+                RecipeName = monSelection[0]
+                performSegue(withIdentifier: "showMealDetails", sender: self)
+                }
+                else{
+                    break
+            }
         case 1:
-            RecipeName = tueSelection[0]
+         
+            if(!tueSelection[0].isEmpty){
+                RecipeName = tueSelection[0]
+                performSegue(withIdentifier: "showMealDetails", sender: self)
+            }
+            else{
+                break
+            }
         case 2:
-            RecipeName = wedSelection[0]
+            if(!wedSelection[0].isEmpty){
+                RecipeName = wedSelection[0]
+                performSegue(withIdentifier: "showMealDetails", sender: self)
+            }
+            else{
+                break
+            }
         case 3:
-            RecipeName = thuSelection[0]
+            if(!thuSelection[0].isEmpty){
+                RecipeName = thuSelection[0]
+                performSegue(withIdentifier: "showMealDetails", sender: self)
+            }
+            else{
+                break
+            }
         case 4:
-            RecipeName = friSelection[0]
+            if(!friSelection[0].isEmpty){
+                RecipeName = friSelection[0]
+                performSegue(withIdentifier: "showMealDetails", sender: self)
+            }
+            else{
+                break
+            }
         case 5:
-            RecipeName = satSelection[0]
+            if(!satSelection[0].isEmpty){
+                RecipeName = satSelection[0]
+                performSegue(withIdentifier: "showMealDetails", sender: self)
+            }
+            else{
+                break
+            }
         case 6:
-            RecipeName = sunSelection[0]
-        default:
+            if(!sunSelection[0].isEmpty){
+                RecipeName = sunSelection[0]
+                performSegue(withIdentifier: "showMealDetails", sender: self)
+            }
+            else{
+                break
+            }        default:
             print("wat")
         }
-        performSegue(withIdentifier: "showMealDetails", sender: self)
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? tableDetailViewController{
-           destination.receipeNamePassed = RecipeName
+            destination.receipeNamePassed = RecipeName
         }
     }
     
