@@ -1,31 +1,27 @@
 //
-//  customTableViewCell.swift
+//  MealPlanTableViewCell.swift
 //  FBApp
 //
-//  Created by Administrator on 5/21/18.
+//  Created by Sophie Amin on 2018-06-28.
 //  Copyright © 2018 Sophie Amin. All rights reserved.
 //
 
 import UIKit
 
-class customTableViewCell: UITableViewCell {
- //CELL FOR TABLE VIEW CONTROLLER FOR MEALS LIST
+class MealPlanTableViewCell: UITableViewCell {
+    //MARK: Properties
+    //@IBOutlet weak var mealImageView: UIImageView?
+    @IBOutlet weak var mealLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
-    @IBOutlet weak var cellView: UIView!
-    @IBOutlet weak var foodImage1: UIImageView!
-   
-    @IBOutlet weak var image1Text: UILabel!
-   
-    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
     }
-    
 
 }

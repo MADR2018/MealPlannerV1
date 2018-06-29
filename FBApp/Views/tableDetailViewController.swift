@@ -11,7 +11,7 @@ import Firebase
 import FirebaseDatabase
 
 class tableDetailViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
-    
+    //MEAL DETAILS VIEW CONTROLLER
     var pictureList = [String]()
     var ingredientsList: [String] = []
     var instructionList: [String] = []
@@ -52,7 +52,7 @@ class tableDetailViewController: UIViewController,UITableViewDelegate,UITableVie
         selectedFoodImage.image = UIImage(named: receipeNamePassed)
         
         //get data from firebase
-        retrieveMessages()
+        retrieveRecipe()
         
         
         
@@ -75,7 +75,7 @@ class tableDetailViewController: UIViewController,UITableViewDelegate,UITableVie
     //        return 100
     //    }
     // retrieveMessages from firebase
-    func retrieveMessages(){
+    func retrieveRecipe(){
         
         let receipeDB = Database.database().reference().child("Recipes").child(receipeNamePassed)
         receipeDB.observeSingleEvent(of:.value){(snapshot) in

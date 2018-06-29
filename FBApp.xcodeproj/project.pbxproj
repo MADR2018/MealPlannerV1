@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0A2C7120547F9309B9CF466B /* Pods_FBApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC98FE63D30C70B2B7FB1B82 /* Pods_FBApp.framework */; };
 		141C25CBBA6A256F63C293C3 /* Pods_FBAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 031B49DDA3EB150B8D5C3F7D /* Pods_FBAppUITests.framework */; };
+		2D0F7CE720E5746C0013CB53 /* MealPlanTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F7CE620E5746C0013CB53 /* MealPlanTableViewCell.swift */; };
 		2D33CBCB208D8F0000F7FEFC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D33CBCA208D8F0000F7FEFC /* AppDelegate.swift */; };
 		2D33CBCD208D8F0000F7FEFC /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D33CBCC208D8F0000F7FEFC /* SignInViewController.swift */; };
 		2D33CBD0208D8F0100F7FEFC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D33CBCE208D8F0100F7FEFC /* Main.storyboard */; };
@@ -59,6 +60,7 @@
 /* Begin PBXFileReference section */
 		031B49DDA3EB150B8D5C3F7D /* Pods_FBAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FBAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A4122FCA14F01704972DF0D /* Pods-FBAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FBAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FBAppTests/Pods-FBAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		2D0F7CE620E5746C0013CB53 /* MealPlanTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealPlanTableViewCell.swift; sourceTree = "<group>"; };
 		2D33CBC7208D8F0000F7FEFC /* FBApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FBApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D33CBCA208D8F0000F7FEFC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2D33CBCC208D8F0000F7FEFC /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
@@ -195,6 +197,7 @@
 		2DA2D5CD20A2979600A7C18A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				2D0F7CE620E5746C0013CB53 /* MealPlanTableViewCell.swift */,
 				8435E4E920E2C9D00040EA2D /* favouriteTableViewController.swift */,
 				8435E4EB20E2CA410040EA2D /* ShoppingListTableViewController.swift */,
 				2DC7970220E183D0007DDB53 /* LogOutViewController.swift */,
@@ -545,6 +548,7 @@
 				2DD0B51F209B8E9000181025 /* Recipe.swift in Sources */,
 				8435E4EC20E2CA410040EA2D /* ShoppingListTableViewController.swift in Sources */,
 				2DD0B527209B91DB00181025 /* DatabaseService.swift in Sources */,
+				2D0F7CE720E5746C0013CB53 /* MealPlanTableViewCell.swift in Sources */,
 				8436F07C20B35D19008D2AF9 /* tableViewCellControllerViewController.swift in Sources */,
 				8436F08020B38E07008D2AF9 /* tableDetailViewController.swift in Sources */,
 			);
