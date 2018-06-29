@@ -202,7 +202,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vh7-PO-2EK">
-                                                    <rect key="frame" x="14" y="-1" width="347" height="100"/>
+                                                    <rect key="frame" x="15" y="11" width="345" height="24"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="100" id="FJh-lk-zom"/>
                                                     </constraints>
@@ -213,8 +213,8 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="Vh7-PO-2EK" firstAttribute="centerY" secondItem="VG3-kp-Jy8" secondAttribute="centerY" id="2Qn-yU-0gI"/>
-                                                <constraint firstItem="Vh7-PO-2EK" firstAttribute="leading" secondItem="VG3-kp-Jy8" secondAttribute="leadingMargin" constant="-1" id="9pT-Mb-Rtw"/>
-                                                <constraint firstItem="Vh7-PO-2EK" firstAttribute="top" secondItem="VG3-kp-Jy8" secondAttribute="topMargin" constant="-12" id="KO1-ed-qpq"/>
+                                                <constraint firstItem="Vh7-PO-2EK" firstAttribute="leading" secondItem="VG3-kp-Jy8" secondAttribute="leadingMargin" id="9pT-Mb-Rtw"/>
+                                                <constraint firstItem="Vh7-PO-2EK" firstAttribute="top" secondItem="VG3-kp-Jy8" secondAttribute="topMargin" id="KO1-ed-qpq"/>
                                                 <constraint firstItem="Vh7-PO-2EK" firstAttribute="centerX" secondItem="VG3-kp-Jy8" secondAttribute="centerX" id="uwF-wg-ff6"/>
                                             </constraints>
                                         </tableViewCellContentView>
