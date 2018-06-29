@@ -13,7 +13,7 @@ class tableViewCellControllerViewController: UIViewController,UITableViewDelegat
     //TABLE VIEW CONTROLLER CLASS
     @IBOutlet weak var tableView: UITableView!
     
-    var pictureList = ["Cauliflower Tikka Masala","No-Pain Lo Mein","One-Pot Farfalle Primavera","One-Pot Spaghetti with Fresh Tomato Sauce","Pan Roasted Pork Chops and Broccoli","Pea and Goat's Cheese Risotto"]
+    var pictureList = ["Cauliflower Tikka Masala","No-Pain Lo Mein","One-Pot Farfalle Primavera","One-Pot Spaghetti with Fresh Tomato Sauce","Pan Roasted Pork Chops and Broccoli","Pea and Goat's Cheese Risotto","Creamy Chicken and Mushroom One-Pot with Pot Pie Toppers","Aromatic Steamed Mussels","One Skillet Trout with Green Beans","Pot Steamed Salmon"]
     var groceryButton1Result: Bool = false
 
     override func viewDidLoad() {
